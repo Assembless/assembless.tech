@@ -11,5 +11,8 @@ export default ((theme: Theme) => createStyles({
     description: {
         opacity: 0.45,
         whiteSpace: "pre-wrap"
+    },
+    brandName: {
+        color: "#FFF", fontSize: "54px", margin: 0, padding: 0
     }
 }));

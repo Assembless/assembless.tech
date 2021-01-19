@@ -27,8 +27,8 @@ const About = (props: AboutProps) => {
         </Box>
 
         <Box style={{ width: "50%" }} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
-            <h1 style={{ color: "#FFF", opacity: 1, fontSize: "54px", margin: 0, padding: 0 }}>Assembless</h1>
-            <h1 style={{ color: "#FFF", opacity: 0.55, fontSize: "54px", margin: 0, padding: 0 }}>/əˈsɛmblɛs/</h1>
+            <h1 className={classes.brandName} style={{ opacity: 1 }}>Assembless</h1>
+            <h1 className={classes.brandName} style={{ opacity: 0.55 }}>/əˈsɛmblɛs/</h1>
         </Box>
 
     </Box>

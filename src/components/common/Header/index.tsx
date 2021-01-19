@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Box, Typography, Button, Hidden } from "@material-ui/core";
+import { makeStyles, Box, Typography, Button, Hidden, useMediaQuery } from "@material-ui/core";
 import { useLittera } from "react-littera";
 import cx from "classnames";
 
@@ -18,6 +18,7 @@ import translations from "./trans";
  * @author Mike Eling <mike.eling97@gmail.com>
  */
 const Header = (props: HeaderProps) => {
+    const reduceData = useMediaQuery("(prefers-reduced-data: reduce)");
     const translated = useLittera(translations);
     const classes = useStyles();
 
@@ -36,7 +37,8 @@ const Header = (props: HeaderProps) => {
             <Box display="flex" justifyContent="flex-end" alignItems="center" className={cx(classes.side)}>
                 <Box width="500px" height="500px" maxWidth="100%" display="flex" alignItems="center" justifyContent="center" style={{ background: "url(https://unblast.com/wp-content/uploads/2018/10/Sky-Stars-Pattern-0.jpg)", borderRadius: "50px" }}>
                     <Box overflow="hidden" width="500px" height="500px" maxWidth="100%" display="flex" alignItems="center" justifyContent="center" style={{ borderRadius: "500px 50px 50px 50px" }}>
-                        <img alt="thumbnail" src={vid} style={{ width: "auto", height: "103%" }} />
+                        {!reduceData && <img alt="thumbnail" src={vid} style={{ width: "auto", height: "105%" }} />}
+                        {!!reduceData && <img alt="thumbnail" src={logo} style={{ width: "auto", height: "105%" }} />}
                     </Box>
                 </Box>
             </Box>
