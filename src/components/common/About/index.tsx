@@ -21,12 +21,12 @@ const About = (props: AboutProps) => {
     const classes = useStyles();
 
     return <Box display="flex" justifyContent="space-between" alignItems="center" flexWrap="wrap" className={cx(classes.root, props.className)} style={props.style}>
-        <Box style={{ width: "50%" }}>
+        <Box className={classes.side}>
             <Typography className={classes.title} variant="h3" gutterBottom>{translated.title}</Typography>
             <Typography className={classes.description}>{translated.description}</Typography>
         </Box>
 
-        <Box style={{ width: "50%" }} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
+        <Box className={classes.side} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
             <h1 className={classes.brandName} style={{ opacity: 1 }}>Assembless</h1>
             <h1 className={classes.brandName} style={{ opacity: 0.55 }}>/əˈsɛmblɛs/</h1>
         </Box>
