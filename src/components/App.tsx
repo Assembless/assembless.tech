@@ -1,6 +1,6 @@
 import React from 'react';
 import { LitteraProvider } from 'react-littera';
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { ThemeProvider, useMediaQuery, CssBaseline } from '@material-ui/core';
 
 import { LOCALES } from "utils/language";

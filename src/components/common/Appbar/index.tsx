@@ -1,8 +1,9 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Toolbar, Container, AppBar as Navbar, Typography } from "@material-ui/core";
+import { makeStyles, Toolbar, Container, AppBar as Navbar, Box } from "@material-ui/core";
 import { useLittera } from "react-littera";
 import cx from "classnames";
+import { Link, useHistory } from "react-router-dom";
 
 // Project scoped imports.
 import logo from 'assets/logo.jpg';
@@ -20,11 +21,23 @@ import translations from "./trans";
 const Appbar = (props: AppbarProps) => {
     const translated = useLittera(translations);
     const classes = useStyles();
+    const history = useHistory();
 
-    return <Navbar className={cx(classes.root, props.className)} style={props.style}>
+    const handleNavigation = (path: string) => () => {
+        history.push(path);
+    }
+
+    return <Navbar position="sticky" className={cx(classes.root, props.className)} style={props.style}>
         <Container>
             <Toolbar>
-                <img alt="logo" src={logo} style={{ width: "64px", height: "64px" }} />
+                <Box display="flex" justifyContent="space-between" alignItems="center" width="100%">
+                    <img onClick={handleNavigation("/")} alt="logo" src={logo} style={{ width: "64px", height: "64px", cursor: "pointer" }} />
+
+                    <Box display="flex" justifyContent="flex-end" alignItems="center">
+                        <Link className={classes.link} to="/">{translated.home}</Link>
+                        <Link className={classes.link} to="/career/">{translated.career}</Link>
+                    </Box>
+                </Box>
             </Toolbar>
         </Container>
     </Navbar>
