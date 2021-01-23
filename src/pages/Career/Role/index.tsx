@@ -31,6 +31,12 @@ const CareerRole = (props: CareerRoleProps) => {
         window.open(path, "_blank");
     }
 
+    const prefill = {
+        customAnswers: {
+            a1: `${props.role.title} / ${props.role.project}`,
+        }
+    }
+
     return <>
         <Box className={cx(classes.root, props.className)} style={props.style} display="flex" justifyContent="space-between" alignItems="center">
             <Box display="flex" alignItems="center">
@@ -49,7 +55,7 @@ const CareerRole = (props: CareerRoleProps) => {
 
         <Dialog open={open} onClose={handleClose} PaperProps={{ style: { width: "70vw" } }}>
             <DialogContent>
-                <InlineWidget url="https://calendly.com/assembless/meeting" styles={{ minWidth: "320px", width: "100%", height: "630px" }} pageSettings={{ primaryColor: stripHash(theme.palette.primary.main), textColor: stripHash(theme.palette.text.primary), backgroundColor: stripHash(theme.palette.background.paper) }} />
+                <InlineWidget url="https://calendly.com/assembless/meeting" prefill={prefill} styles={{ minWidth: "320px", width: "100%", height: "630px" }} pageSettings={{ primaryColor: stripHash(theme.palette.primary.main), textColor: stripHash(theme.palette.text.primary), backgroundColor: stripHash(theme.palette.background.paper) }} />
             </DialogContent>
             <DialogActions>
                 <Button variant="text" onClick={handleClose}>{translated.close}</Button>
