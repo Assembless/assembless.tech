@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Box } from "@material-ui/core";
+import { makeStyles, Box, Typography } from "@material-ui/core";
 import { useLittera } from "react-littera";
 import cx from "classnames";
 
@@ -21,7 +21,7 @@ const Component = (props: ComponentProps) => {
     const classes = useStyles();
 
     return <Box className={cx(classes.root, props.className)} style={props.style}>
-        <h4 className={classes.h4}>{translated.example}</h4>
+        <Typography variant="h3" className={classes.title}>{translated.title}</Typography>
     </Box>
 }
 

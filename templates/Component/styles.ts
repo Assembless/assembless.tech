@@ -1,12 +1,14 @@
 import { createStyles, Theme } from "@material-ui/core/styles";
 // Here we define styles for the component.
 
-export default ((theme: Theme) => createStyles({
+const styles = ((theme: Theme) => createStyles({
     root: {
         // Container styles...
     },
-    h4: {
+    title: {
         // Head text styles...
-        color: theme.palette.primary.main
+        fontFamily: "'PT Mono', monospace"
     }
 }));
+
+export default styles;

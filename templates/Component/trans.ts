@@ -1,7 +1,7 @@
 // Here we define translations for the component.
 
 const translations = {
-    example: {
+    title: {
         en_US: "Example",
         de_DE: "Beispiel",
         pl_PL: "Przykład"
