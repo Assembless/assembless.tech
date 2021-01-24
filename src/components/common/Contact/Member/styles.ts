@@ -11,8 +11,12 @@ const styles = ((theme: Theme) => createStyles({
         width: "280px",
         marginRight: `${theme.spacing(3)}px`,
         marginTop: theme.spacing(2),
+        transition: "all 255ms ease-out",
         [theme.breakpoints.down("sm")]: {
             width: "100%",
+        },
+        "&:hover": {
+            borderColor: theme.palette.common.white
         }
     },
     role: {
