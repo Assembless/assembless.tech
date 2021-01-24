@@ -8,6 +8,7 @@ import cx from "classnames";
 import Header from 'components/common/Header'
 import About from 'components/common/About'
 import Projects from 'components/common/Projects'
+import Contact from 'components/common/Contact'
 
 // Component scoped imports.
 import styles from "./styles";
@@ -27,6 +28,7 @@ const Home = (props: HomeProps) => {
         <Header />
         <About />
         <Projects />
+        <Contact />
     </Container>
 }
 
