@@ -1,4 +1,4 @@
-export type TRole = "Chief Executive Officer" | "Chief Marketing Officer" | "Project Manager";
+export type TRole = "Chief Executive Officer" | "Chief Marketing Officer" | "Chief Technology Officer" | "Project Manager";
 
 export interface IMember {
     first_name: string;
