@@ -56,7 +56,7 @@ const MemberContactIcons = (props: MemberContactIconsProps) => {
 
     return <Box flex="display" alignItems="center" justifyContent="space-evenly" flexWrap="wrap" marginTop="12px">
         {
-            props.contact.map(ct => <Tooltip title={ct.name} aria-label={ct.label}>
+            props.contact.map(ct => <Tooltip key={ct.name + ct.value} title={ct.name} aria-label={ct.label}>
                 <Icon onClick={handleNavigation(ct.value)} className={cx(iconsMap[ct.label], props.className)} />
             </Tooltip>)
         }

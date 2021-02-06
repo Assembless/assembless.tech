@@ -28,7 +28,7 @@ const Projects = (props: ProjectsProps) => {
 
         <Box display="flex" justifyContent="flex-start" flexWrap="wrap">
             {
-                list.map(item => <Project {...item} />)
+                list.map(item => <Project key={item.repo_url + item.name} {...item} />)
             }
         </Box>
     </Box>

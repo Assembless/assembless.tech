@@ -1,10 +1,14 @@
 import { IMember, TMemberContact, TRole, TMemberContactLabel } from "./types";
 
+let incrementedId = 0;
 export class MemberItem {
+    id: number;
     // @ts-ignore
     details: IMember = {};
 
     constructor(first_name: string, last_name: string, role: TRole, contact: TMemberContact[], nickname?: string, project?: string, photo_url?: string) {
+        incrementedId += 1;
+        this.id = incrementedId;
         this.details.first_name = first_name;
         this.details.last_name = last_name;
         this.details.role = role;

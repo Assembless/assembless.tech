@@ -1,10 +1,11 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Box, Typography, Button, Hidden, useMediaQuery } from "@material-ui/core";
+import { makeStyles, Box, Typography, Button, useMediaQuery } from "@material-ui/core";
 import { useLittera } from "react-littera";
 import cx from "classnames";
 
 // Project scoped imports.
+import ContributionPlanet from '../ContributionPlanet';
 
 // Component scoped imports.
 import styles from "./styles";
@@ -33,25 +34,9 @@ const Header = (props: HeaderProps) => {
         </Box>
 
         { /* What a hell I've created..? */}
-        <Hidden smDown>
-            <Box display="flex" justifyContent="flex-end" alignItems="center" className={cx(classes.side)} overflow="hidden" >
-                <div>
-                    <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.galaxy}>
-                    </Box>
-                    <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.galaxyFade}>
-                    </Box>
-                    <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.orbit}>
-                    </Box>
-                    <Box width="500px" height="500px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.atmosphere, classes.atmosphereAnimation01)}>
-                    </Box>
-                    <Box width="500px" height="500px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.atmosphere, classes.atmosphereAnimation02)}>
-                    </Box>
-                    <Box width="400px" height="400px" display="flex" alignItems="center" justifyContent="center" className={classes.planet}>
-                        <img src="https://media4.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif?cid=ecf05e476yvh801dnv123fvcatmqyc9iqp9mee4zcv5pwfsr&rid=giphy.gif" style={{ width: "400px", height: "400px" }} />
-                    </Box>
-                </div>
-            </Box> 
-        </Hidden>
+        <Box display="flex" justifyContent="flex-end" alignItems="center" className={cx(classes.side)} overflow="hidden" >
+            <ContributionPlanet />
+        </Box>
     </Box>
 }
 
