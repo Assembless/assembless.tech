@@ -34,7 +34,7 @@ const Header = (props: HeaderProps) => {
 
         { /* What a hell I've created..? */}
         <Hidden smDown>
-            <Box display="flex" justifyContent="flex-end" alignItems="center" className={cx(classes.side)}>
+            <Box display="flex" justifyContent="flex-end" alignItems="center" className={cx(classes.side)} overflow="hidden" >
                 <div>
                     <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.galaxy}>
                     </Box>
