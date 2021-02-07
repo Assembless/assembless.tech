@@ -10,7 +10,7 @@ import { InlineWidget } from "react-calendly";
 // Project scoped imports.
 
 // Component scoped imports.
-import { ICareerRole } from "../types";
+import { ICareerRoleRaw } from "../types";
 import styles from "./styles";
 import translations from "./trans";
 
@@ -71,7 +71,7 @@ const useStyles = makeStyles(styles);
 type CareerRoleProps = {
     className?: string;
     style?: React.CSSProperties;
-    role: ICareerRole;
+    role: ICareerRoleRaw;
 }
 
 // Time to export! 🚚

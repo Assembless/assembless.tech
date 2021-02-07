@@ -14,7 +14,7 @@ import translations from "./trans";
  * Example component.
  * @description This is an example component including translations and theming.
  * @version 1.0.0
- * @author Mike Eling <mike.eling97@gmail.com>
+ * @author Assembless <support@assembless.tech>
  */
 const Component = (props: ComponentProps) => {
     const translated = useLittera(translations);
