@@ -7,7 +7,7 @@ import { LOCALES } from "utils/language";
 import { LIGHT_THEME, DARK_THEME } from "utils/theme";
 import Routes from "./Routes";
 
-import Appbar from 'components/common/Appbar'
+//import Appbar from 'components/common/Appbar'
 import Footer from 'components/common/Footer'
 import About from "components/common/About";
 
