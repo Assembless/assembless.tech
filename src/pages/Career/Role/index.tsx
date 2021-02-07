@@ -8,9 +8,9 @@ import cx from "classnames";
 import { InlineWidget } from "react-calendly";
 
 // Project scoped imports.
+import { ICareerRole } from "api/CareerRole.model";
 
 // Component scoped imports.
-import { ICareerRole } from "../types";
 import styles from "./styles";
 import translations from "./trans";
 
@@ -33,7 +33,7 @@ const CareerRole = (props: CareerRoleProps) => {
 
     const prefill = {
         customAnswers: {
-            a1: `${props.role.title} / ${props.role.project}`,
+            a1: `${props.role.role} / ${props.role.project?.name ?? ""}`,
         }
     }
 
@@ -45,8 +45,8 @@ const CareerRole = (props: CareerRoleProps) => {
                 </Avatar>
 
                 <Box>
-                    <Typography variant="h5" style={{ fontFamily: "'PT Mono', monospace", }}>{props.role.title}</Typography>
-                    <Typography style={{ cursor: "pointer", opacity: 0.65 }} onClick={handleNavigation(props.role.projectUrl)}>{props.role.project}</Typography>
+                    <Typography variant="h5" style={{ fontFamily: "'PT Mono', monospace", }}>{props.role.role}</Typography>
+                    {props.role.project && <Typography style={{ cursor: "pointer", opacity: 0.65 }} onClick={handleNavigation(props.role.project.name ?? "")}>{props.role.project.name}</Typography>}
                 </Box>
             </Box>
 

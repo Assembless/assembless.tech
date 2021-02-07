@@ -29,7 +29,7 @@ const Career = (props: CareerProps) => {
             </Box>
 
             {
-                roleList.map(role => <CareerRole key={role.title + role.project} role={role} />)
+                roleList.map(role => <CareerRole key={role.role} role={role} />)
             }
         </Container>
     </Box>

@@ -5,14 +5,15 @@ import { useLittera } from "react-littera";
 import cx from "classnames";
 
 // Project scoped imports.
+import ProjectModel from "api/Project.model";
 
 // Component scoped imports.
-import styles from "./styles";
+import styles from "./styles"; 
 import translations from "./trans";
 
 /**
- * Example component.
- * @description This is an example component including translations and theming.
+ * Project component.
+ * @description Displays a single project.
  * @version 1.0.0
  * @author Mike Eling <mike.eling97@gmail.com>
  */
@@ -21,12 +22,16 @@ const Project = (props: ProjectProps) => {
     const classes = useStyles();
 
     return <Box className={cx(classes.root, props.className)} style={props.style}>
-        <Typography variant="h5" className={classes.title} gutterBottom>{props.name}</Typography>
-        <Typography className={classes.description} >{props.description}</Typography>
+        <Box display="flex" justifyContent="space-between" flexDirection="column" height="auto" style={{minHeight: "194px"}}>
+            <Box>
+                <Typography variant="h5" className={classes.title} gutterBottom>{props.project.name}</Typography>
+                <Typography className={classes.description} >{props.project.description}</Typography>
+            </Box>
 
-        <Box display="flex" justifyContent="flex-start" alignItems="center" style={{ marginTop: "16px" }}>
-            <Button variant="contained" href={props.url} size="large" style={{ marginRight: "6px" }}>{translated.preview}</Button>
-            <Button target="_blank" href={props.repo_url} variant="outlined">{translated.repo}</Button>
+            <Box display="flex" justifyContent="flex-start" alignItems="center" style={{ marginTop: "16px" }}>
+                <Button variant="contained" href={props.project.url} size="large" style={{ marginRight: "6px" }}>{translated.preview}</Button>
+                {props.project.repo_url && <Button target="_blank" href={props.project.repo_url} variant="outlined">{translated.repo}</Button>}
+            </Box>
         </Box>
     </Box>
 }
@@ -38,11 +43,7 @@ const useStyles = makeStyles(styles);
 type ProjectProps = {
     className?: string;
     style?: React.CSSProperties;
-    name: string;
-    description: string;
-    logo: string;
-    url: string;
-    repo_url: string;
+    project: ProjectModel
 }
 
 // Time to export! 🚚

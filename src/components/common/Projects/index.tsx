@@ -13,8 +13,8 @@ import styles from "./styles";
 import translations from "./trans";
 
 /**
- * Example component.
- * @description This is an example component including translations and theming.
+ * Projects list component.
+ * @description Displays a list of projects.
  * @version 1.0.0
  * @author Mike Eling <mike.eling97@gmail.com>
  */
@@ -28,7 +28,7 @@ const Projects = (props: ProjectsProps) => {
 
         <Box display="flex" justifyContent="flex-start" flexWrap="wrap">
             {
-                list.map(item => <Project {...item} />)
+                list.map(item => <Project project={item} />)
             }
         </Box>
     </Box>

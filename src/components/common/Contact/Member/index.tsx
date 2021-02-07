@@ -26,7 +26,7 @@ const Member = ({ member, ...props }: MemberProps) => {
         <Avatar className={classes.avatar} src={member.details.photo_url} alt={`${member.name}`}>{member.initials}</Avatar>
         <Typography variant="h6" className={classes.title}>{member.name}</Typography>
         <Typography className={classes.role}>{member.details.role}</Typography>
-        <Typography className={classes.role}>{member.details.project ?? "--"}</Typography>
+        <Typography className={classes.role}>{member.details?.project?.name ?? "--"}</Typography>
         <MemberContactIcons contact={member.contact} className={classes.contactIcon} />
     </Box>
 }

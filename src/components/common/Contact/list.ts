@@ -1,10 +1,12 @@
+import Project from "api/Project.model";
+import projects from "../Projects/list";
 import { IMember, TMemberContact, TRole, TMemberContactLabel } from "./types";
 
 export class MemberItem {
     // @ts-ignore
     details: IMember = {};
 
-    constructor(first_name: string, last_name: string, role: TRole, contact: TMemberContact[], nickname?: string, project?: string, photo_url?: string) {
+    constructor(first_name: string, last_name: string, role: TRole, contact: TMemberContact[], nickname?: string, project?: Project, photo_url?: string) {
         this.details.first_name = first_name;
         this.details.last_name = last_name;
         this.details.role = role;
@@ -148,7 +150,7 @@ const list: MemberItem[] = [
     new MemberItem("Mike", "Eling", "Chief Executive Officer", contacts[0], undefined, undefined, "https://pbs.twimg.com/profile_images/1350106852814704641/w_BmuLjD_400x400.jpg"),
     new MemberItem("Damian", "Błochowiak", "Chief Marketing Officer", contacts[1], undefined, undefined, "https://pbs.twimg.com/profile_images/1235677108208271360/TbZBzgcx_400x400.jpg"),
     new MemberItem("Marko", "Eling", "Chief Technology Officer", contacts[2], undefined, undefined),
-    new MemberItem("Przemysław", "Cieślik", "Project Manager", contacts[3], undefined, "Circles"),
+    new MemberItem("Przemysław", "Cieślik", "Project Manager", contacts[3], undefined, projects[0]),
 ]
 
 export const iconsMap: { [key: string]: string } = {

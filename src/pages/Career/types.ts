@@ -1,4 +1,4 @@
-export interface ICareerRole {
+export interface ICareerRoleRaw {
     title: string;
     project: string;
     projectUrl: string;
