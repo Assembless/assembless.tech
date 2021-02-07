@@ -22,6 +22,10 @@ class Project {
         this.url = url;
         this.repo_url = repo_url;
     }
+
+    open() {
+        window.open(this.url, "_blank");
+    }
 }
 
 export const makeProjectData = (data: IProject) => new Project(data.name, data.description, data.url, data.repo_url, data.logoUrl);

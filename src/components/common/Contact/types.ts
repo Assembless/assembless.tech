@@ -1,3 +1,5 @@
+import Project from "api/Project.model";
+
 export type TRole = "Chief Executive Officer" | "Chief Marketing Officer" | "Chief Technology Officer" | "Project Manager";
 
 export interface IMember {
@@ -6,7 +8,7 @@ export interface IMember {
     nickname?: string;
     photo_url?: string;
     role: TRole;
-    project?: string;
+    project?: Project;
     contact: TMemberContact[];
 }
 

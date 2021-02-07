@@ -27,9 +27,7 @@ class CareerRole implements ICareerRole {
         this.description = description;
         this.icon = icon;
         this.requirements = requirements;
-    }
-
-
+    }    
 }
 
 export default CareerRole;

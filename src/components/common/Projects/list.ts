@@ -11,16 +11,14 @@ const projects = [
     makeProjectData({
         name: "Circles Server",
         logoUrl: "https://i.imgur.com/VzOVjUy.png",
-        description: "Circles is a messaging app designed with family ties in mind. It makes sure that you not forget to catch up with a family member and never forget about their birthday ever again. Thanks to this app, your family relationships will be better than ever!",
-        url: "https://circles.assembless.space/",
-        repo_url: "https://github.com/Assembless/circles-server"
+        description: "Back-end for Circles messaging app based on Firebase.",
+        url: "https://github.com/Assembless/circles-server"
     }),
     makeProjectData({
         name: "Circles Express",
         logoUrl: "https://i.imgur.com/VzOVjUy.png",
-        description: "Circles is a messaging app designed with family ties in mind. It makes sure that you not forget to catch up with a family member and never forget about their birthday ever again. Thanks to this app, your family relationships will be better than ever!",
-        url: "https://circles.assembless.space/",
-        repo_url: "https://github.com/Assembless/circles-express"
+        description: "Back-end for Circles messaging app powered by Express.",
+        url: "https://github.com/Assembless/circles-express"
     }),
 ]
 
