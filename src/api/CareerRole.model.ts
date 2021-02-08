@@ -8,7 +8,7 @@ export interface ICareerRole {
     requirements?: IRoleRequirements[];
 }
 
-interface IRoleRequirements {
+export interface IRoleRequirements {
     label: string;
     level: 1 | 2 | 3 | 4;
     description?: string;
@@ -27,7 +27,7 @@ class CareerRole implements ICareerRole {
         this.description = description;
         this.icon = icon;
         this.requirements = requirements;
-    }    
+    }
 }
 
 export default CareerRole;
