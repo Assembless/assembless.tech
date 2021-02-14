@@ -19,6 +19,8 @@
     "react-littera": "^2.1.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-three-fiber": "^5.3.18",
+    "three": "^0.125.2",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },

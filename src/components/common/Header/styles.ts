@@ -1,8 +1,10 @@
 import { createStyles, Theme } from "@material-ui/core/styles";
 // Here we define styles for the component.
 
-export default ((theme: Theme) => createStyles({
+const styles = ((theme: Theme) => createStyles({
     root: {
+        // Container styles...
+        height: "calc(100vh - 64px)"
     },
     title: {
         whiteSpace: "pre-line",
@@ -22,17 +24,37 @@ export default ((theme: Theme) => createStyles({
         marginTop: "1rem",
         opacity: 0.45
     },
+
+    earthContainer: {
+        width: "400px",
+        height: "400px",
+        borderRadius: "400px",
+        backgroundColor: "rgba(255, 255, 255, .06)",
+        cursor: "grab",
+        "&:active": {
+            cursor: "grabbing"
+        }
+    },
     side: {
         position: "relative",
         width: "50%",
-        height: "100vh",
+        // height: "100vh",
         [theme.breakpoints.down('sm')]: {
             width: "80%"
         }
     },
+    featuredButton: {
+        boxShadow: `0 1px 2px rgba(33, 150, 243,0.07), 
+                    0 2px 4px rgba(33, 150, 243,0.07), 
+                    0 4px 8px rgba(33, 150, 243,0.07), 
+                    0 8px 16px rgba(33, 150, 243,0.07),
+                    0 16px 32px rgba(33, 150, 243,0.07), 
+                    0 32px 64px rgba(33, 150, 243,0.07)`,
+
+    },
     atmosphere: {
         borderRadius: "500px",
-        backgroundColor: "rgba(255, 255, 255, .06)",
+        backgroundColor: "rgba(255, 255, 255, .1)",
         position: "absolute",
         top: "50%",
         left: "50%",
@@ -48,7 +70,9 @@ export default ((theme: Theme) => createStyles({
         transform: "translate(-50%, -50%) scale(0.9)",
     },
     planet: {
-        borderRadius: "400px", backgroundColor: "#212121", overflow: "hidden",
+        borderRadius: "400px",
+        //backgroundColor: "#212121", 
+        overflow: "hidden",
         position: "absolute",
         top: "50%",
         left: "50%",
@@ -123,3 +147,5 @@ export default ((theme: Theme) => createStyles({
         },
     },
 }));
+
+export default styles;
