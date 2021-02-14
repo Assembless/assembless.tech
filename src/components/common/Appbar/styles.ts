@@ -8,7 +8,7 @@ const styles = ((theme: Theme) => createStyles({
     },
     link: {
         fontFamily: "'PT Mono', monospace",
-        margin: "0 10px",
+        margin: "0 14px",
         color: theme.palette.common.white,
         textDecoration: "none",
         opacity: 0.6,

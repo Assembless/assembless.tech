@@ -15,7 +15,13 @@ export default ((theme: Theme) => createStyles({
             width: "100%"
         },
         "&:hover": {
-            borderColor: theme.palette.common.white
+            borderColor: theme.palette.secondary.main,
+            boxShadow: `0 1px 2px rgba(33, 150, 243, 0.2), 
+                    0 2px 4px rgba(33, 150, 243, 0.2), 
+                    0 4px 8px rgba(33, 150, 243, 0.2), 
+                    0 8px 16px rgba(33, 150, 243, 0.2),
+                    0 16px 32px rgba(33, 150, 243, 0.2), 
+                    0 32px 64px rgba(33, 150, 243, 0.2)`,
         }
     },
     title: {

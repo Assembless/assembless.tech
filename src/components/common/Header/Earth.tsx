@@ -54,7 +54,7 @@ const Controls = () => {
     useFrame(() => ref.current.update())
     useEffect(() => void ref.current.addEventListener('change', invalidate), [])
     // @ts-ignore
-    return <orbitControls ref={ref} enableDamping args={[camera, gl.domElement]} />
+    return <orbitControls ref={ref} zoomSpeed={0} enableDamping args={[camera, gl.domElement]} />
 }
 
 export default Earth

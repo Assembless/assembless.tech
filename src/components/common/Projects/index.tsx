@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Box, Typography } from "@material-ui/core";
+import { makeStyles, Box, Typography, Container } from "@material-ui/core";
 import { useLittera } from "react-littera";
 import cx from "classnames";
 
@@ -22,16 +22,18 @@ const Projects = (props: ProjectsProps) => {
     const translated = useLittera(translations);
     const classes = useStyles();
 
-    return <Box className={cx(classes.root, props.className)} style={props.style}>
-        <Typography className={classes.title} variant="h3">{translated.title}</Typography>
-        <br />
+    return <Container>
+        <Box className={cx(classes.root, props.className)} style={props.style}>
+            <Typography className={classes.title} variant="h3">{translated.title}</Typography>
+            <br />
 
-        <Box display="flex" justifyContent="flex-start" flexWrap="wrap">
-            {
-                list.map(item => <Project project={item} />)
-            }
+            <Box display="flex" justifyContent="flex-start" flexWrap="wrap">
+                {
+                    list.map(item => <Project project={item} />)
+                }
+            </Box>
         </Box>
-    </Box>
+    </Container>
 }
 
 // Creates a hook for generating classnames.

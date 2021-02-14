@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Box, Typography, Button } from "@material-ui/core";
+import { makeStyles, Box, Typography, Button, Container } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useLittera } from "react-littera";
 import cx from "classnames";
@@ -29,28 +29,30 @@ const Contact = (props: ContactProps) => {
         history.push(path)
     }
 
-    return <Box className={cx(classes.root, props.className)} style={props.style}>
-        <Typography variant="h3" className={classes.title} gutterBottom>{translated.title}</Typography>
+    return <Container>
+        <Box className={cx(classes.root, props.className)} style={props.style}>
+            <Typography variant="h3" className={classes.title} gutterBottom>{translated.title}</Typography>
 
-        <Box className={classes.container} display="flex" justifyContent="flex-start" flexWrap="wrap" alignItems="flex-start">
-            {
-                memberList.map(member => <Member member={member} />)
-            }
+            <Box className={classes.container} display="flex" justifyContent="flex-start" flexWrap="wrap" alignItems="flex-start">
+                {
+                    memberList.map(member => <Member member={member} />)
+                }
+            </Box>
+
+            <Alert
+                variant="filled"
+                severity="info"
+                style={{ marginTop: "24px" }}
+                action={
+                    <Button color="inherit" size="small" onClick={handleNavigation("/career/")}>
+                        {translated.seeCareer}
+                    </Button>
+                }
+            >
+                {translated.weHire}
+            </Alert>
         </Box>
-
-        <Alert
-            variant="filled"
-            severity="info"
-            style={{ marginTop: "24px" }}
-            action={
-                <Button color="inherit" size="small" onClick={handleNavigation("/career/")}>
-                    {translated.seeCareer}
-                </Button>
-            }
-        >
-            {translated.weHire}
-        </Alert>
-    </Box>
+    </Container>
 }
 
 // Creates a hook for generating classnames.
