@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useRef } from 'react'
 import { extend, MeshProps, useFrame, useLoader, useThree } from 'react-three-fiber'
 import { Mesh, TextureLoader } from 'three'
+// @ts-ignore
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 extend({ OrbitControls })
