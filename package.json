@@ -58,14 +58,15 @@
     "@types/react-router-dom": "^5.1.6",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
-    "json-loader": "^0.5.7"
+    "json-loader": "^0.5.7",
+    "ts-jest": "^26.5.1"
   },
   "jest": {
     "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
+      "^.+\\.[t|j]sx?$": "ts-jest"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!@shotgunjed)/"
+      "node_modules/three/"
     ]
   }
 }
