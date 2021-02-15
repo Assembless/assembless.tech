@@ -23,9 +23,18 @@ function App() {
 
   // Hide loading view after 2 sec.
   useEffect(() => {
-    // TODO: Hide loader based on page loading state instead of timeout.
-    const tm = setTimeout(() => { setDisplayLoader(false); }, 3000);
-    return () => clearTimeout(tm);
+    let tm = null as unknown as NodeJS.Timeout;
+    function fn() {
+      // TODO: Hide loader based on page loading state instead of timeout.
+      tm = setTimeout(() => { setDisplayLoader(false); }, 1000);
+    }
+
+    window.addEventListener('load', fn);
+    return () => {
+      window.removeEventListener('load', fn);
+      if (tm)
+        clearTimeout(tm);
+    }
   }, []);
 
   return (
