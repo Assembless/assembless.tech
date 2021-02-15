@@ -8,12 +8,13 @@ const styles = ((theme: Theme) => createStyles({
     },
     link: {
         fontFamily: "'PT Mono', monospace",
-        margin: "0 14px",
+        margin: "0 1.5rem",
         color: theme.palette.common.white,
         textDecoration: "none",
         opacity: 0.6,
         transition: `all 155ms ${theme.transitions.easing.easeInOut}`,
         textShadow: `0 0px 0px ${theme.palette.common.white}`,
+        letterSpacing: '0.7px',
 
         "&:hover": {
             opacity: 1,
