@@ -6,7 +6,7 @@ import cx from "classnames";
 import { Link, useHistory } from "react-router-dom";
 
 // Project scoped imports.
-import logotype from 'assets/logotype.png';
+import newLogotype from 'assets/newLogotype.png';
 
 // Component scoped imports.
 import styles from "./styles";
@@ -29,10 +29,11 @@ const Appbar = (props: AppbarProps) => {
 
     return <Navbar position="sticky" className={cx(classes.root, props.className)} style={props.style}>
         <Container>
-            <Toolbar>
+            <Toolbar style={{ padding: 0 }}>
                 <Box display="flex" justifyContent="space-between" alignItems="center" width="100%">
-                    <img onClick={handleNavigation("/")} alt="logo" src={logotype} style={{ height: "64px", cursor: "pointer" }} />
-
+                    <Box onClick={handleNavigation("/")} style={{ display: 'flex', padding: '5px 0', cursor: "pointer" }}>
+                        <img alt="logo" src={newLogotype} style={{ height: "22px" }} />
+                    </Box>
                     <Box display="flex" justifyContent="flex-end" alignItems="center">
                         <Link className={classes.link} to="/">{translated.home}</Link>
                         <Link className={classes.link} to="/career/">{translated.career}</Link>
