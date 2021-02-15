@@ -7,7 +7,12 @@ const translations = {
         pl_PL: "LEARN.\nASSEMBLE.\nCOLLABORATE."
     },
     slogan: {
-        en_US: "Begin your journey by choosing a Space and an interesting issue",
+        en_US: "Explore the Space and interesting issues.",
+        de_DE: "Beginnen Sie Ihre Reise mit der Auswahl eines Projekts und eines interessanten Problems",
+        pl_PL: "Rozpocznij swoją podróż od wybrania Przestrzeni i interesującego problemu",
+    },
+    subSlogan: {
+        en_US: "Begin your journey right now.",
         de_DE: "Beginnen Sie Ihre Reise mit der Auswahl eines Projekts und eines interessanten Problems",
         pl_PL: "Rozpocznij swoją podróż od wybrania Przestrzeni i interesującego problemu",
     },

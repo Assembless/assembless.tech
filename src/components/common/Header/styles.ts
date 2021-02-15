@@ -20,9 +20,19 @@ const styles = ((theme: Theme) => createStyles({
             fontSize: "38px"
         },
     },
+
     slogan: {
-        marginTop: "1rem",
-        opacity: 0.45
+        marginTop: "1.2rem",
+        opacity: 0.45,
+        fontSize: '20px',
+        letterSpacing: '1px',
+    },
+
+    subSlogan: {
+        marginTop: "0.4rem",
+        opacity: 0.45,
+        fontSize: '20px',
+        letterSpacing: '1px',
     },
 
     earthContainer: {

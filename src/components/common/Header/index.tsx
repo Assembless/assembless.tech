@@ -27,6 +27,7 @@ const Header = (props: ComponentProps) => {
             <Box className={classes.side}>
                 <Typography component="h1" variant="h2" className={classes.title}>{translated.title}</Typography>
                 <Typography component="h2" variant="h5" className={classes.slogan}>{translated.slogan}</Typography>
+                <Typography component="h2" variant="h5" className={classes.subSlogan}>{translated.subSlogan}</Typography>
                 <br />
                 <br />
                 <br />
@@ -62,7 +63,7 @@ const Header = (props: ComponentProps) => {
                     <Earth />
                 </Canvas>
             </Box> */}
-    </Box>
+        </Box>
     </Container>
 }
 
