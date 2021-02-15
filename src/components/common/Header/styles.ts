@@ -118,7 +118,7 @@ const styles = ((theme: Theme) => createStyles({
             content: "''",
             width: "18px",
             height: "18px",
-            backgroundColor: "#ccc",
+            background: 'linear-gradient(90deg, #ccc, #000 110%)',
             borderRadius: "18px",
             position: "absolute",
             left: "-9px",
