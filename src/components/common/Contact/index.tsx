@@ -35,7 +35,7 @@ const Contact = (props: ContactProps) => {
 
             <Box className={classes.container} display="flex" justifyContent="flex-start" flexWrap="wrap" alignItems="flex-start">
                 {
-                    memberList.map(member => <Member member={member} />)
+                    memberList.map(member => <Member key={member.name} member={member} />)
                 }
             </Box>
 

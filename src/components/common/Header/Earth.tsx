@@ -31,10 +31,10 @@ const Earth: React.FC<MeshProps> = () => {
 
 function Asset() {
     const mesh = useRef<Mesh>()
-    const map = useLoader(TextureLoader, "/assets/8081_earthmap4k.jpg");
-    const spec = useLoader(TextureLoader, "/assets/8081_earthspec4k.jpg");
-    const lights = useLoader(TextureLoader, "/assets/8081_earthlights4k.jpg");
-    const bumpMap = useLoader(TextureLoader, "/assets/8081_earthbump4k.jpg");
+    const map = useLoader(TextureLoader, "/assets/8081_earthmap4k-min.webp");
+    const spec = useLoader(TextureLoader, "/assets/8081_earthspec4k-min.webp");
+    const lights = useLoader(TextureLoader, "/assets/8081_earthlights4k-min.webp");
+    const bumpMap = useLoader(TextureLoader, "/assets/8081_earthbump4k-min.webp");
 
     useFrame(() => {
         if (mesh.current) mesh.current.rotation.x = mesh.current.rotation.y += 0.0005

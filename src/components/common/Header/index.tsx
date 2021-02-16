@@ -8,9 +8,10 @@ import { Canvas } from 'react-three-fiber'
 // Project scoped imports.
 
 // Component scoped imports.
-import Earth from "./Earth";
 import styles from "./styles";
 import translations from "./trans";
+
+const EarthComp = React.lazy(() => import("./Earth"));
 
 /**
  * Header component.
@@ -50,7 +51,14 @@ const Header = (props: ComponentProps) => {
                             </Box>
                             <Box width="400px" height="400px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.planet, classes.earthContainer)}>
                                 <Canvas style={{ width: "400px", height: "400px", borderRadius: "400px" }}>
-                                    <Earth />
+                                    <React.Suspense fallback={
+                                        <mesh scale={[1, 1, 1]}>
+                                            <sphereGeometry args={[3, 52, 52]} />
+                                            <meshStandardMaterial color={"#eee"} />
+                                        </mesh>}>
+
+                                        <EarthComp />
+                                    </React.Suspense>
                                 </Canvas>
                             </Box>
                         </div>

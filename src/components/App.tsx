@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { LitteraProvider } from 'react-littera';
 import { HashRouter as Router } from "react-router-dom";
 import { ThemeProvider, useMediaQuery, CssBaseline, Box } from '@material-ui/core';
@@ -44,11 +44,13 @@ function App() {
         <LitteraProvider initialLocale="en_US" locales={LOCALES}>
           <Loading open={displayLoader} />
           <Box style={{ flex: 1, opacity: displayLoader ? 0 : 1 }}>
-            <Router>
-              <Appbar />
-              <Routes />
-              <Footer />
-            </Router>
+            <Suspense fallback={<Loading open />}>
+              <Router>
+                <Appbar />
+                <Routes />
+                <Footer />
+              </Router>
+            </Suspense>
           </Box>
         </LitteraProvider>
       </ThemeProvider>
