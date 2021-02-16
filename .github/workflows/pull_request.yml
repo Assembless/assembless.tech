@@ -29,7 +29,6 @@ jobs:
           failOnError: true
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
-            - uses: actions/checkout@v1
       - name: Generate Lighthouse Report
         uses: justinribeiro/lighthouse-action@master
         with:
