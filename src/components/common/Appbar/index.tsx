@@ -4,6 +4,7 @@ import { makeStyles, Toolbar, Container, AppBar as Navbar, Box } from "@material
 import { useLittera } from "react-littera";
 import cx from "classnames";
 import { Link, useHistory } from "react-router-dom";
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 // Project scoped imports.
 import newLogo from 'assets/newLogo.png';
@@ -27,21 +28,28 @@ const Appbar = (props: AppbarProps) => {
         history.push(path);
     }
 
-    return <Navbar position="sticky" className={cx(classes.root, props.className)} style={props.style}>
-        <Container>
-            <Toolbar style={{ padding: 0 }}>
-                <Box display="flex" justifyContent="space-between" alignItems="center" width="100%">
-                    <Box onClick={handleNavigation("/")} style={{ display: 'flex', padding: '5px 0', cursor: "pointer" }}>
-                        <img alt="logo" src={newLogo} style={{ height: "38px" }} />
+    const scrollTriger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+    });
+
+    return (
+        <Navbar position="sticky" className={cx(classes.root, props.className)} style={props.style} >
+            <Container>
+                <Toolbar style={{ padding: 0, minHeight: `${scrollTriger ? '64px' : '114px'}`, transition: '0.2s ease-out' }}>
+                    <Box display="flex" justifyContent="space-between" alignItems="center" width="100%" >
+                        <Box onClick={handleNavigation("/")} style={{ display: 'flex', padding: '5px 0', cursor: "pointer" }}>
+                            <img alt="logo" src={newLogo} style={{ height: "38px" }} />
+                        </Box>
+                        <Box display="flex" justifyContent="flex-end" alignItems="center">
+                            <Link className={classes.link} to="/">{translated.home}</Link>
+                            <Link className={classes.link} to="/career/">{translated.career}</Link>
+                        </Box>
                     </Box>
-                    <Box display="flex" justifyContent="flex-end" alignItems="center">
-                        <Link className={classes.link} to="/">{translated.home}</Link>
-                        <Link className={classes.link} to="/career/">{translated.career}</Link>
-                    </Box>
-                </Box>
-            </Toolbar>
-        </Container>
-    </Navbar>
+                </Toolbar>
+            </Container>
+        </Navbar >
+    )
 }
 
 // Creates a hook for generating classnames.
@@ -52,6 +60,7 @@ type AppbarProps = {
     className?: string;
     style?: React.CSSProperties
 }
+
 
 // Time to export! 🚚
 export default Appbar;
