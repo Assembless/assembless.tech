@@ -4,7 +4,7 @@ import { createStyles, Theme } from "@material-ui/core/styles";
 const styles = ((theme: Theme) => createStyles({
     root: {
         // Container styles...
-        height: "calc(100vh - 64px)"
+        height: "calc(100vh - 64px)",
     },
     title: {
         whiteSpace: "pre-line",
@@ -121,7 +121,7 @@ const styles = ((theme: Theme) => createStyles({
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%) rotate(0deg)",
-        borderRadius: "550px", border: "1px solid rgba(255, 255, 255, 0.4)",
+        borderRadius: "550px",
         animation: `$orbitRotation 15000ms linear`,
         animationIterationCount: "infinite",
         "&:after": {
