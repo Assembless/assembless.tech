@@ -4,7 +4,7 @@ import { createStyles, Theme } from "@material-ui/core/styles";
 export default ((theme: Theme) => createStyles({
     root: {
         border: `1px solid ${theme.palette.background.paper}`,
-        padding: "16px",
+        padding: "26px",
         margin: "10px 0",
         marginRight: "15px",
         width: "45%",
@@ -30,5 +30,24 @@ export default ((theme: Theme) => createStyles({
     },
     description: {
         opacity: 0.45
+    },
+
+    projectBtn: {
+        color: '#fff',
+
+        letterSpacing: '0.6px',
+        "&:hover": {
+            boxShadow: `0 1px 2px rgba(33, 150, 243, 0.2), 
+            0 2px 4px rgba(33, 150, 243, 0.2), 
+            0 4px 8px rgba(33, 150, 243, 0.2)`,
+        }
+    },
+    repoBtn: {
+        transition: '0.2s ease',
+        "&:hover": {
+            transform: 'translateX(5px)',
+            letterSpacing: '1.5px'
+        }
     }
+
 }));

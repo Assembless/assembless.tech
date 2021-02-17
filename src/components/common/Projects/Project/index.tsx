@@ -8,7 +8,7 @@ import cx from "classnames";
 import ProjectModel from "api/Project.model";
 
 // Component scoped imports.
-import styles from "./styles"; 
+import styles from "./styles";
 import translations from "./trans";
 
 /**
@@ -22,15 +22,15 @@ const Project = (props: ProjectProps) => {
     const classes = useStyles();
 
     return <Box className={cx(classes.root, props.className)} style={props.style}>
-        <Box display="flex" justifyContent="space-between" flexDirection="column" height="auto" style={{minHeight: "194px"}}>
+        <Box display="flex" justifyContent="space-between" flexDirection="column" height="auto" style={{ minHeight: "194px" }}>
             <Box>
                 <Typography variant="h5" className={classes.title} gutterBottom>{props.project.name}</Typography>
                 <Typography className={classes.description} >{props.project.description}</Typography>
             </Box>
 
-            <Box display="flex" justifyContent="flex-start" alignItems="center" style={{ marginTop: "16px" }}>
-                <Button variant="contained" href={props.project.url} size="large" style={{ marginRight: "6px" }}>{translated.preview}</Button>
-                {props.project.repo_url && <Button target="_blank" href={props.project.repo_url} variant="outlined">{translated.repo}</Button>}
+            <Box display="flex" justifyContent="flex-start" alignItems="center" style={{ marginTop: "22px" }}>
+                <Button variant="contained" className={classes.projectBtn} href={props.project.url} size="medium" color='secondary' style={{ marginRight: "6px" }}>{translated.preview}</Button>
+                {props.project.repo_url && <Button target="_blank" href={props.project.repo_url} className={classes.repoBtn} variant="outlined">{translated.repo}</Button>}
             </Box>
         </Box>
     </Box>

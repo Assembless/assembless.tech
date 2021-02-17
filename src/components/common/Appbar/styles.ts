@@ -4,7 +4,7 @@ import { createStyles, Theme } from "@material-ui/core/styles";
 const styles = ((theme: Theme) => createStyles({
     root: {
         // Container styles...
-        backgroundColor: theme.palette.background.default
+        backgroundColor: theme.palette.background.default,
     },
     link: {
         fontFamily: "'PT Mono', monospace",
@@ -20,7 +20,8 @@ const styles = ((theme: Theme) => createStyles({
             opacity: 1,
             textShadow: `0 5px 10px ${theme.palette.common.white}`,
         }
-    }
+    },
+
 }));
 
 export default styles;
