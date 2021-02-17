@@ -30,7 +30,7 @@ const Project = (props: ProjectProps) => {
 
             <Box display="flex" justifyContent="flex-start" alignItems="center" style={{ marginTop: "22px" }}>
                 <Button variant="contained" className={classes.projectBtn} href={props.project.url} size="medium" color='secondary' style={{ marginRight: "6px" }}>{translated.preview}</Button>
-                {props.project.repo_url && <Button target="_blank" href={props.project.repo_url} className={classes.repoBtn} variant="outlined">{translated.repo}</Button>}
+                {props.project.repo_url && <Button target="_blank" href={props.project.repo_url} variant="outlined">{translated.repo}</Button>}
             </Box>
         </Box>
     </Box>

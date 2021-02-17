@@ -25,16 +25,15 @@ export default ((theme: Theme) => createStyles({
         }
     },
     title: {
-
-        fontFamily: "'PT Mono', monospace"
+        fontFamily: "'PT Mono', monospace",
+        marginBottom: '0.8rem'
     },
     description: {
-        opacity: 0.45
+        opacity: 0.45,
     },
 
     projectBtn: {
         color: '#fff',
-
         letterSpacing: '0.6px',
         "&:hover": {
             boxShadow: `0 1px 2px rgba(33, 150, 243, 0.2), 
@@ -42,12 +41,5 @@ export default ((theme: Theme) => createStyles({
             0 4px 8px rgba(33, 150, 243, 0.2)`,
         }
     },
-    repoBtn: {
-        transition: '0.2s ease',
-        "&:hover": {
-            transform: 'translateX(5px)',
-            letterSpacing: '1.5px'
-        }
-    }
 
 }));
