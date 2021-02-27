@@ -7,9 +7,10 @@ type TApi = {
     image: string;
 };
 
-// Fetch image
-// Allow setting size (keep in state)
-const useUnsplash = () => {
+/**
+ * @description Fetches a random image from unsplash.
+ */
+export const useUnsplash = () => {
     const [size, setSize] = useState(250);
     const ref = useRef(null as unknown as TApi)
 

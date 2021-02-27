@@ -4,7 +4,6 @@ import { makeStyles, Box, Typography, IconButton, Icon, Avatar, DialogContent, D
 import { useTheme } from "@material-ui/styles";
 import { useLittera } from "react-littera";
 import cx from "classnames";
-// @ts-ignore
 
 
 // Project scoped imports.
@@ -98,61 +97,59 @@ const RecrutingForm = ({ role, questions, handleCloseForm }: { role: string, que
 
     const { subscribe, onSubmit, reset, errors } = useForm();
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [experience, setExperience] = useState('');
-    const [time, setTime] = useState('');
+    // const [firstName, setFirstName] = useState('');
+    // const [lastName, setLastName] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [experience, setExperience] = useState('');
+    // const [time, setTime] = useState('');
     const [questionsValue, setQuestions] = useState({});
-
-    const handleChange = (e: any) => {
-        const value = e.target.value;
-        const field = e.target.name;
-        const questionId = e.target.id;
-
-        switch (field) {
-            case 'first_name':
-                setFirstName(value);
-                break;
-            case 'last_name':
-                setLastName(value);
-                break;
-            case 'emailField':
-                setEmail(value);
-                break;
-            case 'expField':
-                setExperience(value);
-                break;
-            case 'timeField':
-                setTime(value);
-                break;
-            case 'question':
-                setQuestions(prevState => ({
-                    ...prevState,
-                    [questionId]: value
-                }))
-                break;
-        }
+    const changeQuestion = (id: string, value: any) => {
+        setQuestions(prevState => ({
+            ...prevState,
+            [id]: value
+        }))
     }
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        console.log('submit');
-    }
+    // const handleSubmit = (e: any) => {
+    //     e.preventDefault();
+    //     console.log('submit');
+    // }
 
-    const handleSubmit2 = (data: [string, string][]) => {
-        console.log(data);
-        reset();
+    const handleSubmit2 = (data: any) => {
+        console.log("Input", data);
+
     }
 
     return (
         <>
             <form onSubmit={onSubmit(handleSubmit2)}>
-                <TextField inputRef={subscribe} required name="firstName" label="Name" variant="filled" autoComplete="off" />
-                <TextField inputRef={subscribe} name="lastName" label="Last Name" variant="filled" autoComplete="off" />
-                <TextField inputRef={subscribe} required name="age" type="number" label="Age" variant="filled" autoComplete="off" />
-                <TextField inputRef={subscribe} required name="email" type="email" label="E-Mail" variant="filled" autoComplete="off" />
-                <Button style={{ backgroundColor: '#2196f3', color: '#fff' }} variant="contained" size="large" type='submit'>Send application</Button>
+
+                <Box display='flex' justifyContent='space-between' marginBottom='25px'>
+                    <Box style={{ width: '80%', }}>
+                        <Typography variant="h3" style={{ fontSize: '16px', textTransform: 'uppercase', opacity: '0.4', letterSpacing: '1px', marginBottom: '5px' }}> {role}</Typography>
+                        <Typography variant="h2" style={{ fontFamily: "'PT Mono', monospace", marginBottom: '30px', fontSize: '32px' }}>Application form</Typography>
+                        <Typography style={{ opacity: '0.7' }}>Laborum commodo anim incididunt dolor eu quis deserunt. Dolor est voluptate mollit non ut commodo. Consectetur veniam incididunt pariatur enim non non mollit eu velit qui do. Elit labore eiusmod ea eu ex irure anim commodo irure ipsum. Culpa eu sit officia veniam Lorem labore pariatur aliqua enim fugiat culpa id. Dolore mollit veniam nulla velit consectetur consequat duis cupidatat voluptate consectetur. Excepteur duis est ea exercitation sunt officia cillum pariatur sit aute qui excepteur.</Typography>
+                    </Box>
+                    <Box style={{ display: 'flex', alignItems: 'flex-start' }}>
+                        <IconButton color="primary" onClick={handleCloseForm} ><Icon color="primary">close</Icon></IconButton>
+                    </Box>
+                </Box>
+                <Box display='flex' flexDirection='column' style={{ marginBottom: '15px' }} >
+                    <TextField inputRef={subscribe} required name="first_name" variant="filled" autoComplete="off" style={{ marginBottom: '10px', backgroundColor: '#000', borderRadius: '4px' }} label="Name" />
+                    <TextField inputRef={subscribe} name="last_name" variant="filled" autoComplete="off" style={{ marginBottom: '10px', backgroundColor: '#000', borderRadius: '4px' }} label="Surname" />
+                    <TextField inputRef={subscribe} required name="email" type="email" variant="filled" autoComplete="off" style={{ marginBottom: '10px', backgroundColor: '#000', borderRadius: '4px' }} label="Email" />
+                    <TextField inputRef={subscribe} required name="experience" type="number" variant="filled" autoComplete="off" style={{ marginBottom: '10px', backgroundColor: '#000', borderRadius: '4px' }} label="Years of commercial and non-commercial experience" />
+                    <TextField inputRef={subscribe} required name="time_available" type="string" variant="filled" autoComplete="off" style={{ marginBottom: '10px', backgroundColor: '#000', borderRadius: '4px' }} label="Time weekly to spend on contributions" />
+
+                </Box>
+                {questions &&
+                    questions.map((question, index) => (
+                        <QuestionDiv question={question} index={index} handleChange={changeQuestion} questionsValue={questionsValue} />
+                    ))
+                }
+                <DialogActions style={{ padding: '0', justifyContent: 'center', marginTop: '40px' }}>
+                    <Button style={{ backgroundColor: '#2196f3', color: '#fff' }} variant="contained" size="large" type='submit'>Send application</Button>
+                </DialogActions>
             </form>
 
 
@@ -188,14 +185,14 @@ const RecrutingForm = ({ role, questions, handleCloseForm }: { role: string, que
     )
 }
 
-const QuestionDiv = ({ question, index, questionsValue, handleChange }: { question: string, index: number, questionsValue: Record<string, string>, handleChange: (e: any) => void }) => {
+const QuestionDiv = ({ question, index, questionsValue, handleChange }: { question: string, index: number, questionsValue: Record<string, string>, handleChange: (id: string, value: any) => void }) => {
     const questionNr = index + 1;
 
     return (
         <Box style={{ marginBottom: '20px' }}>
             <Typography variant='h5' style={{ fontSize: '17px', marginBottom: '5px' }}>Question {questionNr}</Typography>
             <Typography style={{ marginBottom: '10px', opacity: '0.7' }}>{question}</Typography>
-            <TextField name='question' multiline variant="filled" value={questionsValue[`question${questionNr}`]} id={`question${questionNr}`} onChange={handleChange} style={{ backgroundColor: '#000', borderRadius: '4px', width: '100%', }} />
+            <TextField name='question' multiline variant="filled" value={questionsValue[`question${questionNr}`]} id={`question${questionNr}`} onChange={() => handleChange(`question${questionNr}`, questionsValue[`question${questionNr}`])} style={{ backgroundColor: '#000', borderRadius: '4px', width: '100%', }} />
         </Box>
     )
 }
