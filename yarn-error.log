@@ -1,0 +1,99 @@
+Arguments: 
+  /home/mike/.nvm/versions/node/v12.0.0/bin/node /usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /home/mike/.deno/bin:/home/mike/go/bin:/usr/local/go/bin:/home/mike/bin:/home/mike/.nvm/versions/node/v12.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/ImageMagick-7.0.10-Q16-HDRI:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Yarn/bin/:/mnt/c/Users/mikee/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/mikee/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/mikee/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/mikee/AppData/Roaming/npm:/mnt/c/Users/mikee/AppData/Local/Yarn/bin:/mnt/c/Program Files (x86)/Java/jre1.8.0_241/bin:/mnt/c/WINDOWS/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Inkscape/bin:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/nodejs/:/mnt/c/Users/mikee/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/mikee/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/mikee/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/mikee/AppData/Local/Yarn/bin:/mnt/c/Program Files (x86)/Java/jre1.8.0_241/bin:/mnt/c/Program Files (x86)/GitHub CLI/:/mnt/c/Users/mikee/AppData/Roaming/npm:/snap/bin:/home/mike/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.0.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.1.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/usr/share/yarn/lib/cli.js:141376:19)
+      at Object.onceWrapper (events.js:284:20)
+      at ClientRequest.emit (events.js:196:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:674:40)
+      at Object.onceWrapper (events.js:284:20)
+      at TLSSocket.emit (events.js:196:13)
+      at TLSSocket.Socket._onTimeout (net.js:432:8)
+      at listOnTimeout (internal/timers.js:531:17)
+      at processTimers (internal/timers.js:475:7)
+
+npm manifest: 
+  {
+    "name": "assembless.tech",
+    "version": "1.0.0",
+    "private": true,
+    "author": "Assembless <support@assembless.tech>",
+    "homepage": "https://assembless.tech/",
+    "license": "MIT",
+    "keywords": [
+      "gatsby",
+      "starter",
+      "typescript"
+    ],
+    "scripts": {
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "type-check": "tsc",
+      "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
+      "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+      "postinstall": "husky install"
+    },
+    "lint-staged": {
+      "./src/**/*.{ts,js,jsx,tsx}": [
+        "yarn lint --fix",
+        "yarn format"
+      ]
+    },
+    "dependencies": {
+      "gatsby": "3.2.1",
+      "react": "17.0.2",
+      "react-dom": "17.0.2",
+      "tsconfig-paths-webpack-plugin": "3.5.1"
+    },
+    "devDependencies": {
+      "@commitlint/cli": "12.1.1",
+      "@commitlint/config-conventional": "12.1.1",
+      "@types/node": "14.14.37",
+      "@types/react": "17.0.3",
+      "@types/react-dom": "17.0.3",
+      "@typescript-eslint/eslint-plugin": "4.19.0",
+      "@typescript-eslint/parser": "4.19.0",
+      "babel-plugin-root-import": "6.6.0",
+      "commitizen": "4.2.3",
+      "cz-conventional-changelog": "3.3.0",
+      "eslint": "7.24.0",
+      "eslint-config-airbnb": "18.2.1",
+      "eslint-config-prettier": "8.1.0",
+      "eslint-import-resolver-root-import": "1.0.4",
+      "eslint-plugin-import": "2.22.1",
+      "eslint-plugin-jsx-a11y": "6.4.1",
+      "eslint-plugin-prettier": "3.3.1",
+      "eslint-plugin-react": "7.23.2",
+      "eslint-plugin-react-hooks": "4.2.0",
+      "husky": "6.0.0",
+      "lint-staged": "10.5.4",
+      "prettier": "2.2.1",
+      "typescript": "4.2.4"
+    },
+    "config": {
+      "commitizen": {
+        "path": "cz-conventional-changelog"
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -14,12 +14,12 @@ import translations from './trans';
 const useStyles = makeStyles(styles);
 
 /**
- * {{$name}} component.
+ * Hero component.
  * @description This is an example component including translations and theming.
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const {{$name}} = ({ className, style }: {{$name}}Props): JSX.Element => {
+const Hero = ({ className, style }: HeroProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
 
@@ -33,16 +33,16 @@ const {{$name}} = ({ className, style }: {{$name}}Props): JSX.Element => {
 };
 
 // Props the component accepts.
-type {{$name}}Props = {
+type HeroProps = {
   className?: string;
   style?: React.CSSProperties;
 };
 
 // Default props.
-{{$name}}.defaultProps = {
+Hero.defaultProps = {
   className: ``,
   style: {},
 };
 
 // Time to export! 🚚
-export default {{$name}};
+export default Hero;

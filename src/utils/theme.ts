@@ -1,48 +1,21 @@
-// Default theme can be found here: https://material-ui.com/customization/default-theme/
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme } from '@material-ui/core/styles';
 
-export const LIGHT_THEME = createMuiTheme({
-    palette: {
-        type: "light",
-        primary: {
-            main: "#FFF",
-            contrastText: "#000"
-        },
-        background: {
-            default: "#000",
-            paper: "#212121"
-        },
-        text: {
-            primary: "#FFF",
-            disabled: "#21212"
-        }
+export const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: `#222`,
     },
-    overrides: {
-        MuiCssBaseline: {
-            '@global': {
-                html: {
-                    WebkitFontSmoothing: 'auto',
-                    backgroundColor: "#000"
-                },
-            },
-        },
-        MuiInputLabel: {
-            root: {
-                color: "#a8a8a8",
-                "&$focused": {
-                    color: "#FFF",
-                }
-            },
-        },
-        MuiOutlinedInput: {
-            notchedOutline: {
-                borderColor: "#a8a8a8",
-            },
-            focused: {
-                borderColo: "#FFF"
-            }
-        },
+    secondary: {
+      main: `rgba(196, 196, 196, 0.18)`,
     },
+    background: {
+      default: `#FFF`,
+    },
+  },
+
+  typography: {
+    fontFamily: `Lato`,
+  },
 });
 
-export const DARK_THEME = LIGHT_THEME;
+export type TTheme = typeof theme;

@@ -2,10 +2,11 @@
 
 const translations = {
     title: {
-        en_US: "Example",
-        de_DE: "Beispiel",
-        pl_PL: "Przykład"
-    }
-}
-
+      en_US: `Example`,
+      de_DE: `Beispiel`,
+      pl_PL: `Przykład`,
+    },
+  };
+  
 export default translations;
+  
