@@ -12,6 +12,7 @@ const translations = (preset: TTransPreset) => ({
   services: preset.services,
   aboutUs: preset.aboutUs,
   deliver: preset.deliver,
+  contactUs: preset.contactUs,
 });
 
 export default translations;

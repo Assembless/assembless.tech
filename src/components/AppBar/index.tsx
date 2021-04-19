@@ -7,11 +7,13 @@ import {
   Typography,
   Toolbar,
   AppBar as MaterialAppBar,
+  Button,
 } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
 
 // Project scoped imports.
+import Logotype from '@/components/Logotype';
 
 // Component scoped imports.
 import styles from './styles';
@@ -32,27 +34,42 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
 
   return (
     <MaterialAppBar
+      elevation={0}
       position="static"
       className={cx(classes.root, className)}
       style={style}
     >
       <Toolbar>
-        <Typography variant="h3">
-          {translated.title}
-        </Typography>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          width="100%"
+        >
+          <Logotype />
+          <Box component="ul" display="flex" alignItems="center">
+            <Button href="https://google.com/" style={{ margin: `0 6px` }}>
+              {translated.services}
+            </Button>
 
-        <Box component="ul" display="flex">
-          <Box component="li" marginLeft= "40px">
-            <Link href="https://google.com/">{translated.services}</Link>
-          </Box>
-          <Box component="li" marginLeft= "40px">
-            <Link href="https://google.com/">{translated.aboutUs}</Link>
-          </Box>
-          <Box component="li" marginLeft= "40px">
-            <Link href="https://google.com/">{translated.deliver}</Link>
+            <Button href="https://google.com/" style={{ margin: `0 6px` }}>
+              {translated.aboutUs}
+            </Button>
+
+            <Button href="https://google.com/" style={{ margin: `0 6px` }}>
+              {translated.deliver}
+            </Button>
+
+            <Button
+              className={classes.btn}
+              color="primary"
+              variant="contained"
+              size="small"
+            >
+              {translated.contactUs}
+            </Button>
           </Box>
         </Box>
-        button
       </Toolbar>
     </MaterialAppBar>
   );

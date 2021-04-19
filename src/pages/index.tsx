@@ -13,11 +13,12 @@ import AppBar from '@/components/AppBar';
 
 // Component scope imports.
 import HeroSection from './segments/Hero';
+import ServicesSection from './segments/Services';
 
 const Home: React.FC<PageProps> = () => (
   <main>
-    <CssBaseline />
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <LitteraProvider
         preset={preset}
         locales={[`en_US`, `pl_PL`, `de_DE`]}
@@ -25,6 +26,7 @@ const Home: React.FC<PageProps> = () => (
       >
         <AppBar />
         <HeroSection />
+        <ServicesSection />
       </LitteraProvider>
     </ThemeProvider>
   </main>

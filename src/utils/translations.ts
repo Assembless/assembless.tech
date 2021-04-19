@@ -16,6 +16,12 @@ export const preset = {
     de_DE: `Beispiel`,
     pl_PL: `Przykład`,
   },
+
+  contactUs: {
+    en_US: `Contact Us`,
+    de_DE: `Kontakt`,
+    pl_PL: `Skontaktuj się`,
+  },
 };
 
 export type TTransPreset = typeof preset;

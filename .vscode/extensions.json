@@ -1,3 +1,6 @@
 {
-    "recommendations": ["teamchilla.blueprint", "funkyremi.vscode-google-translate", "eamodio.gitlens"]
+    "recommendations": [
+        "teamchilla.blueprint",
+        "eamodio.gitlens"
+    ]
 }

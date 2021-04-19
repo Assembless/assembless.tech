@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, Theme } from '@material-ui/core/styles';
 
-export const theme = createMuiTheme({
+const themeObj = Object.freeze({
   palette: {
     primary: {
       main: `#222`,
@@ -10,12 +10,68 @@ export const theme = createMuiTheme({
     },
     background: {
       default: `#FFF`,
+      paper: `#FFF`,
     },
   },
 
   typography: {
     fontFamily: `Lato`,
   },
+
+  variables: {
+    appBarHeight: 112,
+  },
+
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          minHeight: `100vh`,
+          backgroundColor: `#FFF`,
+          fontFamily: `Lato`,
+        },
+      },
+    },
+    MuiButton: {
+      textPrimary: {
+        color: `#222`,
+      },
+      containedPrimary: {
+        backgroundColor: `#222`,
+        color: `#FFF`,
+        boxShadow: `none`,
+        '&:hover': {
+          boxShadow: `none`,
+        },
+      },
+      outlinedPrimary: {
+        borderWidth: 2,
+        borderRadius: 6,
+        borderColor: `#222`,
+
+        fontWeight: `bold`,
+
+        padding: `12px 16px`,
+
+        fontFamily: `Lato`,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        fontWeight: 600,
+
+        color: `#222`,
+
+        '&:hover': {
+          borderWidth: 2,
+          borderColor: `#222`,
+
+          backgroundColor: `#222`,
+
+          color: `#FFF`,
+        },
+      },
+    },
+  },
 });
 
+export const theme = createMuiTheme(themeObj);
 export type TTheme = typeof theme;

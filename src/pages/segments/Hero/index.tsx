@@ -1,10 +1,17 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
+import {
+  makeStyles,
+  Box,
+  Typography,
+  Button,
+  Container,
+} from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
+import { StaticImage } from 'gatsby-plugin-image';
 
-// Project scoped imports.
+// Project scoped imports.r
 
 // Component scoped imports.
 import styles from './styles';
@@ -24,11 +31,24 @@ const Hero = ({ className, style }: HeroProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Box className={cx(classes.root, className)} style={style}>
-      <Typography variant="h3" className={classes.title}>
-        {translated.title}
-      </Typography>
-    </Box>
+    <Container className={cx(classes.root, className)} style={style}>
+      <Box flexBasis="50%">
+        <Typography variant="h3" className={classes.title}>
+          {translated.title}
+        </Typography>
+
+        <Button variant="outlined" color="primary">
+          explore
+        </Button>
+      </Box>
+      <Box flexBasis="50%">
+        <StaticImage
+          src="../../../assets/phone_hand_illustration.png"
+          alt="Phone hand illustration"
+          height={300}
+        />
+      </Box>
+    </Container>
   );
 };
 
