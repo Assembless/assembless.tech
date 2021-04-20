@@ -10,7 +10,7 @@ const styles = (theme: Theme) =>
       marginTop: `10%`,
       marginBottom: `10%`,
 
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: theme.palette?.background?.default ?? `#FFF`,
     },
     title: {
       fontSize: 36,
