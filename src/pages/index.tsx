@@ -1,6 +1,9 @@
+/* eslint-disable import/no-unresolved */
 // Package scope imports.
 import React from 'react';
 import '@fontsource/lato';
+import '@fontsource/lato/300.css';
+import '@fontsource/lato/700.css';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { LitteraProvider } from 'react-littera';
