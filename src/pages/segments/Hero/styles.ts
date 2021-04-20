@@ -9,9 +9,9 @@ const styles = (theme: Theme) =>
       // @ts-ignore
       height: `calc(100vh - ${theme.variables.appBarHeight}px)`,
       overflow: `hidden`,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
+      display: `flex`,
+      alignItems: `center`,
+      justifyContent: `center`,
     },
     container: {
       display: `grid`,

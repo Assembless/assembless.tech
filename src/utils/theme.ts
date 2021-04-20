@@ -16,6 +16,11 @@ const themeObj = Object.freeze({
 
   typography: {
     fontFamily: `Lato`,
+
+    h3: {
+      fontWeight: 400,
+      fontSize: 36,
+    },
   },
 
   variables: {
@@ -36,6 +41,7 @@ const themeObj = Object.freeze({
       text: {
         color: `#222`,
         fontWeight: 600,
+        borderRadius: 6,
       },
       containedPrimary: {
         backgroundColor: `#222`,
@@ -44,6 +50,7 @@ const themeObj = Object.freeze({
         '&:hover': {
           boxShadow: `none`,
         },
+        borderRadius: 6,
       },
       outlinedPrimary: {
         borderWidth: 2,

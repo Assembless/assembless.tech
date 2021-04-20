@@ -15,8 +15,9 @@ import { theme } from '@/utils/theme';
 import AppBar from '@/components/AppBar';
 
 // Component scope imports.
-import HeroSection from './segments/Hero';
-import ServicesSection from './segments/Services';
+import HeroSegment from './segments/Hero';
+import ContactSegment from './segments/Contact';
+import ServicesSegment from './segments/Services';
 
 const Home: React.FC<PageProps> = () => (
   <main>
@@ -28,8 +29,9 @@ const Home: React.FC<PageProps> = () => (
         detectLocale
       >
         <AppBar />
-        <HeroSection />
-        <ServicesSection />
+        <HeroSegment />
+        <ServicesSegment />
+        <ContactSegment />
       </LitteraProvider>
     </ThemeProvider>
   </main>
