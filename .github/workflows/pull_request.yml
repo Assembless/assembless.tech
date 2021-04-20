@@ -17,6 +17,9 @@ jobs:
         run: |
           yarn install
           yarn build
+      - name: E2E Test ✅
+        run: |
+          yarn test:e2e:ci
       - name: Deploy 🚀
         uses: afc163/surge-preview@v1
         id: preview_step
