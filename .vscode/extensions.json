@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "teamchilla.blueprint",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint"
     ]
 }
