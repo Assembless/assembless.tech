@@ -14,7 +14,7 @@ const useStyles = makeStyles(styles);
 
 /**
  * Logotype component.
- * @description This is an example component including translations and theming.
+ * @description This component displays the Assembless logotype.
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
@@ -23,7 +23,6 @@ const Logotype = ({ className, style }: LogotypeProps): JSX.Element => {
 
   return (
     <Typography
-      variant="h2"
       component="h1"
       className={cx(classes.root, className)}
       style={style}

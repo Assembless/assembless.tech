@@ -11,11 +11,23 @@ const styles = (theme: TTheme) =>
       paddingBottom: 24,
     },
 
-    btn: {
-      backgroundColor: theme.palette.primary.main,
-      marginLeft: 30,
+    wrapper: {
+      [theme.breakpoints.down(`sm`)]: {
+        justifyContent: `center`,
+      },
     },
 
+    menuBar: {
+      [theme.breakpoints.down(`sm`)]: {
+        display: `none`,
+      },
+    },
+
+    contactUsButton: {
+      backgroundColor: theme.palette.primary.main,
+      marginLeft: 30,
+      padding: `7px 19px`,
+    },
   });
 
 export default styles;

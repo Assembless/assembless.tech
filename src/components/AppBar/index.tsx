@@ -3,8 +3,6 @@ import React from 'react';
 import {
   makeStyles,
   Box,
-  Link,
-  Typography,
   Toolbar,
   AppBar as MaterialAppBar,
   Button,
@@ -24,7 +22,7 @@ const useStyles = makeStyles(styles);
 
 /**
  * AppBar component.
- * @description This is an example component including translations and theming.
+ * @description This component displays the app bar on top.
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
@@ -45,9 +43,16 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
           justifyContent="space-between"
           alignItems="center"
           width="100%"
+          className={classes.wrapper}
         >
           <Logotype />
-          <Box component="ul" display="flex" alignItems="center">
+
+          <Box
+            component="ul"
+            display="flex"
+            alignItems="center"
+            className={classes.menuBar}
+          >
             <Button href="https://google.com/" style={{ margin: `0 6px` }}>
               {translated.services}
             </Button>
@@ -61,7 +66,7 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
             </Button>
 
             <Button
-              className={classes.btn}
+              className={classes.contactUsButton}
               color="primary"
               variant="contained"
               size="small"
