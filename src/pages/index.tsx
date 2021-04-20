@@ -11,7 +11,7 @@ import { PageProps } from 'gatsby';
 
 // Project scope imports.
 import { preset } from '@/utils/translations';
-import { theme } from '@/utils/theme';
+import theme from '@/gatsby-theme-material-ui-top-layout/theme';
 import AppBar from '@/components/AppBar';
 
 // Component scope imports.
