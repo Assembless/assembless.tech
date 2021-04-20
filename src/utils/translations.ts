@@ -1,8 +1,8 @@
 export const preset = {
   services: {
-    en_US: `Services`,
-    de_DE: `Dienstleistungen`,
-    pl_PL: `Serwisy`,
+    en_US: `services`,
+    de_DE: `dienstleistungen`,
+    pl_PL: `serwisy`,
   },
 
   aboutUs: {
