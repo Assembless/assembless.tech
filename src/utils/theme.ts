@@ -1,4 +1,4 @@
-import { createMuiTheme, Theme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 const themeObj = Object.freeze({
   palette: {
@@ -33,8 +33,9 @@ const themeObj = Object.freeze({
       },
     },
     MuiButton: {
-      textPrimary: {
+      text: {
         color: `#222`,
+        fontWeight: 600,
       },
       containedPrimary: {
         backgroundColor: `#222`,
@@ -48,6 +49,7 @@ const themeObj = Object.freeze({
         borderWidth: 2,
         borderRadius: 6,
         borderColor: `#222`,
+        backgroundColor: `#FFF`,
 
         fontWeight: `bold`,
 
