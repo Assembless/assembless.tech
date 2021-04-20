@@ -19,6 +19,8 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 
 declare module '@material-ui/core/styles/createPalette' {
   interface TypeBackground {
+    default: string;
+    paper: string;
     patch: string;
   }
 }
