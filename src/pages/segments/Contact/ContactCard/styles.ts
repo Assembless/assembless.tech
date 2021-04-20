@@ -1,13 +1,12 @@
-import { createStyles } from '@material-ui/core/styles';
-import { TTheme } from '@/utils/theme';
+import { createStyles, Theme } from '@material-ui/core/styles';
 // Here we define styles for the component.
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const styles = (theme: TTheme) =>
+const styles = (theme: Theme) =>
   createStyles({
     root: {
       // Container styles...
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.background.patch,
       borderRadius: 12,
 
       width: `90%`,

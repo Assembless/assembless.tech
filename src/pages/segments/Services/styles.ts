@@ -5,7 +5,7 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.background.patch,
       padding: `140px 0`,
       position: `relative`,
     },
@@ -17,19 +17,17 @@ const styles = (theme: Theme) =>
       top: 0,
       left: 0,
       transform: `translate(0,-100%)`,
-      backgroundColor: theme.palette.secondary.main,
-      display: 'flex'
+      backgroundColor: theme.palette.background.patch,
+      display: `flex`,
     },
 
     innerBox: {
-      position: 'relative',
-      backgroundColor: 'blue',
-      width: `100%`
+      position: `relative`,
+      backgroundColor: `blue`,
+      width: `100%`,
     },
 
-    circle: {
-
-    },
+    circle: {},
 
     head: {
       display: `flex`,

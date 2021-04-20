@@ -1,8 +1,7 @@
-import { createStyles } from '@material-ui/core/styles';
-import { TTheme } from '@/utils/theme';
+import { createStyles, Theme } from '@material-ui/core/styles';
 // Here we define styles for the component.
 
-const styles = (theme: TTheme) =>
+const styles = (theme: Theme) =>
   createStyles({
     root: {
       // Container styles...
