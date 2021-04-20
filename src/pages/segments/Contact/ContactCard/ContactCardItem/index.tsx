@@ -26,7 +26,12 @@ const ContactCardItem = ({
   const classes = useStyles();
 
   return (
-    <Box className={cx(classes.root, className)} style={style}>
+    <Box
+      display="flex"
+      alignItems="center"
+      className={cx(classes.root, className)}
+      style={style}
+    >
       {icon}
       <Typography variant="h3" className={classes.title}>
         {value}

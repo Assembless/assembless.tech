@@ -17,6 +17,7 @@ const styles = (theme: Theme) =>
     title: {
       fontSize: 16,
       fontWeight: `bold`,
+      marginLeft: theme.spacing(4),
     },
   });
 

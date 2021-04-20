@@ -6,7 +6,7 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       height: `100%`,
-      minHeight: `calc(100vh - ${theme.variables.appBarHeight})`,
+      minHeight: `calc(100vh - ${theme.variables.appBarHeight}px)`,
       overflow: `hidden`,
       display: `flex`,
       alignItems: `center`,
