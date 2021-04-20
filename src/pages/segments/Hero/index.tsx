@@ -24,14 +24,16 @@ const Hero = ({ className, style }: HeroProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Container className={cx(classes.root, className)} style={style}>
-      <Box style={{ width: 390 }}>
-        <HeroTitle />
+    <Box className={cx(classes.root, className)} style={style}>
+      <Container className={classes.container}>
+        <Box style={{ width: 390 }}>
+          <HeroTitle />
 
-        <HeroExploreButton />
-      </Box>
-      <HeroIllustration />
-    </Container>
+          <HeroExploreButton />
+        </Box>
+        <HeroIllustration />
+      </Container>
+    </Box>
   );
 };
 

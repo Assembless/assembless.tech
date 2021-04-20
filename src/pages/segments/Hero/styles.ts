@@ -8,12 +8,17 @@ const styles = (theme: Theme) =>
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       height: `calc(100vh - ${theme.variables.appBarHeight}px)`,
+      overflow: `hidden`,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    container: {
       display: `grid`,
       gridColumn: 2,
       gridAutoFlow: `column`,
       alignItems: `center`,
       justifyContent: `space-between`,
-      overflow: `hidden`,
     },
     // HeroTitle
     title: {
@@ -63,7 +68,7 @@ const styles = (theme: Theme) =>
       },
     },
     illustrationRoot: {
-      maxWidth: 632,
+      minWidth: 632,
       minHeight: 632,
     },
     illustrationCircle: {
