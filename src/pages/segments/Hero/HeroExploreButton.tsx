@@ -37,6 +37,7 @@ const HeroExploreButton = ({
       style={{ marginTop: 120, ...style }}
     >
       <Button
+        data-test-id="explore-button"
         variant="outlined"
         className={classes.exploreButton}
         color="primary"
