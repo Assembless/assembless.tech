@@ -15,7 +15,7 @@ const useStyles = makeStyles(styles);
 
 /**
  * {{$name}} component.
- * @description This is an example component including translations and theming.
+ * @description {{$description}}
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
