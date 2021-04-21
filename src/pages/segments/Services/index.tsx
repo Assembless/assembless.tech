@@ -90,6 +90,7 @@ const Services = ({ className, style }: ServicesProps): JSX.Element => {
         <Box className={classes.cardsContainer} display="flex">
           {services.map((el) => (
             <Card
+              key={el.title + el.subtitle}
               title={translated[el.title]}
               subtitle={translated[el.subtitle]}
               icon={el.icon}

@@ -7,8 +7,8 @@ const styles = (theme: Theme) =>
     root: {
       position: `relative`,
 
-      marginTop: `10%`,
-      marginBottom: `10%`,
+      marginTop: theme.spacing(25),
+      marginBottom: theme.spacing(25),
 
       backgroundColor: theme.palette.background.default,
     },

@@ -1,6 +1,6 @@
 // Deps scoped imports.
-import React from 'react';
-import { makeStyles, Box, Button } from '@material-ui/core';
+import React, { useState } from 'react';
+import { makeStyles, Box, Button, Dialog } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
 import MailIcon from '@material-ui/icons/Mail';
@@ -42,27 +42,43 @@ const ContactCard = ({ className, style }: ContactCardProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
 
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const openDialog = () => setDialogOpen(true);
+  const closeDialog = () => setDialogOpen(false);
+
   return (
-    <Box className={cx(classes.root, className)} style={style}>
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        className={classes.wrapper}
-      >
-        {CONTACT_LIST.map((item) => (
-          <ContactCardItem {...item} />
-        ))}
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.scheduleButton}
+    <>
+      <Box className={cx(classes.root, className)} style={style}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          className={classes.wrapper}
         >
-          {translated.schedule}
-        </Button>
+          {CONTACT_LIST.map((item) => (
+            <ContactCardItem key={item.value} {...item} />
+          ))}
+
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={openDialog}
+            className={classes.scheduleButton}
+          >
+            {translated.schedule}
+          </Button>
+        </Box>
       </Box>
-    </Box>
+
+      <Dialog open={dialogOpen} onClose={closeDialog}>
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/drfrost"
+          style={{ minWidth: `320px`, height: `630px` }}
+        />
+      </Dialog>
+    </>
   );
 };
 

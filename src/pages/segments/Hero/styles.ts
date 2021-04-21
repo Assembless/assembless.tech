@@ -11,7 +11,7 @@ const styles = (theme: Theme) =>
       display: `flex`,
       alignItems: `center`,
       justifyContent: `center`,
-      marginBottom: `200px`,
+      marginBottom: theme.spacing(25),
     },
     container: {
       display: `grid`,

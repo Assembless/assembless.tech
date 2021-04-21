@@ -5,9 +5,9 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      // Container styles...
+      backgroundColor: theme.palette.background.default,
       borderColor: theme.palette.primary.main,
-      borderWidth: 1,
+      borderWidth: 2,
       borderRadius: 6,
       borderStyle: `solid`,
       padding: `16px 24px`,

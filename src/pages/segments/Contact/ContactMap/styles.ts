@@ -7,7 +7,7 @@ const styles = (theme: Theme) =>
     root: {
       // Container styles...
       backgroundColor: `transparent`,
-      borderRadius: 12,
+      borderRadius: theme.shape.borderRadius * 3,
 
       width: `60%`,
       height: 480,
@@ -20,25 +20,12 @@ const styles = (theme: Theme) =>
 
       position: `absolute`,
 
-      right: 0,
+      right: `1.2%`,
       top: 0,
-
-      boxShadow: `-10px 10px 50px 0 rgb(0 0 0 / 7%)`,
 
       [theme.breakpoints.down(`sm`)]: {
         display: `none`,
       },
-    },
-    overlayGradient: {
-      position: `absolute`,
-
-      top: 0,
-      left: 0,
-
-      width: `100%`,
-      height: `100%`,
-
-      background: `linear-gradient(to bottom left, white 2%, transparent 90%)`,
     },
   });
 

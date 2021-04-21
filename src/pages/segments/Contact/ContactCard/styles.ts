@@ -5,25 +5,22 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      // Container styles...
       backgroundColor: theme.palette.background.patch,
-      borderRadius: 12,
+      borderRadius: theme.shape.borderRadius * 3,
 
       width: `90%`,
-      height: 422,
+      height: 382,
 
-      padding: 14,
-      marginTop: 20,
+      padding: `0 3%`,
+      marginTop: theme.spacing(4),
 
       display: `flex`,
       alignItems: `center`,
       justifyContent: `flex-start`,
+      position: `relative`,
     },
     wrapper: {
-      width: `42.5%`,
-      [theme.breakpoints.down(`sm`)]: {
-        width: `100%`,
-      },
+      width: `38%`,
     },
     scheduleButton: {
       padding: `14px 20px`,
@@ -32,6 +29,20 @@ const styles = (theme: Theme) =>
       width: `100%`,
 
       fontSize: `17px`,
+    },
+
+    // Mobile view
+    [theme.breakpoints.down(`sm`)]: {
+      root: {
+        width: `100%`,
+        height: `auto`,
+
+        paddingTop: theme.spacing(3),
+        paddingBottom: theme.spacing(3),
+      },
+      wrapper: {
+        width: `100%`,
+      },
     },
   });
 

@@ -8,6 +8,8 @@ const styles = (theme: Theme) =>
       backgroundColor: theme.palette.background.patch,
       padding: `140px 0`,
       position: `relative`,
+      marginTop: theme.spacing(25),
+      marginBottom: theme.spacing(25),
     },
 
     backgroundBox: {
