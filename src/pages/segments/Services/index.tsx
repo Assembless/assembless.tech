@@ -56,9 +56,18 @@ const Services = ({ className, style }: ServicesProps): JSX.Element => {
       className={cx(classes.root, className)}
       style={style}
     >
-      <div className={classes.backgroundBox} >
+      <div className={classes.backgroundBox}>
         <div className={classes.innerBox}>
-          <div className={classes.circle}></div>
+          <div className={classes.layer}>
+            <div className={classes.innerLayer} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.backgroundBox2}>
+        <div className={classes.innerBox}>
+          <div className={classes.layer}>
+            <div className={classes.innerLayer} />
+          </div>
         </div>
       </div>
       <Container>

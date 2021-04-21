@@ -5,7 +5,7 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.background.paper,
       padding: `140px 0`,
       position: `relative`,
     },
@@ -16,19 +16,45 @@ const styles = (theme: Theme) =>
       position: `absolute`,
       top: 0,
       left: 0,
-      transform: `translate(0,-100%)`,
-      backgroundColor: theme.palette.secondary.main,
-      display: 'flex'
+      transform: `translate(0,-99%)`,
+      display: 'flex',
+      zIndex: -1,
+    },
+
+    backgroundBox2: {
+      width: `30%`,
+      height: `50px`,
+      position: `absolute`,
+      bottom: 0,
+      right: 0,
+      transform: `translate(0,99%) rotate(180deg)`,
+      display: 'flex',
+      zIndex: -1,
     },
 
     innerBox: {
       position: 'relative',
-      backgroundColor: 'blue',
-      width: `100%`
+      backgroundColor: theme.palette.background.paper,
+      width: `100%`,
+      borderRadius: `0 40px 0 0`,
     },
 
-    circle: {
+    layer: {
+      position: 'absolute',
+      bottom: 0,
+      right: 0,
+      backgroundColor: theme.palette.background.paper,
+      width: `56px`,
+      height: `40px`,
+      transform: `translate(97%,0)`,
+      zIndex: -2,
+    },
 
+    innerLayer: {
+      width: `100%`,
+      height: `100%`,
+      backgroundColor: theme.palette.background.default,
+      borderRadius: `0 0 0 60%`,
     },
 
     head: {
@@ -43,7 +69,7 @@ const styles = (theme: Theme) =>
       color: theme.palette.primary.main,
       opacity: 0.6,
       letterSpacing: `1px`,
-      fontWeight: 300, // not work yet
+      fontWeight: 300,
     },
 
     sectionSubTitle: {

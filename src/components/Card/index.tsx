@@ -7,6 +7,7 @@ import cx from 'classnames';
 
 // Component scoped imports.
 import styles from './styles';
+import { useHoverCard } from './useHoverCard';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -25,9 +26,14 @@ const Card = ({
   icon,
 }: CardProps): JSX.Element => {
   const classes = useStyles();
+  const hoverCardRef = useHoverCard();
 
   return (
-    <Box className={cx(classes.root, className)} style={style}>
+    <Box
+      className={cx(classes.root, className)}
+      style={style}
+      ref={hoverCardRef}
+    >
       <SvgIcon className={classes.icon} component={icon} />
       <Typography variant="h4" className={classes.title}>
         {title}

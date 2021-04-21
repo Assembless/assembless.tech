@@ -10,7 +10,7 @@ const themeObj = Object.freeze({
     },
     background: {
       default: `#FFF`,
-      paper: `#FFF`,
+      paper: `#F4F4F4`,
     },
   },
 

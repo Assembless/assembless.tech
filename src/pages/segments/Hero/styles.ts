@@ -7,11 +7,11 @@ const styles = (theme: Theme) =>
     root: {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      height: `100%`,
+      height: `calc(100vh-${theme.variables.appBarHeight})`,
       overflow: `hidden`,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
+      display: `flex`,
+      alignItems: `center`,
+      justifyContent: `center`,
       marginBottom: `200px`,
     },
     container: {

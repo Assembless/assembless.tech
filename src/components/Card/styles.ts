@@ -14,6 +14,8 @@ const styles = (theme: TTheme) =>
       alignItems: `center`,
       borderRadius: `8px`,
       margin: `0 10px`,
+      transition: `all 0.25s ease`,
+      transformStyle: "preserve-3d",
 
       '&:nth-child(2)': {
         marginBottom: `40px`,
@@ -31,6 +33,7 @@ const styles = (theme: TTheme) =>
       width: `86px`,
       height: `86px`,
       marginBottom: `65px`,
+      pointerEvents: 'none',
     },
 
     title: {
@@ -38,6 +41,7 @@ const styles = (theme: TTheme) =>
       marginBottom: `18px`,
       whiteSpace: `pre-line`,
       textAlign: `center`,
+      pointerEvents: 'none',
     },
 
     subtitle: {
@@ -47,6 +51,7 @@ const styles = (theme: TTheme) =>
       letterSpacing: `1px`,
       whiteSpace: `pre-line`,
       textAlign: `center`,
+      pointerEvents: 'none',
     },
   });
 
