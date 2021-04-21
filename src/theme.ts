@@ -1,16 +1,15 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const themeObj = Object.freeze({
+const theme = createMuiTheme({
   palette: {
     primary: {
+      dark: `#121212`,
       main: `#222`,
-    },
-    secondary: {
-      main: `rgba(196, 196, 196, 0.18)`,
     },
     background: {
       default: `#FFF`,
-      paper: `#F4F4F4`,
+      paper: `#FFF`,
+      patch: `#F4F4F4`,
     },
   },
 
@@ -82,5 +81,4 @@ const themeObj = Object.freeze({
   },
 });
 
-export const theme = createMuiTheme(themeObj);
-export type TTheme = typeof theme;
+export default theme;

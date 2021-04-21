@@ -17,3 +17,6 @@ jobs:
         run: |
           yarn install
           yarn build
+      - name: E2E Test ✅
+        run: |
+          yarn test:e2e:ci

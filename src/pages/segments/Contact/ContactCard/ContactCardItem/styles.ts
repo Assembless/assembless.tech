@@ -1,9 +1,8 @@
-import { createStyles } from '@material-ui/core/styles';
-import { TTheme } from '@/utils/theme';
+import { createStyles, Theme } from '@material-ui/core/styles';
 // Here we define styles for the component.
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const styles = (theme: TTheme) =>
+const styles = (theme: Theme) =>
   createStyles({
     root: {
       // Container styles...
@@ -18,6 +17,7 @@ const styles = (theme: TTheme) =>
     title: {
       fontSize: 16,
       fontWeight: `bold`,
+      marginLeft: theme.spacing(4),
     },
   });
 

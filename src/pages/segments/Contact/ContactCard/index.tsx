@@ -3,6 +3,9 @@ import React from 'react';
 import { makeStyles, Box, Button } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
+import MailIcon from '@material-ui/icons/Mail';
+import PhoneIcon from '@material-ui/icons/Phone';
+import PlaceIcon from '@material-ui/icons/Place';
 
 // Project scoped imports.
 
@@ -10,10 +13,24 @@ import cx from 'classnames';
 import styles from './styles';
 import translations from './trans';
 import ContactCardItem from './ContactCardItem';
-import { CONTACT_LIST } from '../list';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
+
+/** Creates a contact object. */
+const makeContactData = (value: string, icon: JSX.Element) => ({
+  value,
+  icon,
+});
+
+/**
+ * List containing all the contact info.
+ */
+const CONTACT_LIST = Object.freeze([
+  makeContactData(`contact@assembless.tech`, <MailIcon />),
+  makeContactData(`+48 450 010 420`, <PhoneIcon />),
+  makeContactData(`Śmidowicz 24/25, Września`, <PlaceIcon />),
+]);
 
 /**
  * ContactCard component.

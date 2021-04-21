@@ -5,9 +5,8 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      height: `calc(100vh-${theme.variables.appBarHeight})`,
+      height: `100%`,
+      minHeight: `calc(100vh - ${theme.variables.appBarHeight}px)`,
       overflow: `hidden`,
       display: `flex`,
       alignItems: `center`,
