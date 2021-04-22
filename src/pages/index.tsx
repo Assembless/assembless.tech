@@ -16,8 +16,9 @@ import AppBar from '@/components/AppBar';
 
 // Component scope imports.
 import HeroSegment from './segments/Hero';
-import ContactSegment from './segments/Contact';
 import ServicesSegment from './segments/Services';
+import AboutSegment from './segments/About';
+import ContactSegment from './segments/Contact';
 
 const Home: React.FC<PageProps> = () => (
   <main>
@@ -25,12 +26,13 @@ const Home: React.FC<PageProps> = () => (
       <CssBaseline />
       <LitteraProvider
         preset={preset}
-        locales={[`en_US`, `pl_PL`, `de_DE`]}
+        locales={[`en_US`, `de_DE`, `pl_PL`]}
         detectLocale
       >
         <AppBar />
         <HeroSegment />
         <ServicesSegment />
+        <AboutSegment />
         <ContactSegment />
       </LitteraProvider>
     </ThemeProvider>
