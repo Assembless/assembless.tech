@@ -20,6 +20,7 @@ import HeroSegment from '../segments/Hero';
 import ContactSegment from '../segments/Contact';
 import ServicesSegment from '../segments/Services';
 import Delivery from '../segments/Delivery';
+import About from '../segments/About';
 
 const Home: React.FC<PageProps> = () => (
   <>
@@ -49,6 +50,7 @@ const Home: React.FC<PageProps> = () => (
           <HeroSegment />
           <ServicesSegment />
           <Delivery />
+          <About/>
           <ContactSegment />
         </LitteraProvider>
       </ThemeProvider>
