@@ -16,10 +16,10 @@ import theme from '@/theme';
 import AppBar from '@/components/AppBar';
 
 // Component scope imports.
-import HeroSegment from './segments/Hero';
-import ContactSegment from './segments/Contact';
-import ServicesSegment from './segments/Services';
-import Delivery from './segments/Delivery';
+import HeroSegment from '../segments/Hero';
+import ContactSegment from '../segments/Contact';
+import ServicesSegment from '../segments/Services';
+import Delivery from '../segments/Delivery';
 
 const Home: React.FC<PageProps> = () => (
   <>
