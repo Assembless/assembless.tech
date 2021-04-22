@@ -26,7 +26,7 @@ const Hero = ({ className, style }: HeroProps): JSX.Element => {
   return (
     <Box className={cx(classes.root, className)} style={style}>
       <Container className={classes.container}>
-        <Box style={{ width: 390 }}>
+        <Box className={classes.titleWrapper}>
           <HeroTitle />
 
           <HeroExploreButton />

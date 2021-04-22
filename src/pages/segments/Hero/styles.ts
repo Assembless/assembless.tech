@@ -21,10 +21,16 @@ const styles = (theme: Theme) =>
       justifyContent: `space-between`,
     },
     // HeroTitle
+    titleWrapper: {
+      width: 550,
+      [theme.breakpoints.down(`sm`)]: {
+        width: `100vw`,
+      },
+    },
     title: {
       fontWeight: 200,
       fontSize: 68,
-      maxWidth: 390,
+      maxWidth: 550,
       textTransform: `uppercase`,
       whiteSpace: `pre-line`,
       display: `block`,

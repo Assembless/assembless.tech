@@ -4,6 +4,7 @@ import { makeStyles, Box, Typography } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 
 // Project scoped imports.
+import TypingCarousel from '@/components/TypingCarousel';
 
 // Component scoped imports.
 import styles from './styles';
@@ -25,7 +26,18 @@ const HeroTitle = ({ className, style }: HeroTitleProps): JSX.Element => {
   return (
     <Box className={className} style={style}>
       <Typography className={classes.title}>
-        {translated.title} <span style={{ fontWeight: 800 }}>CODE</span>
+        {translated.title}
+        {` `}
+        <TypingCarousel
+          style={{ fontWeight: 800 }}
+          values={[
+            translated.typing1,
+            translated.typing2,
+            translated.typing3,
+            translated.typing4,
+            translated.typing5,
+          ]}
+        />
       </Typography>
       <Typography className={classes.slogan}>{translated.slogan}</Typography>
     </Box>
