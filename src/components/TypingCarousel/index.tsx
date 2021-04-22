@@ -63,6 +63,7 @@ const TypingCarousel = ({
 
   return (
     <span
+      data-test-id="typingcarousel"
       className={cx(classes.root, { [classes.caret]: !hideCaret }, className)}
       style={style}
     >
