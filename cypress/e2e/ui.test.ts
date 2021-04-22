@@ -2,7 +2,7 @@
 /// <reference types="Cypress" />
 
 describe(`UI elements tests`, () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit(`/`).get(`main`).injectAxe();
   });
   it(`Has logotype`, () => {
@@ -11,7 +11,12 @@ describe(`UI elements tests`, () => {
   it(`Explore button changes background on hover`, () => {
     cy.get(`[data-test-id="explore-button"]`)
       .realHover()
-      .wait(160)
+      .wait(560)
       .should(`have.css`, `background-color`, `rgb(34, 34, 34)`);
+  });
+  it(`TypingCarousel is animating`, () => {
+    cy.get(`[data-test-id="typingcarousel"]`)
+      .wait(3000)
+      .should(`contain`, `APPS`);
   });
 });

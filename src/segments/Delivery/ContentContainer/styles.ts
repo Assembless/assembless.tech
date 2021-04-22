@@ -4,18 +4,19 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: theme.palette.background.patch,
+      paddingTop: `35px`,
     },
     title: {
       marginBottom: theme.spacing(4),
     },
 
     /** Mobile view */
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down(`sm`)]: {
       title: {
         marginBottom: theme.spacing(2),
-      }
-    }
+      },
+    },
   });
 
 export default styles;
