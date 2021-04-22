@@ -71,11 +71,16 @@ const ContactCard = ({ className, style }: ContactCardProps): JSX.Element => {
         </Box>
       </Box>
 
-      <Dialog open={dialogOpen} onClose={closeDialog}>
+      <Dialog
+        open={dialogOpen}
+        scroll="paper"
+        onClose={closeDialog}
+        PaperProps={{ className: classes.calendlyDialog }}
+        keepMounted
+      >
         <div
-          className="calendly-inline-widget"
           data-url="https://calendly.com/drfrost"
-          style={{ minWidth: `320px`, height: `630px` }}
+          className={cx(`calendly-inline-widget`, classes.calendlyPopup)}
         />
       </Dialog>
     </>

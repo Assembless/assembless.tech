@@ -30,6 +30,18 @@ const styles = (theme: Theme) =>
 
       fontSize: `17px`,
     },
+    calendlyDialog: {
+      width: `90vw`,
+      maxWidth: theme.breakpoints.values.sm,
+    },
+    calendlyPopup: {
+      width: `100%`,
+      height: `690px`,
+      maxHeight: `100vh`,
+      '& iframe': {
+        height: `99.2%`,
+      },
+    },
 
     // Mobile view
     [theme.breakpoints.down(`sm`)]: {

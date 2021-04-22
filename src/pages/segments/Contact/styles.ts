@@ -7,10 +7,13 @@ const styles = (theme: Theme) =>
     root: {
       position: `relative`,
 
-      marginTop: theme.spacing(25),
-      marginBottom: theme.spacing(25),
+      minHeight: `100vh`,
 
       backgroundColor: theme.palette.background.default,
+
+      display: `flex`,
+      alignItems: `center`,
+      justifyContent: `center`,
     },
     title: {
       fontSize: 36,
