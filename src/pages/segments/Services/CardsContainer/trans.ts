@@ -3,17 +3,17 @@
 const translations = {
   cardTitle0: {
     en_US: `Responsive\nWeb Solutions`,
-    de_DE: `can\n do for your business`,
-    pl_PL: `can\n do for your business`,
+    de_DE: `can\ndo for your business`,
+    pl_PL: `can\ndo for your business`,
   },
   cardSubTitle0: {
     en_US: `All from simple websites to\ncomplex web applications`,
-    de_DE: `can\n do for your business`,
-    pl_PL: `can\n do for your business`,
+    de_DE: `can\ndo for your business`,
+    pl_PL: `can\ndo for your business`,
   },
 
   cardTitle1: {
-    en_US: `Native Mobile\n Applications`,
+    en_US: `Native Mobile\nApplications`,
     de_DE: `can do for your business`,
     pl_PL: `can do for your business`,
   },
@@ -24,7 +24,7 @@ const translations = {
   },
 
   cardTitle2: {
-    en_US: `Custom\n Dev Solutions`,
+    en_US: `Custom\nDev Solutions`,
     de_DE: `can do for your business`,
     pl_PL: `can do for your business`,
   },

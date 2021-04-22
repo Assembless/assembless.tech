@@ -12,7 +12,7 @@ export const preset = {
   },
 
   deliver: {
-    en_US: `Example`,
+    en_US: `how we deliver`,
     de_DE: `Beispiel`,
     pl_PL: `Przykład`,
   },

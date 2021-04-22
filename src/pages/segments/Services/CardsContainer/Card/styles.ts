@@ -14,7 +14,7 @@ const styles = (theme: Theme) =>
       borderRadius: `8px`,
       margin: `0 10px`,
       transition: `all 0.25s ease`,
-      transformStyle: "preserve-3d",
+      transformStyle: `preserve-3d`,
 
       '&:nth-child(2)': {
         marginBottom: `40px`,
@@ -32,7 +32,7 @@ const styles = (theme: Theme) =>
       width: `86px`,
       height: `86px`,
       marginBottom: `65px`,
-      pointerEvents: 'none',
+      pointerEvents: `none`,
     },
 
     title: {
@@ -40,7 +40,7 @@ const styles = (theme: Theme) =>
       marginBottom: `18px`,
       whiteSpace: `pre-line`,
       textAlign: `center`,
-      pointerEvents: 'none',
+      pointerEvents: `none`,
     },
 
     subtitle: {
@@ -50,7 +50,7 @@ const styles = (theme: Theme) =>
       letterSpacing: `1px`,
       whiteSpace: `pre-line`,
       textAlign: `center`,
-      pointerEvents: 'none',
+      pointerEvents: `none`,
     },
   });
 

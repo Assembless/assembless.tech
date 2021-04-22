@@ -19,6 +19,7 @@ import AppBar from '@/components/AppBar';
 import HeroSegment from './segments/Hero';
 import ContactSegment from './segments/Contact';
 import ServicesSegment from './segments/Services';
+import Delivery from './segments/Delivery';
 
 const Home: React.FC<PageProps> = () => (
   <>
@@ -47,6 +48,7 @@ const Home: React.FC<PageProps> = () => (
           <AppBar />
           <HeroSegment />
           <ServicesSegment />
+          <Delivery />
           <ContactSegment />
         </LitteraProvider>
       </ThemeProvider>

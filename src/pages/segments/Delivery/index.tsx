@@ -7,6 +7,7 @@ import cx from 'classnames';
 // Project scoped imports.
 
 // Component scoped imports.
+import SectionHead from '@/components/SectionHead';
 import styles from './styles';
 import translations from './trans';
 
@@ -14,41 +15,33 @@ import translations from './trans';
 const useStyles = makeStyles(styles);
 
 /**
- * ServicesHead component.
- * @description This is head of services section.
+ * Delivery component.
+ * @description This is the delivery section.
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const ServicesHead = ({ className, style }: ServicesHeadProps): JSX.Element => {
+const Delivery = ({ className, style }: DeliveryProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
 
   return (
     <Box className={cx(classes.root, className)} style={style}>
-      <Typography className={classes.sectionTitle}>
-        {translated.services}
-      </Typography>
-      <Typography className={classes.sectionSubTitle}>
-        {translated.subTitleLine1}
-      </Typography>
-      <Typography className={classes.sectionSubTitle}>
-        {translated.subTitleLine2}
-      </Typography>
+      <SectionHead title={translated.deliver} subTitle={translated.subTitle} />
     </Box>
   );
 };
 
 // Props the component accepts.
-type ServicesHeadProps = {
+type DeliveryProps = {
   className?: string;
   style?: React.CSSProperties;
 };
 
 // Default props.
-ServicesHead.defaultProps = {
+Delivery.defaultProps = {
   className: ``,
   style: {},
 };
 
 // Time to export! 🚚
-export default ServicesHead;
+export default Delivery;

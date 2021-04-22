@@ -22,6 +22,7 @@ const styles = (theme: Theme) =>
     sectionSubTitle: {
       fontSize: `36px`,
       textAlign: `center`,
+      whiteSpace: `pre-line`,
     },
   });
 
