@@ -26,7 +26,7 @@ const Home: React.FC<PageProps> = () => (
     <Helmet>
       <script
         title="Google Maps API Script"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_KG3mG-3-FLrqnSKJEXkYQzTMxaAJ77k&callback=initMap&map_ids=b0895fcec40baecd"
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GMAPS_KEY}&callback=initMap&map_ids=b0895fcec40baecd`}
         async
         defer
       />
