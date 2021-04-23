@@ -1,6 +1,6 @@
 // Deps scoped imports.
-import React from 'react';
-import { makeStyles, Box, Container, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import { makeStyles, Box, Container } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
 
@@ -10,6 +10,7 @@ import cx from 'classnames';
 import styles from './styles';
 import translations from './trans';
 import StepperContainer from './StepperContainer';
+import DeliverCard from './DeliverCard';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -20,6 +21,7 @@ const useStyles = makeStyles(styles);
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
+
 const ContentContainer = ({
   className,
   style,
@@ -27,10 +29,18 @@ const ContentContainer = ({
   const translated = useLittera(translations);
   const classes = useStyles();
 
+  const [activeStep, setActiveStep] = useState(0);
+
   return (
     <Box className={cx(classes.root, className)} style={style}>
       <Container>
-        <StepperContainer />
+        <Box position="relative">
+          <StepperContainer
+            activeStep={activeStep}
+            setActiveStep={setActiveStep}
+          />
+          <DeliverCard activeStep={activeStep} />
+        </Box>
       </Container>
     </Box>
   );

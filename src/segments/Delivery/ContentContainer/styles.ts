@@ -5,7 +5,7 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: theme.palette.background.patch,
-      paddingTop: `35px`,
+      height: `424px`,
     },
     title: {
       marginBottom: theme.spacing(4),
