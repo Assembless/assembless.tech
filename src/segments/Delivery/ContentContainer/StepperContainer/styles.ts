@@ -3,9 +3,34 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 
 const styles = (theme: Theme) =>
   createStyles({
-    root: {},
-    title: {
-      marginBottom: theme.spacing(4),
+    root: {
+      paddingTop: `35px`,
+    },
+
+    stepper: {
+      backgroundColor: theme.palette.background.patch,
+      paddingLeft: `0`,
+      paddingRight: `0`,
+    },
+
+    active: {
+      /*    '&::after': {
+        content: `''`,
+        width: `4px`,
+        height: `100px`,
+        position: `absolute`,
+        left: 0,
+        top: 0,
+        backgroundColor: `red`,
+      }, */
+    },
+
+    labelContainer: {
+      position: `absolute`,
+      top: -50,
+      left: `50%`,
+      margin: 0,
+      display: `flex`,
     },
 
     /** Mobile view */

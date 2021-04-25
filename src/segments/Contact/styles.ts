@@ -14,6 +14,8 @@ const styles = (theme: Theme) =>
       display: `flex`,
       alignItems: `center`,
       justifyContent: `center`,
+
+      paddingTop: `240px`,
     },
     title: {
       fontSize: 36,
