@@ -50,7 +50,7 @@ const Home: React.FC<PageProps> = () => (
           <HeroSegment />
           <ServicesSegment />
           <Delivery />
-          <About/>
+          <About />
           <ContactSegment />
         </LitteraProvider>
       </ThemeProvider>

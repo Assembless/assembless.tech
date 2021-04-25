@@ -28,8 +28,22 @@ const PersonImage = ({ className, style }: PersonImageProps): JSX.Element => {
       className={cx(classes.root, className)}
       style={style}
     >
-      <StaticImage alt="Person" src="../../../assests/mike.png" height={100} />
-      <Circle />
+      <StaticImage
+        alt="Person"
+        src="../../assets/mike.png"
+        height={250}
+        width={200}
+        className={cx(classes.ilustration)}
+      />
+      <Box className={cx(classes.illustrationCircle)}>
+        <StaticImage
+          alt="Person"
+          src="../../assets/mike.png"
+          height={250}
+          width={200}
+          className={cx(classes.ilustrationInsideCircle)}
+        />
+      </Box>
     </Box>
   );
 };

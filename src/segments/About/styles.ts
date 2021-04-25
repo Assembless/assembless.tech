@@ -59,6 +59,42 @@ const styles = (theme: Theme) =>
     imageSection: {
       margin: `50px auto`,
     },
+    illustrationCircle: {
+      width: 200,
+      height: 200,
+      top: `50%`,
+      left: `50%`,
+      transform: `translate(-50%, -50%)`,
+      position: `absolute`,
+      backgroundColor: theme.palette.background.patch,
+      zIndex: 0,
+      borderRadius: `100%`,
+      overflow: `hidden`,
+
+      [theme.breakpoints.down(`xs`)]: {
+        display: `none`,
+      },
+    },
+    ilustration: {
+      height: `250px`,
+      width: `200px`,
+      zIndex: 3,
+      position: `absolute`,
+      top: `40%`,
+      left: `50%`,
+      transform: `translate(-50%, -60%)`,
+      borderRadius: `50%`,
+    },
+    ilustrationInsideCircle: {
+      height: `250px`,
+      width: `200px`,
+      zIndex: 3,
+      position: `absolute`,
+      top: `40%`,
+      left: `50%`,
+      transform: `translate(-50%, -50%)`,
+      borderRadius: `50%`,
+    },
   });
 
 export default styles;
