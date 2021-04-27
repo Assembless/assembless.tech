@@ -5,14 +5,14 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       position: `absolute`,
-      top: 150,
+      top: 144,
       left: `50%`,
       width: `100%`,
       height: `329px`,
       transform: `translate(-50%,0)`,
       backgroundColor: theme.palette.background.default,
       borderRadius: `8px`,
-      padding: `51px`,
+      padding: `48px 54px`,
       zIndex: 10,
       boxShadow: `0 8px 64px rgba(0,0,0,0.09)`,
 
@@ -27,8 +27,13 @@ const styles = (theme: Theme) =>
         borderRadius: `8px 0 0 8px`,
       },
     },
+
     title: {
       marginBottom: theme.spacing(4),
+    },
+
+    subTitle: {
+      width: `80%`,
     },
 
     /** Mobile view */

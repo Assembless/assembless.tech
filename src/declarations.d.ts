@@ -22,5 +22,6 @@ declare module '@material-ui/core/styles/createPalette' {
     default: string;
     paper: string;
     patch: string;
+    greyDivider: string;
   }
 }

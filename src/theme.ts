@@ -10,6 +10,7 @@ const theme = createMuiTheme({
       default: `#FFF`,
       paper: `#FFF`,
       patch: `#F4F4F4`,
+      greyDivider: `rgba(196,196,196,0.37)`,
     },
   },
 
