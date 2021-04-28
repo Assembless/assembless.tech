@@ -13,6 +13,7 @@ const styles = (theme: Theme) =>
     alternativeLabel: {
       fontSize: `18px`,
       letterSpacing: `1px`,
+      color: theme.palette.primary.dark,
     },
 
     labelContainer: {

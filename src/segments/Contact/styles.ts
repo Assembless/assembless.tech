@@ -25,7 +25,7 @@ const styles = (theme: Theme) =>
     label: {
       fontSize: 22,
 
-      opacity: 0.6,
+      opacity: 0.65,
 
       textTransform: `lowercase`,
     },

@@ -38,7 +38,8 @@ const styles = (theme: Theme) =>
     slogan: {
       fontWeight: 600,
       fontSize: 20,
-      opacity: 0.35,
+      opacity: 0.65,
+      letterSpacing: `0.3px`,
       marginTop: theme.spacing(3),
     },
     // HeroExploreButton

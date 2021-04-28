@@ -122,7 +122,7 @@ const StepperContainer = ({
         }
       >
         {deliverySteps.map((step, index, steps) => (
-          <Step onClick={handleStep(index)}>
+          <Step onClick={handleStep(index)} key={step.title}>
             <StepLabel
               classes={{
                 alternativeLabel: classes.alternativeLabel,

@@ -27,8 +27,12 @@ const SectionHead = ({
 
   return (
     <Box className={cx(classes.root, className)} style={style}>
-      <Typography className={classes.sectionTitle}>{title}</Typography>
-      <Typography className={classes.sectionSubTitle}>{subTitle}</Typography>
+      <Typography variant="h2" className={classes.sectionTitle}>
+        {title}
+      </Typography>
+      <Typography variant="h3" className={classes.sectionSubTitle}>
+        {subTitle}
+      </Typography>
     </Box>
   );
 };

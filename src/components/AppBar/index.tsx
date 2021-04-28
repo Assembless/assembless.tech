@@ -52,24 +52,42 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
             display="flex"
             alignItems="center"
             className={classes.menuBar}
+            role="menu"
           >
-            <Button href="https://google.com/" style={{ margin: `0 6px` }}>
+            <Button
+              component="li"
+              href="https://google.com/"
+              style={{ margin: `0 6px` }}
+              role="menuitem"
+            >
               {translated.services}
             </Button>
 
-            <Button href="https://google.com/" style={{ margin: `0 6px` }}>
+            <Button
+              component="li"
+              href="https://google.com/"
+              style={{ margin: `0 6px` }}
+              role="menuitem"
+            >
               {translated.aboutUs}
             </Button>
 
-            <Button href="https://google.com/" style={{ margin: `0 6px` }}>
+            <Button
+              component="li"
+              href="https://google.com/"
+              style={{ margin: `0 6px` }}
+              role="menuitem"
+            >
               {translated.deliver}
             </Button>
 
             <Button
+              component="li"
               className={classes.contactUsButton}
               color="primary"
               variant="contained"
               size="small"
+              role="menuitem"
             >
               {translated.contactUs}
             </Button>

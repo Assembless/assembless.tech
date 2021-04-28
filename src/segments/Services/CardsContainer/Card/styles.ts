@@ -47,7 +47,7 @@ const styles = (theme: Theme) =>
     subtitle: {
       fontSize: `17px`,
       color: theme.palette.primary.main,
-      opacity: 0.6,
+      opacity: 0.65,
       letterSpacing: `1px`,
       whiteSpace: `pre-line`,
       textAlign: `center`,
