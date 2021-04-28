@@ -39,7 +39,7 @@ const styles = (theme: Theme) =>
       fontWeight: 600,
       fontSize: 20,
       opacity: 0.35,
-      marginTop: 12,
+      marginTop: theme.spacing(3),
     },
     // HeroExploreButton
     exploreButton: {

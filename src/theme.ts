@@ -9,8 +9,7 @@ const theme = createMuiTheme({
     background: {
       default: `#FFF`,
       paper: `#FFF`,
-      patch: `#F4F4F4`,
-      greyDivider: `rgba(196,196,196,0.37)`,
+      patch: { main: `#F4F4F4`, dark: `rgba(196,196,196,0.37)` },
     },
   },
 
@@ -22,6 +21,12 @@ const theme = createMuiTheme({
       fontSize: 36,
     },
   },
+
+  shape: {
+    borderRadius: 8,
+  },
+
+  spacing: 4,
 
   variables: {
     appBarHeight: 112,
@@ -77,6 +82,13 @@ const theme = createMuiTheme({
 
           color: `#FFF`,
         },
+      },
+    },
+    MuiStepLabel: {
+      active: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        fontWeight: `bold !important`,
       },
     },
   },

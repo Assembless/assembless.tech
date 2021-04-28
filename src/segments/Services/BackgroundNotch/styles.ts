@@ -14,7 +14,7 @@ const styles = (theme: Theme) =>
 
     innerBox: {
       position: `relative`,
-      backgroundColor: theme.palette.background.patch,
+      backgroundColor: theme.palette.background.patch.main,
       width: `100%`,
       borderRadius: `0 40px 0 0`,
     },
@@ -23,7 +23,7 @@ const styles = (theme: Theme) =>
       position: `absolute`,
       bottom: 0,
       right: 0,
-      backgroundColor: theme.palette.background.patch,
+      backgroundColor: theme.palette.background.patch.main,
       width: `56px`,
       height: `40px`,
       transform: `translate(97%,0)`,
