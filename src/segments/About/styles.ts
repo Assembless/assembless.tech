@@ -6,45 +6,44 @@ const styles = (theme: Theme) =>
     root: {
       display: `flex`,
       flexWrap: `wrap`,
-      margin: `120px 5vw`,
+      margin: `120px 5vw 247px 5vw`,
 
       [theme.breakpoints.up(`md`)]: {
         flexWrap: `nowrap`,
       },
     },
-    textArea: {
+    subheader: {
       width: `100%`,
 
       [theme.breakpoints.up(`md`)]: {
         width: `45%`,
       },
     },
-    aboutUs: {
+    title: {
       color: `rgba(0, 0, 0, 0.6)`,
       margin: `50px 0`,
-      textAlign: `center`,
+      textAlign: `left`,
 
-      [theme.breakpoints.up(`md`)]: {
-        margin: `50px 0`,
-        textAlign: `left`,
+      [theme.breakpoints.down(`sm`)]: {
+        textAlign: `center`,
       },
     },
-    title: {
+    title_2: {
       fontWeight: `bold`,
     },
     mediaWrapper: {
       display: `flex`,
       justifyContent: `space-between`,
       alignItems: `center`,
-      margin: `50px auto`,
+      margin: `50px 0`,
 
-      width: `250px`,
+      width: `203px`,
       padding: `5px`,
       backgroundColor: `#F4F4F4`,
       borderRadius: `25px`,
 
-      [theme.breakpoints.up(`md`)]: {
-        margin: `50px 0`,
+      [theme.breakpoints.down(`sm`)]: {
+        margin: `50px auto`,
       },
     },
     icon: {
@@ -57,11 +56,12 @@ const styles = (theme: Theme) =>
       marginTop: `50px`,
     },
     imageSection: {
-      margin: `50px auto`,
+      margin: `150px auto`,
+      alignSelf: `center`,
     },
     illustrationCircle: {
-      width: 200,
-      height: 200,
+      width: 450,
+      height: 450,
       top: `50%`,
       left: `50%`,
       transform: `translate(-50%, -50%)`,
@@ -76,21 +76,22 @@ const styles = (theme: Theme) =>
       },
     },
     ilustration: {
-      height: `250px`,
-      width: `200px`,
+      height: `600px`,
+      width: `600px`,
       zIndex: 3,
       position: `absolute`,
       top: `40%`,
       left: `50%`,
-      transform: `translate(-50%, -60%)`,
+      transform: `translate(-50%, -50%)`,
       borderRadius: `50%`,
+      clipPath: `polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%)`,
     },
     ilustrationInsideCircle: {
-      height: `250px`,
-      width: `200px`,
+      height: `600px`,
+      width: `600px`,
       zIndex: 3,
       position: `absolute`,
-      top: `40%`,
+      top: `50%`,
       left: `50%`,
       transform: `translate(-50%, -50%)`,
       borderRadius: `50%`,

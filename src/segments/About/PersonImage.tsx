@@ -5,7 +5,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import cx from 'classnames';
 
 // Project scoped imports.r
-import Circle from '@/components/Circle';
 
 // Component scoped imports.
 import styles from './styles';

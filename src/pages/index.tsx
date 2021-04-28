@@ -49,8 +49,8 @@ const Home: React.FC<PageProps> = () => (
           <AppBar />
           <HeroSegment />
           <ServicesSegment />
-          <Delivery />
           <About />
+          <Delivery />
           <ContactSegment />
         </LitteraProvider>
       </ThemeProvider>

@@ -11,6 +11,7 @@ import { Facebook, GitHub, Twitter } from '@material-ui/icons';
 import styles from './styles';
 import translations from './trans';
 import PersonImage from './PersonImage';
+import TextArea from './Subheader';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -27,27 +28,14 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
 
   return (
     <Box className={cx(classes.root, className)} style={style}>
-      <Box className={classes.textArea}>
-        <Box>
-          <Typography className={classes.aboutUs} variant="h5" component="h5">
-            {translated.about_us}
-          </Typography>
-          <Typography className={classes.title} variant="h2" component="h2">
-            {translated.title_1}
-          </Typography>
-          <Typography className={classes.title} variant="h2" component="h2">
-            {translated.title_2}
-          </Typography>
-          <Typography className={classes.text} variant="body1" component="p">
-            {translated.paragraph}
-          </Typography>
-          <Typography className={classes.text} variant="body1" component="p">
-            {translated.paragraph2}
-          </Typography>
-        </Box>
+      <Box className={classes.subheader}>
+        <TextArea />
         <Box className={classes.mediaWrapper}>
           <GitHub className={classes.icon} style={{ fontSize: `3rem` }} />
-          <Facebook className={classes.icon} style={{ fontSize: `3rem` }} />
+          <Facebook
+            className={classes.icon}
+            style={{ fontSize: `3rem`, borderRadius: `100px` }}
+          />
           <Twitter className={classes.icon} style={{ fontSize: `3rem` }} />
         </Box>
       </Box>

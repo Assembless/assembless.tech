@@ -5,9 +5,9 @@ import { TTransPreset } from '@/utils/translations';
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const translations = (preset: TTransPreset) => ({
   about_us: {
-    en_US: `About Us`,
-    de_DE: `Beispiel`,
-    pl_PL: `O nas`,
+    en_US: `about Us`,
+    de_DE: `beispiel`,
+    pl_PL: `o nas`,
   },
   title_1: {
     en_US: `Get to know`,
