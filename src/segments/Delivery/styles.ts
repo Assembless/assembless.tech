@@ -5,10 +5,6 @@ import { createStyles } from '@material-ui/core/styles';
 const styles = () =>
   createStyles({
     root: {},
-    title: {
-      // Head text styles...
-      fontFamily: `'PT Mono', monospace`,
-    },
   });
 
 export default styles;

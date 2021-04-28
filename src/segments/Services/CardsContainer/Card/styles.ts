@@ -7,23 +7,24 @@ const styles = (theme: Theme) =>
     root: {
       backgroundColor: theme.palette.background.default,
       boxShadow: `0 9px 38px rgba(0,0,0, 0.07)`,
-      padding: `61px 46px`,
+
+      padding: theme.spacing(15, 11.5),
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,
-      borderRadius: `8px`,
-      margin: `0 10px`,
+      borderRadius: theme.shape.borderRadius,
+      margin: `0 ${theme.spacing(2.5)}px`,
       transition: `all 0.25s ease`,
       transformStyle: `preserve-3d`,
 
       '&:nth-child(2)': {
-        marginBottom: `40px`,
+        marginBottom: theme.spacing(10),
       },
 
       [theme.breakpoints.down(1062)]: {
-        marginBottom: `30px`,
+        marginBottom: theme.spacing(7.5),
         '&:nth-child(2)': {
-          marginBottom: `30px`,
+          marginBottom: theme.spacing(7.5),
         },
       },
     },
@@ -31,13 +32,13 @@ const styles = (theme: Theme) =>
     icon: {
       width: `86px`,
       height: `86px`,
-      marginBottom: `65px`,
+      marginBottom: theme.spacing(16),
       pointerEvents: `none`,
     },
 
     title: {
       fontSize: `24px`,
-      marginBottom: `18px`,
+      marginBottom: theme.spacing(4.5),
       whiteSpace: `pre-line`,
       textAlign: `center`,
       pointerEvents: `none`,
@@ -46,7 +47,7 @@ const styles = (theme: Theme) =>
     subtitle: {
       fontSize: `17px`,
       color: theme.palette.primary.main,
-      opacity: 0.6,
+      opacity: 0.65,
       letterSpacing: `1px`,
       whiteSpace: `pre-line`,
       textAlign: `center`,

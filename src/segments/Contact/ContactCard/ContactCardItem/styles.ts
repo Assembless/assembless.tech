@@ -12,7 +12,7 @@ const styles = (theme: Theme) =>
       borderStyle: `solid`,
       padding: `16px 24px`,
       width: `100%`,
-      margin: `8px 0`,
+      margin: `${theme.spacing(2)}px 0`,
     },
     title: {
       fontSize: 16,

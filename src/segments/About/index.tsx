@@ -29,13 +29,13 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
     <Box className={cx(classes.root, className)} style={style}>
       <Box className={classes.textArea}>
         <Box>
-          <Typography className={classes.aboutUs} variant="h5" component="h5">
+          <Typography className={classes.aboutUs} variant="h3" component="h3">
             {translated.about_us}
           </Typography>
           <Typography className={classes.title} variant="h2" component="h2">
             {translated.title_1}
           </Typography>
-          <Typography className={classes.title} variant="h2" component="h2">
+          <Typography className={classes.title} variant="h3" component="h3">
             {translated.title_2}
           </Typography>
           <Typography className={classes.text} variant="body1" component="p">

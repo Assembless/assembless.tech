@@ -5,8 +5,8 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: theme.palette.background.patch,
-      padding: `140px 0`,
+      backgroundColor: theme.palette.background.patch.main,
+      padding: `${theme.spacing(35)}px 0`,
       position: `relative`,
       marginTop: theme.spacing(25),
       marginBottom: theme.spacing(25),

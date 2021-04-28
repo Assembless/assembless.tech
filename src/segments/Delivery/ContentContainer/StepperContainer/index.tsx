@@ -66,6 +66,7 @@ const ProductIcon = (props: StepIconProps) => {
           display: `flex`,
           alignItems: `center`,
           justifyContent: `center`,
+          cursor: `pointer`,
           border: `${active ? `6px solid #222` : `none`}`,
         }}
       >
@@ -120,8 +121,8 @@ const StepperContainer = ({
           />
         }
       >
-        {deliverySteps.map((step, index, dS) => (
-          <Step onClick={handleStep(index)}>
+        {deliverySteps.map((step, index, steps) => (
+          <Step onClick={handleStep(index)} key={step.title}>
             <StepLabel
               classes={{
                 alternativeLabel: classes.alternativeLabel,
@@ -129,7 +130,7 @@ const StepperContainer = ({
                 labelContainer: classes.labelContainer,
               }}
               StepIconComponent={
-                !(index === dS.length - 1) ? CircleIcon : ProductIcon
+                !(index === steps.length - 1) ? CircleIcon : ProductIcon
               }
             >
               {translated[step.title]}
