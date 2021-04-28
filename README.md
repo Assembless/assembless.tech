@@ -43,9 +43,10 @@ src
 ├───components - Reusable components for general purposes.
 ├───pages - Components representing Gatsby pages.
 ├───segments - Components representing segments of the home page.
-│   ├───Contact 
+│   ├───Contact
 │   ├───Delivery
 │   ├───Hero
+│   ├───About
 │   └───Services
 └───utils - Hooks, methods, helpers etc.
 ```
