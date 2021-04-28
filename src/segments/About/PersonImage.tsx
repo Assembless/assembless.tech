@@ -4,7 +4,7 @@ import { makeStyles, Box } from '@material-ui/core';
 import { StaticImage } from 'gatsby-plugin-image';
 import cx from 'classnames';
 
-// Project scoped imports.r
+// Project scoped imports.
 
 // Component scoped imports.
 import styles from './styles';

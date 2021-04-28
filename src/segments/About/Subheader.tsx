@@ -14,7 +14,7 @@ const Subheader = () => {
 
   return (
     <Box>
-      <Typography className={classes.title} variant="h5" component="h5">
+      <Typography className={classes.title} variant="h3" component="h3">
         {translated.about_us}
       </Typography>
       <Typography className={classes.title_2} variant="h2" component="h2">

@@ -1,14 +1,12 @@
 // Deps scoped imports.
 import React, { useState } from 'react';
 import { makeStyles, Box, Container } from '@material-ui/core';
-import { useLittera } from 'react-littera';
 import cx from 'classnames';
 
 // Project scoped imports.
 
 // Component scoped imports.
 import styles from './styles';
-import translations from './trans';
 import StepperContainer from './StepperContainer';
 import DeliverCard from './DeliverCard';
 
@@ -26,7 +24,6 @@ const ContentContainer = ({
   className,
   style,
 }: ContentContainerProps): JSX.Element => {
-  const translated = useLittera(translations);
   const classes = useStyles();
 
   const [activeStep, setActiveStep] = useState(0);

@@ -41,7 +41,7 @@ const DeliverCard = ({
       <Typography variant="h3" className={classes.title}>
         {translated[cardData[activeStep].title]}
       </Typography>
-      <Typography variant="h3" className={classes.title}>
+      <Typography className={classes.subTitle}>
         {translated[cardData[activeStep].content]}
       </Typography>
     </Box>

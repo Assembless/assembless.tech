@@ -3,41 +3,72 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 
 const styles = (theme: Theme) =>
   createStyles({
-    root: {
-      paddingTop: `35px`,
-    },
+    root: {},
 
     stepper: {
-      backgroundColor: theme.palette.background.patch,
-      paddingLeft: `0`,
-      paddingRight: `0`,
+      backgroundColor: theme.palette.background.patch.main,
+      paddingTop: theme.spacing(17),
     },
 
-    active: {
-      /*    '&::after': {
-        content: `''`,
-        width: `4px`,
-        height: `100px`,
-        position: `absolute`,
-        left: 0,
-        top: 0,
-        backgroundColor: `red`,
-      }, */
+    alternativeLabel: {
+      fontSize: `18px`,
+      letterSpacing: `1px`,
+      color: theme.palette.primary.dark,
     },
 
     labelContainer: {
       position: `absolute`,
       top: -50,
       left: `50%`,
+
       margin: 0,
       display: `flex`,
+      cursor: `pointer`,
+    },
+
+    iconContainer: {
+      width: `23px`,
+      height: `23px`,
+
+      display: `flex`,
+      alignItems: `center`,
+      justifyContent: `center`,
+
+      backgroundColor: theme.palette.background.patch.dark,
+      borderRadius: `50%`,
+      cursor: `pointer`,
+    },
+
+    active: {
+      '&::after': {
+        content: `""`,
+        width: `3px`,
+        height: `37px`,
+
+        position: `absolute`,
+        bottom: 0,
+        right: `50%`,
+        transform: `translate(50%,120%)`,
+
+        backgroundColor: theme.palette.background.patch.dark,
+        borderRadius: `200px`,
+      },
+    },
+
+    connectorLine: {
+      backgroundColor: theme.palette.background.patch.dark,
+      height: `3px`,
+      border: `none`,
+      borderRadius: `200px`,
+    },
+
+    productIcon: {
+      fontSize: `99px`,
     },
 
     /** Mobile view */
     [theme.breakpoints.down(`sm`)]: {
-      title: {
-        marginBottom: theme.spacing(2),
-      },
+      title: {},
     },
   });
 

@@ -5,30 +5,40 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       position: `absolute`,
-      top: 150,
+      top: 144,
       left: `50%`,
+      transform: `translate(-50%,0)`,
+
       width: `100%`,
       height: `329px`,
-      transform: `translate(-50%,0)`,
+
       backgroundColor: theme.palette.background.default,
-      borderRadius: `8px`,
-      padding: `51px`,
+      borderRadius: theme.shape.borderRadius,
+      padding: `${theme.spacing(12)}px ${theme.spacing(13.5)}px`,
       zIndex: 10,
       boxShadow: `0 8px 64px rgba(0,0,0,0.09)`,
 
       '&::after': {
         content: `''`,
+
         height: `100%`,
         width: `7px`,
+
         position: `absolute`,
         top: 0,
         left: 0,
+
         backgroundColor: theme.palette.primary.main,
-        borderRadius: `8px 0 0 8px`,
+        borderRadius: `${theme.shape.borderRadius} 0 0 ${theme.shape.borderRadius}`,
       },
     },
+
     title: {
       marginBottom: theme.spacing(4),
+    },
+
+    subTitle: {
+      width: `80%`,
     },
 
     /** Mobile view */

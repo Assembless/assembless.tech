@@ -7,10 +7,10 @@ import cx from 'classnames';
 // Project scoped imports.
 
 // Component scoped imports.
+import SectionHead from '@/components/SectionHead';
 import styles from './styles';
 import translations from './trans';
 import BackgroundNotch from './BackgroundNotch';
-import SectionHead from '../../../components/SectionHead';
 import CardsContainer from './CardsContainer';
 import ButtonContainer from './ButtonContainer';
 

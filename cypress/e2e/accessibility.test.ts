@@ -22,7 +22,7 @@ function terminalLog(violations) {
 }
 
 describe(`Accessibility tests`, () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit(`/`).get(`main`).injectAxe();
   });
   it(`Has no detectable accessibility violations on load`, () => {

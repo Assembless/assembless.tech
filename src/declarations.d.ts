@@ -1,7 +1,11 @@
 /* eslint-disable no-shadow */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
-import { TypeBackground } from '@material-ui/core/styles/createPalette';
+import {
+  PaletteColorOptions,
+  SimplePaletteColorOptions,
+  TypeBackground,
+} from '@material-ui/core/styles/createPalette';
 
 declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {
@@ -21,6 +25,6 @@ declare module '@material-ui/core/styles/createPalette' {
   interface TypeBackground {
     default: string;
     paper: string;
-    patch: string;
+    patch: SimplePaletteColorOptions;
   }
 }

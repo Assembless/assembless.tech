@@ -41,11 +41,7 @@ const Home: React.FC<PageProps> = () => (
     <main>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <LitteraProvider
-          preset={preset}
-          locales={[`en_US`, `pl_PL`, `de_DE`]}
-          detectLocale
-        >
+        <LitteraProvider preset={preset} locales={[`en_US`, `pl_PL`, `de_DE`]}>
           <AppBar />
           <HeroSegment />
           <ServicesSegment />

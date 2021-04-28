@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
+import { makeStyles, Box } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
 
@@ -26,7 +26,11 @@ const Delivery = ({ className, style }: DeliveryProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Box className={cx(classes.root, className)} style={style}>
+    <Box
+      component="section"
+      className={cx(classes.root, className)}
+      style={style}
+    >
       <SectionHead title={translated.deliver} subTitle={translated.subTitle} />
       <ContentContainer />
     </Box>

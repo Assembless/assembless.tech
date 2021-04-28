@@ -66,7 +66,7 @@ const styles = (theme: Theme) =>
       left: `50%`,
       transform: `translate(-50%, -50%)`,
       position: `absolute`,
-      backgroundColor: theme.palette.background.patch,
+      backgroundColor: theme.palette.background.patch.main,
       zIndex: 0,
       borderRadius: `100%`,
       overflow: `hidden`,

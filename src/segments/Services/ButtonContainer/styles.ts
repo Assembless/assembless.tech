@@ -15,10 +15,10 @@ const styles = (theme: Theme) =>
       top: -13,
       left: `50%`,
       transform: `translate(-50%,0)`,
-      padding: `10px 40px`,
+      padding: `${theme.spacing(2.5)}px ${theme.spacing(10)}px`,
 
       [theme.breakpoints.down(1062)]: {
-        marginTop: `30px`,
+        marginTop: theme.spacing(7.5),
       },
     },
   });
