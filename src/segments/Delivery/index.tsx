@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
+import { makeStyles, Box } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
 

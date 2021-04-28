@@ -120,7 +120,7 @@ const StepperContainer = ({
           />
         }
       >
-        {deliverySteps.map((step, index, deliverySteps) => (
+        {deliverySteps.map((step, index, dS) => (
           <Step onClick={handleStep(index)}>
             <StepLabel
               classes={{
@@ -129,7 +129,7 @@ const StepperContainer = ({
                 labelContainer: classes.labelContainer,
               }}
               StepIconComponent={
-                !(index === deliverySteps.length - 1) ? CircleIcon : ProductIcon
+                !(index === dS.length - 1) ? CircleIcon : ProductIcon
               }
             >
               {translated[step.title]}

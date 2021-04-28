@@ -14,7 +14,7 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "ignorePatterns": ["templates/**/*"],
+  "ignorePatterns": ["templates/**/*", "src/html.js"],
   "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
   "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "rules": {
@@ -51,6 +51,7 @@
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
         "no-use-before-define": [0],
         "@typescript-eslint/no-use-before-define": [1],
         "@typescript-eslint/quotes": [

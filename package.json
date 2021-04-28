@@ -20,7 +20,19 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "test:e2e": "start-server-and-test \"yarn develop\" http://localhost:8000 \"yarn cy:open\"",
-    "test:e2e:ci": "start-server-and-test \"yarn develop\" http://localhost:8000 \"yarn cy:run\""
+    "test:e2e:ci": "start-server-and-test \"yarn develop\" http://localhost:8000 \"yarn cy:run\"",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
   },
   "dependencies": {
     "@fontsource/lato": "^4.2.2",
@@ -60,7 +72,7 @@
     "babel-plugin-root-import": "6.6.0",
     "commitizen": "4.2.3",
     "commitlint-config-gitmoji": "^2.2.3",
-    "cz-conventional-changelog": "3.3.0",
+    "cz-emoji": "^3.3.0",
     "eslint": "7.24.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "8.1.0",
@@ -75,5 +87,148 @@
     "prettier": "2.2.1",
     "start-server-and-test": "^1.12.1",
     "typescript": "4.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji"
+    },
+    "cz-emoji": {
+      "skipQuestions": ["scope", "breaking"],
+      "types": [
+        {
+          "emoji":"✨",
+          "entity":"&#x2728;",
+          "code":":sparkles:",
+          "description":"Introducing new features.",
+          "name":"sparkles"
+        },
+        {
+          "emoji":"💄",
+          "entity":"&#ff99cc;",
+          "code":":lipstick:",
+          "description":"Updating the UI or styles.",
+          "name":"lipstick"
+        },
+        {
+          "emoji":"🔧",
+          "entity":"&#x1f527;",
+          "code":":wrench:",
+          "description":"Changing configuration files.",
+          "name":"wrench"
+        },
+        {
+          "emoji":"🐛",
+          "entity":"&#x1f41b;",
+          "code":":bug:",
+          "description":"Fixing a bug.",
+          "name":"bug"
+        },
+        {
+          "emoji":"🎨",
+          "entity":"&#x1f3a8;",
+          "code":":art:",
+          "description":"Improving structure / format of the code.",
+          "name":"art"
+        },
+        {
+          "emoji":"⚡️",
+          "entity":"&#x26a1;",
+          "code":":zap:",
+          "description":"Improving performance.",
+          "name":"zap"
+        },
+        {
+          "emoji":"🔥",
+          "entity":"&#x1f525;",
+          "code":":fire:",
+          "description":"Removing code or files.",
+          "name":"fire"
+        },
+        {
+          "emoji": "🚑",
+          "entity": "&#128657;",
+          "code": ":ambulance:",
+          "description": "Critical hotfix.",
+          "name": "ambulance"
+        },
+        {
+          "emoji":"📝",
+          "entity":"&#x1f4dd;",
+          "code":":memo:",
+          "description":"Writing docs.",
+          "name":"memo"
+        },
+        {
+          "emoji":"🚀",
+          "entity":"&#x1f680;",
+          "code":":rocket:",
+          "description":"Deploying stuff.",
+          "name":"rocket"
+        },
+        {
+          "emoji":"🎉",
+          "entity":"&#127881;",
+          "code":":tada:",
+          "description":"Initial commit.",
+          "name":"tada"
+        },
+        {
+          "emoji":"🔒",
+          "entity":"&#x1f512;",
+          "code":":lock:",
+          "description":"Fixing security issues.",
+          "name":"lock"
+        },
+        {
+          "emoji":"🔨",
+          "entity":"&#128736;",
+          "code":":hammer:",
+          "description":"Heavy refactoring.",
+          "name":"hammer"
+        },
+        {
+          "emoji":"✏️",
+          "entity":"&#59161;",
+          "code":":pencil2:",
+          "description":"Content changes.",
+          "name":"pencil"
+        },
+        {
+          "emoji":"💩",
+          "entity":"&#58613;",
+          "code":":hankey:",
+          "description":"Writing bad code that needs to be improved.",
+          "name":"hankey"
+        },
+        {
+          "emoji":"📦",
+          "entity":"&#1F4E6;",
+          "code":":package:",
+          "description":"Updating compiled files or packages.",
+          "name":"package"
+        },
+        {
+          "emoji":"🚚",
+          "entity":"&#1F69A;",
+          "code":":truck:",
+          "description":"Moving or renaming files.",
+          "name":"truck"
+        },
+        {
+          "emoji":"⬇️",
+          "entity":"⬇️",
+          "code":":arrow_down:",
+          "description":"Downgrading dependencies.",
+          "name":"arrow-down"
+        },
+        {
+          "emoji":"⬆️",
+          "entity":"⬆️",
+          "code":":arrow_up:",
+          "description":"Upgrading dependencies.",
+          "name":"arrow-up"
+        }
+      ]
+    }
   }
 }

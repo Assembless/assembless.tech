@@ -1,22 +1,6 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/26466516/107675788-31f54e00-6c77-11eb-96c9-58fd8a4c69ac.png" alt="Gatsby and TypeScript">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/gatsby-starter-ts?style=for-the-badge&color=24B36B&labelColor=000000">
-
-  <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
-    <img src="https://img.shields.io/twitter/follow/jpedroschmitz?style=for-the-badge&color=24B36B&labelColor=000000" alt="Follow @jpedroschmitz" />
-  </a>
-</p>
+# Assembless Website
 
 <br>
-
-A TypeScript starter for Gatsby. No plugins and styling. Exactly the necessary to start 🔥
-
-No plugins installed, great for advanced users.
 
 - 📏 **ESLint** — Pluggable JavaScript linter
 - 💖 **Prettier** - Opinionated Code Formatter
@@ -51,10 +35,25 @@ To view the project you can open `http://localhost:8000`.
 
 **After your pull request is merged**, you can safely delete your branch.
 
+## 🌲 Tree
+
+```
+src
+├───assets - Illustrations, photography, logos etc.
+├───components - Reusable components for general purposes.
+├───pages - Components representing Gatsby pages.
+├───segments - Components representing segments of the home page.
+│   ├───Contact 
+│   ├───Delivery
+│   ├───Hero
+│   └───Services
+└───utils - Hooks, methods, helpers etc.
+```
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
 
 ---
 
-Made with ♥ by João Pedro Schmitz
+Made with ♥ by Assembless
