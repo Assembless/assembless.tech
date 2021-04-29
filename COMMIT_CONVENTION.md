@@ -7,72 +7,72 @@ The commit body complements „this commit will...". For example: ":lipstick: Fi
 
 ## List of emojis that we use
 
-| Emoji | Entity    | Code                        | Description                                                   | Name                      | Version |
-| ----- | --------- | --------------------------- | ------------------------------------------------------------- | ------------------------- | ------- |
-| 🎨    | &#x1f3a8; | :art:                       | Improve structure / format of the code.                       | art                       | null    |
-| ⚡️   | &#x26a1;  | :zap:                       | Improve performance.                                          | zap                       | patch   |
-| 🔥    | &#x1f525; | :fire:                      | Remove code or files.                                         | fire                      | null    |
-| 🐛    | &#x1f41b; | :bug:                       | Fix a bug.                                                    | bug                       | patch   |
-| 🚑️   | &#128657; | :ambulance:                 | Critical hotfix.                                              | ambulance                 | patch   |
-| ✨    | &#x2728;  | :sparkles:                  | Introduce new features.                                       | sparkles                  | minor   |
-| 📝    | &#x1f4dd; | :memo:                      | Add or update documentation.                                  | memo                      | null    |
-| 🚀    | &#x1f680; | :rocket:                    | Deploy stuff.                                                 | rocket                    | null    |
-| 💄    | &#ff99cc; | :lipstick:                  | Add or update the UI and style files.                         | lipstick                  | patch   |
-| 🎉    | &#127881; | :tada:                      | Begin a project.                                              | tada                      | null    |
-| ✅    | &#x2705;  | :white_check_mark:          | Add or update tests.                                          | white-check-mark          | null    |
-| 🔒️   | &#x1f512; | :lock:                      | Fix security issues.                                          | lock                      | patch   |
-| 🔖    | &#x1f516; | :bookmark:                  | Release / Version tags.                                       | bookmark                  | null    |
-| 🚨    | &#x1f6a8; | :rotating_light:            | Fix compiler / linter warnings.                               | rotating-light            | null    |
-| 🚧    | &#x1f6a7; | :construction:              | Work in progress.                                             | construction              | null    |
-| 💚    | &#x1f49a; | :green_heart:               | Fix CI Build.                                                 | green-heart               | null    |
-| ⬇️    | ⬇️        | :arrow_down:                | Downgrade dependencies.                                       | arrow-down                | patch   |
-| ⬆️    | ⬆️        | :arrow_up:                  | Upgrade dependencies.                                         | arrow-up                  | patch   |
-| 📌    | &#x1F4CC; | :pushpin:                   | Pin dependencies to specific versions.                        | pushpin                   | patch   |
-| 👷    | &#x1f477; | :construction_worker:       | Add or update CI build system.                                | construction-worker       | null    |
-| 📈    | &#x1F4C8; | :chart_with_upwards_trend:  | Add or update analytics or track code.                        | chart-with-upwards-trend  | patch   |
-| ♻️    | &#x2672;  | :recycle:                   | Refactor code.                                                | recycle                   | null    |
-| ➕    | &#10133;  | :heavy_plus_sign:           | Add a dependency.                                             | heavy-plus-sign           | patch   |
-| ➖    | &#10134;  | :heavy_minus_sign:          | Remove a dependency.                                          | heavy-minus-sign          | patch   |
-| 🔧    | &#x1f527; | :wrench:                    | Add or update configuration files.                            | wrench                    | patch   |
-| 🔨    | &#128296; | :hammer:                    | Add or update development scripts.                            | hammer                    | null    |
-| 🌐    | &#127760; | :globe_with_meridians:      | Internationalization and localization.                        | globe-with-meridians      | patch   |
-| ✏️    | &#59161;  | :pencil2:                   | Fix typos.                                                    | pencil2                   | patch   |
-| 💩    | &#58613;  | :poop:                      | Write bad code that needs to be improved.                     | poop                      | null    |
-| ⏪️   | &#9194;   | :rewind:                    | Revert changes.                                               | rewind                    | patch   |
-| 🔀    | &#128256; | :twisted_rightwards_arrows: | Merge branches.                                               | twisted-rightwards-arrows | null    |
-| 📦️   | &#1F4E6;  | :package:                   | Add or update compiled files or packages.                     | package                   | patch   |
-| 👽️   | &#1F47D;  | :alien:                     | Update code due to external API changes.                      | alien                     | patch   |
-| 🚚    | &#1F69A;  | :truck:                     | Move or rename resources (e.g.: files, paths, routes).        | truck                     | null    |
-| 📄    | &#1F4C4;  | :page_facing_up:            | Add or update license.                                        | page-facing-up            | null    |
-| 💥    | &#x1f4a5; | :boom:                      | Introduce breaking changes.                                   | boom                      | major   |
-| 🍱    | &#1F371   | :bento:                     | Add or update assets.                                         | bento                     | patch   |
-| ♿️   | &#9855;   | :wheelchair:                | Improve accessibility.                                        | wheelchair                | patch   |
-| 💡    | &#128161; | :bulb:                      | Add or update comments in source code.                        | bulb                      | null    |
-| 🍻    | &#x1f37b; | :beers:                     | Write code drunkenly.                                         | beers                     | null    |
-| 💬    | &#128172; | :speech_balloon:            | Add or update text and literals.                              | speech-balloon            | patch   |
-| 🗃️    | &#128451; | :card_file_box:             | Perform database related changes.                             | card-file-box             | patch   |
-| 🔊    | &#128266; | :loud_sound:                | Add or update logs.                                           | loud-sound                | null    |
-| 🔇    | &#128263; | :mute:                      | Remove logs.                                                  | mute                      | null    |
-| 👥    | &#128101; | :busts_in_silhouette:       | Add or update contributor(s).                                 | busts-in-silhouette       | null    |
-| 🚸    | &#128696; | :children_crossing:         | Improve user experience / usability.                          | children-crossing         | patch   |
-| 🏗️    | &#1f3d7;  | :building_construction:     | Make architectural changes.                                   | building-construction     | null    |
-| 📱    | &#128241; | :iphone:                    | Work on responsive design.                                    | iphone                    | patch   |
-| 🤡    | &#129313; | :clown_face:                | Mock things.                                                  | clown-face                | null    |
-| 🥚    | &#129370; | :egg:                       | Add or update an easter egg.                                  | egg                       | patch   |
-| 🙈    | &#8bdfe7; | :see_no_evil:               | Add or update a .gitignore file.                              | see-no-evil               | null    |
-| 📸    | &#128248; | :camera_flash:              | Add or update snapshots.                                      | camera-flash              | null    |
-| ⚗️    | &#128248; | :alembic:                   | Perform experiments.                                          | alembic                   | patch   |
-| 🔍️   | &#128269; | :mag:                       | Improve SEO.                                                  | mag                       | patch   |
-| 🏷️    | &#127991; | :label:                     | Add or update types.                                          | label                     | patch   |
-| 🌱    | &#127793; | :seedling:                  | Add or update seed files.                                     | seedling                  | null    |
-| 🚩    | &#x1F6A9; | :triangular_flag_on_post:   | Add, update, or remove feature flags.                         | triangular-flag-on-post   | patch   |
-| 🥅    | &#x1F945; | :goal_net:                  | Catch errors.                                                 | goal-net                  | patch   |
-| 💫    | &#x1f4ab; | :dizzy:                     | Add or update animations and transitions.                     | animation                 | patch   |
-| 🗑️    | &#x1F5D1; | :wastebasket:               | Deprecate code that needs to be cleaned up.                   | wastebasket               | patch   |
-| 🛂    | &#x1F6C2; | :passport_control:          | Work on code related to authorization, roles and permissions. | passport-control          | patch   |
-| 🩹    | &#x1FA79; | :adhesive_bandage:          | Simple fix for a non-critical issue.                          | adhesive-bandage          | patch   |
-| 🧐    | &#x1F9D0; | :monocle_face:              | Data exploration/inspection.                                  | monocle-face              | null    |
-| ⚰️    | &#x26B0;  | :coffin:                    | Remove dead code.                                             | coffin                    | null    |
+| Emoji | Code                          | Description                                                   | Name                      | Version |
+| ----- | ----------------------------- | ------------------------------------------------------------- | ------------------------- | ------- |
+| 🎨    | `:art:`                       | Improve structure / format of the code.                       | art                       | null    |
+| ⚡️   | `:zap:`                       | Improve performance.                                          | zap                       | patch   |
+| 🔥    | `:fire:`                      | Remove code or files.                                         | fire                      | null    |
+| 🐛    | `:bug:`                       | Fix a bug.                                                    | bug                       | patch   |
+| 🚑️   | `:ambulance:`                 | Critical hotfix.                                              | ambulance                 | patch   |
+| ✨    | `:sparkles:`                  | Introduce new features.                                       | sparkles                  | minor   |
+| 📝    | `:memo:`                      | Add or update documentation.                                  | memo                      | null    |
+| 🚀    | `:rocket:`                    | Deploy stuff.                                                 | rocket                    | null    |
+| 💄    | `:lipstick:`                  | Add or update the UI and style files.                         | lipstick                  | patch   |
+| 🎉    | `:tada:`                      | Begin a project.                                              | tada                      | null    |
+| ✅    | `:white_check_mark:`          | Add or update tests.                                          | white-check-mark          | null    |
+| 🔒️   | `:lock:`                      | Fix security issues.                                          | lock                      | patch   |
+| 🔖    | `:bookmark:`                  | Release / Version tags.                                       | bookmark                  | null    |
+| 🚨    | `:rotating_light:`            | Fix compiler / linter warnings.                               | rotating-light            | null    |
+| 🚧    | `:construction:`              | Work in progress.                                             | construction              | null    |
+| 💚    | `:green_heart:`               | Fix CI Build.                                                 | green-heart               | null    |
+| ⬇️    | `:arrow_down:`                | Downgrade dependencies.                                       | arrow-down                | patch   |
+| ⬆️    | `:arrow_up:`                  | Upgrade dependencies.                                         | arrow-up                  | patch   |
+| 📌    | `:pushpin:`                   | Pin dependencies to specific versions.                        | pushpin                   | patch   |
+| 👷    | `:construction_worker:`       | Add or update CI build system.                                | construction-worker       | null    |
+| 📈    | `:chart_with_upwards_trend:`  | Add or update analytics or track code.                        | chart-with-upwards-trend  | patch   |
+| ♻️    | `:recycle:`                   | Refactor code.                                                | recycle                   | null    |
+| ➕    | `:heavy_plus_sign:`           | Add a dependency.                                             | heavy-plus-sign           | patch   |
+| ➖    | `:heavy_minus_sign:`          | Remove a dependency.                                          | heavy-minus-sign          | patch   |
+| 🔧    | `:wrench:`                    | Add or update configuration files.                            | wrench                    | patch   |
+| 🔨    | `:hammer:`                    | Add or update development scripts.                            | hammer                    | null    |
+| 🌐    | `:globe_with_meridians:`      | Internationalization and localization.                        | globe-with-meridians      | patch   |
+| ✏️    | `:pencil2:`                   | Fix typos.                                                    | pencil2                   | patch   |
+| 💩    | `:poop:`                      | Write bad code that needs to be improved.                     | poop                      | null    |
+| ⏪️   | `:rewind:`                    | Revert changes.                                               | rewind                    | patch   |
+| 🔀    | `:twisted_rightwards_arrows:` | Merge branches.                                               | twisted-rightwards-arrows | null    |
+| 📦️   | `:package:`                   | Add or update compiled files or packages.                     | package                   | patch   |
+| 👽️   | `:alien:`                     | Update code due to external API changes.                      | alien                     | patch   |
+| 🚚    | `:truck:`                     | Move or rename resources (e.g.: files, paths, routes).        | truck                     | null    |
+| 📄    | `:page_facing_up:`            | Add or update license.                                        | page-facing-up            | null    |
+| 💥    | `:boom:`                      | Introduce breaking changes.                                   | boom                      | major   |
+| 🍱    | `:bento:`                     | Add or update assets.                                         | bento                     | patch   |
+| ♿️   | `:wheelchair:`                | Improve accessibility.                                        | wheelchair                | patch   |
+| 💡    | `:bulb:`                      | Add or update comments in source code.                        | bulb                      | null    |
+| 🍻    | `:beers:`                     | Write code drunkenly.                                         | beers                     | null    |
+| 💬    | `:speech_balloon:`            | Add or update text and literals.                              | speech-balloon            | patch   |
+| 🗃️    | `:card_file_box:`             | Perform database related changes.                             | card-file-box             | patch   |
+| 🔊    | `:loud_sound:`                | Add or update logs.                                           | loud-sound                | null    |
+| 🔇    | `:mute:`                      | Remove logs.                                                  | mute                      | null    |
+| 👥    | `:busts_in_silhouette:`       | Add or update contributor(s).                                 | busts-in-silhouette       | null    |
+| 🚸    | `:children_crossing:`         | Improve user experience / usability.                          | children-crossing         | patch   |
+| 🏗️    | `:building_construction:`     | Make architectural changes.                                   | building-construction     | null    |
+| 📱    | `:iphone:`                    | Work on responsive design.                                    | iphone                    | patch   |
+| 🤡    | `:clown_face:`                | Mock things.                                                  | clown-face                | null    |
+| 🥚    | `:egg:`                       | Add or update an easter egg.                                  | egg                       | patch   |
+| 🙈    | `:see_no_evil:`               | Add or update a .gitignore file.                              | see-no-evil               | null    |
+| 📸    | `:camera_flash:`              | Add or update snapshots.                                      | camera-flash              | null    |
+| ⚗️    | `:alembic:`                   | Perform experiments.                                          | alembic                   | patch   |
+| 🔍️   | `:mag:`                       | Improve SEO.                                                  | mag                       | patch   |
+| 🏷️    | `:label:`                     | Add or update types.                                          | label                     | patch   |
+| 🌱    | `:seedling:`                  | Add or update seed files.                                     | seedling                  | null    |
+| 🚩    | `:triangular_flag_on_post:`   | Add, update, or remove feature flags.                         | triangular-flag-on-post   | patch   |
+| 🥅    | `:goal_net:`                  | Catch errors.                                                 | goal-net                  | patch   |
+| 💫    | `:dizzy:`                     | Add or update animations and transitions.                     | animation                 | patch   |
+| 🗑️    | `:wastebasket:`               | Deprecate code that needs to be cleaned up.                   | wastebasket               | patch   |
+| 🛂    | `:passport_control:`          | Work on code related to authorization, roles and permissions. | passport-control          | patch   |
+| 🩹    | `:adhesive_bandage:`          | Simple fix for a non-critical issue.                          | adhesive-bandage          | patch   |
+| 🧐    | `:monocle_face:`              | Data exploration/inspection.                                  | monocle-face              | null    |
+| ⚰️    | `:coffin:`                    | Remove dead code.                                             | coffin                    | null    |
 
 ## How to decide which emoji to use
 
