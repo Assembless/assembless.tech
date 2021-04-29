@@ -15,19 +15,23 @@ const styles = (theme: Theme) =>
       alignItems: `center`,
       justifyContent: `center`,
 
-      paddingTop: `240px`,
+      paddingTop: `330px`,
     },
     title: {
       fontSize: 36,
 
+      marginBottom: 44,
+
       whiteSpace: `pre-wrap`,
     },
     label: {
-      fontSize: 22,
-
-      opacity: 0.65,
-
+      fontSize: 27,
+      fontWeight: 300,
       textTransform: `lowercase`,
+
+      opacity: 0.6,
+
+      marginBottom: 14,
     },
   });
 

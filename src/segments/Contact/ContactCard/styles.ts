@@ -11,7 +11,7 @@ const styles = (theme: Theme) =>
       width: `90%`,
       height: 382,
 
-      padding: `0 3%`,
+      padding: `0 3.65%`,
       marginTop: theme.spacing(4),
 
       display: `flex`,
