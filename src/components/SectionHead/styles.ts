@@ -8,19 +8,23 @@ const styles = (theme: Theme) =>
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,
-      marginBottom: `100px`,
+
+      marginBottom: theme.spacing(25),
     },
 
     sectionTitle: {
-      fontSize: `27px`,
-      color: theme.palette.primary.main,
-      opacity: 0.6,
+      fontSize: 27,
       letterSpacing: `1px`,
       fontWeight: 300,
+
+      color: theme.palette.primary.main,
+      opacity: 0.6,
+
+      marginBottom: 14,
     },
 
     sectionSubTitle: {
-      fontSize: `36px`,
+      fontSize: 36,
       textAlign: `center`,
       whiteSpace: `pre-line`,
     },
