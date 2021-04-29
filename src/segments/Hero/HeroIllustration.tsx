@@ -32,7 +32,7 @@ const HeroIllustration = ({
       style={style}
     >
       <StaticImage
-        src="../../assets/phone_hand_illustration.png"
+        src="../../assets/29_Hand with phone_01.png"
         alt="Phone hand illustration"
         height={632}
         className={classes.illustration}

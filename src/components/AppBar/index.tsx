@@ -6,6 +6,7 @@ import {
   Toolbar,
   AppBar as MaterialAppBar,
   Button,
+  Container,
 } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
@@ -38,61 +39,63 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
       style={style}
     >
       <Toolbar>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          width="100%"
-          className={classes.wrapper}
-        >
-          <Logotype />
-
+        <Container>
           <Box
-            component="ul"
             display="flex"
+            justifyContent="space-between"
             alignItems="center"
-            className={classes.menuBar}
-            role="menu"
+            width="100%"
+            className={classes.wrapper}
           >
-            <Button
-              component="li"
-              href="https://google.com/"
-              style={{ margin: `0 6px` }}
-              role="menuitem"
-            >
-              {translated.services}
-            </Button>
+            <Logotype />
 
-            <Button
-              component="li"
-              href="https://google.com/"
-              style={{ margin: `0 6px` }}
-              role="menuitem"
+            <Box
+              component="ul"
+              display="flex"
+              alignItems="center"
+              className={classes.menuBar}
+              role="menu"
             >
-              {translated.aboutUs}
-            </Button>
+              <Button
+                component="li"
+                href="https://google.com/"
+                className={classes.menuItem}
+                role="menuitem"
+              >
+                {translated.services}
+              </Button>
 
-            <Button
-              component="li"
-              href="https://google.com/"
-              style={{ margin: `0 6px` }}
-              role="menuitem"
-            >
-              {translated.deliver}
-            </Button>
+              <Button
+                component="li"
+                href="https://google.com/"
+                className={classes.menuItem}
+                role="menuitem"
+              >
+                {translated.aboutUs}
+              </Button>
 
-            <Button
-              component="li"
-              className={classes.contactUsButton}
-              color="primary"
-              variant="contained"
-              size="small"
-              role="menuitem"
-            >
-              {translated.contactUs}
-            </Button>
+              <Button
+                component="li"
+                href="https://google.com/"
+                className={classes.menuItem}
+                role="menuitem"
+              >
+                {translated.deliver}
+              </Button>
+
+              <Button
+                component="li"
+                className={classes.contactUsButton}
+                color="primary"
+                variant="contained"
+                size="small"
+                role="menuitem"
+              >
+                {translated.contactUs}
+              </Button>
+            </Box>
           </Box>
-        </Box>
+        </Container>
       </Toolbar>
     </MaterialAppBar>
   );

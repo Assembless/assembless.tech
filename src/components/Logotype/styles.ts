@@ -10,6 +10,7 @@ const styles = (theme: Theme) =>
       color: theme.palette.primary.main,
       fontSize: 22,
       fontWeight: 600,
+      letterSpacing: `1px`,
     },
   });
 
