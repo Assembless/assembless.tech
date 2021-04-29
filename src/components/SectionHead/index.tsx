@@ -22,11 +22,12 @@ const SectionHead = ({
   style,
   title,
   subTitle,
+  id,
 }: SectionHeadProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Box className={cx(classes.root, className)} style={style}>
+    <Box className={cx(classes.root, className)} style={style} id={id}>
       <Typography variant="h2" className={classes.sectionTitle}>
         {title}
       </Typography>
@@ -43,6 +44,7 @@ type SectionHeadProps = {
   style?: React.CSSProperties;
   title: string;
   subTitle: string;
+  id: string;
 };
 
 // Default props.

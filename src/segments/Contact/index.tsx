@@ -27,7 +27,7 @@ const Contact = ({ className, style }: ContactProps): JSX.Element => {
 
   return (
     <Container className={cx(classes.root, className)} style={style}>
-      <Box style={{ width: `100%`, position: `relative` }}>
+      <Box style={{ width: `100%`, position: `relative` }} id="contact">
         <Box>
           <Typography className={classes.label}>{translated.label}</Typography>
           <Typography variant="h3" className={classes.title}>

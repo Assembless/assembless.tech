@@ -33,6 +33,7 @@ const ButtonContainer = ({
         variant="outlined"
         color="primary"
         size="large"
+        href="#contact"
       >
         {translated.contact}
       </Button>

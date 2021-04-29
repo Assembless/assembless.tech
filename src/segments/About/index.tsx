@@ -1,17 +1,15 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { makeStyles, Box } from '@material-ui/core';
 import cx from 'classnames';
-import { Facebook, GitHub, Twitter } from '@material-ui/icons';
 
 // Project scoped imports.
 
 // Component scoped imports.
 import styles from './styles';
-import translations from './trans';
-import PersonImage from './PersonImage';
-import TextArea from './Subheader';
+import PersonImage from './PersonImage/index';
+import Subheader from './Subheader';
+import Media from './SocialMedia';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -23,31 +21,15 @@ const useStyles = makeStyles(styles);
  * @author Assembless <support@assembless.tech>
  */
 const About = ({ className, style }: AboutProps): JSX.Element => {
-  const translated = useLittera(translations);
   const classes = useStyles();
 
   return (
-    <Box className={cx(classes.root, className)} style={style}>
+    <Box className={cx(classes.root, className)} style={style} id="aboutUs">
       <Box className={classes.subheader}>
-        <TextArea />
-        <Box className={classes.mediaWrapper}>
-          <GitHub className={classes.icon} style={{ fontSize: `3rem` }} />
-          <Facebook
-            className={classes.icon}
-            style={{ fontSize: `3rem`, borderRadius: `100px` }}
-          />
-          <Twitter className={classes.icon} style={{ fontSize: `3rem` }} />
-        </Box>
+        <Subheader />
+        <Media />
       </Box>
-      <Box className={cx(classes.imageSection)}>
-        <PersonImage />
-        <Typography variant="body2" component="p">
-          {translated.name}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {translated.ceo}
-        </Typography>
-      </Box>
+      <PersonImage />
     </Box>
   );
 };

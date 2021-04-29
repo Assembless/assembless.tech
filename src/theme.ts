@@ -38,6 +38,9 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        html: {
+          scrollBehavior: `smooth`,
+        },
         body: {
           minHeight: `100vh`,
           backgroundColor: `#FFF`,
@@ -87,6 +90,13 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiStepLabel: {
+      active: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        fontWeight: `bold !important`,
+      },
+    },
     MuiOutlinedInput: {
       root: {
         color: `#FFF`,
@@ -125,13 +135,6 @@ const theme = createMuiTheme({
     MuiSelect: {
       icon: {
         color: `#FFF`,
-      },
-    },
-    MuiStepLabel: {
-      active: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        fontWeight: `bold !important`,
       },
     },
   },

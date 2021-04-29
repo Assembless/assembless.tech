@@ -41,6 +41,7 @@ const HeroExploreButton = ({
         variant="outlined"
         className={classes.exploreButton}
         color="primary"
+        href="#services"
       >
         {translated.explore}
       </Button>

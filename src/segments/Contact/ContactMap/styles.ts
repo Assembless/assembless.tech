@@ -10,7 +10,7 @@ const styles = (theme: Theme) =>
       borderRadius: theme.shape.borderRadius * 3,
 
       width: `60%`,
-      height: 480,
+      height: 460,
 
       overflow: `hidden`,
 
@@ -21,7 +21,7 @@ const styles = (theme: Theme) =>
       position: `absolute`,
 
       right: `1.2%`,
-      top: 0,
+      bottom: 49,
 
       [theme.breakpoints.down(`sm`)]: {
         display: `none`,

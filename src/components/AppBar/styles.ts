@@ -22,6 +22,15 @@ const styles = (theme: Theme) =>
       },
     },
 
+    menuItem: {
+      fontSize: `15px`,
+      textTransform: `capitalize`,
+      letterSpacing: `0.8px`,
+
+      margin: `0 12px`,
+      opacity: 0.9,
+    },
+
     contactUsButton: {
       backgroundColor: theme.palette.primary.main,
       marginLeft: 30,
