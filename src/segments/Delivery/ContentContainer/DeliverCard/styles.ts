@@ -29,7 +29,7 @@ const styles = (theme: Theme) =>
         left: 0,
 
         backgroundColor: theme.palette.primary.main,
-        borderRadius: `${theme.shape.borderRadius} 0 0 ${theme.shape.borderRadius}`,
+        borderRadius: `${theme.shape.borderRadius}px 0 0 ${theme.shape.borderRadius}px`,
       },
     },
 
