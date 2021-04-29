@@ -29,6 +29,8 @@ const styles = (theme: Theme) =>
       fontWeight: 300,
       textTransform: `lowercase`,
 
+      letterSpacing: 1,
+
       opacity: 0.6,
 
       marginBottom: 14,
