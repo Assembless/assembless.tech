@@ -6,6 +6,9 @@ const theme = createMuiTheme({
       dark: `#121212`,
       main: `#222`,
     },
+    secondary: {
+      main: `#FFF`,
+    },
     background: {
       default: `#FFF`,
       paper: `#FFF`,
@@ -82,6 +85,46 @@ const theme = createMuiTheme({
 
           color: `#FFF`,
         },
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        color: `#FFF`,
+
+        '&:hover': {
+          borderColor: `#FFF`,
+          color: `#FFF`,
+        },
+      },
+      input: {
+        color: `#FFF`,
+      },
+      notchedOutline: {
+        borderColor: `#FFF !important`,
+        color: `#FFF`,
+
+        '&:hover': {
+          borderColor: `#FFF`,
+          color: `#FFF`,
+        },
+      },
+      colorSecondary: {
+        color: `#FFF`,
+
+        '&:hover': {
+          borderColor: `#FFF`,
+          color: `#FFF`,
+        },
+      },
+    },
+    MuiInputLabel: {
+      root: {
+        color: `#FFF`,
+      },
+    },
+    MuiSelect: {
+      icon: {
+        color: `#FFF`,
       },
     },
     MuiStepLabel: {
