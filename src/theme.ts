@@ -35,6 +35,9 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        html: {
+          scrollBehavior: `smooth`,
+        },
         body: {
           minHeight: `100vh`,
           backgroundColor: `#FFF`,

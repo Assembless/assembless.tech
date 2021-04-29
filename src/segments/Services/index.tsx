@@ -38,6 +38,7 @@ const Services = ({ className, style }: ServicesProps): JSX.Element => {
         <SectionHead
           title={translated.services}
           subTitle={translated.subTitle}
+          id="services"
         />
         <CardsContainer />
         <ButtonContainer />

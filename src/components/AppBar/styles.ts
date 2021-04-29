@@ -23,7 +23,7 @@ const styles = (theme: Theme) =>
     },
 
     menuItem: {
-      fontSize: `16px`,
+      fontSize: `15px`,
       textTransform: `capitalize`,
       letterSpacing: `0.8px`,
 

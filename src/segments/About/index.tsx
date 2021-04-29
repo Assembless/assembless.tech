@@ -27,7 +27,7 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Box className={cx(classes.root, className)} style={style}>
+    <Box className={cx(classes.root, className)} style={style} id="aboutUs">
       <Box className={classes.subheader}>
         <TextArea />
         <Box className={classes.mediaWrapper}>

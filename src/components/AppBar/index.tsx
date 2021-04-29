@@ -54,42 +54,25 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
               display="flex"
               alignItems="center"
               className={classes.menuBar}
-              role="menu"
             >
-              <Button
-                component="li"
-                href="https://google.com/"
-                className={classes.menuItem}
-                role="menuitem"
-              >
+              <Button href="#services" className={classes.menuItem}>
                 {translated.services}
               </Button>
 
-              <Button
-                component="li"
-                href="https://google.com/"
-                className={classes.menuItem}
-                role="menuitem"
-              >
+              <Button href="#aboutUs" className={classes.menuItem}>
                 {translated.aboutUs}
               </Button>
 
-              <Button
-                component="li"
-                href="https://google.com/"
-                className={classes.menuItem}
-                role="menuitem"
-              >
+              <Button href="#deliver" className={classes.menuItem}>
                 {translated.deliver}
               </Button>
 
               <Button
-                component="li"
+                href="#contact"
                 className={classes.contactUsButton}
                 color="primary"
                 variant="contained"
                 size="small"
-                role="menuitem"
               >
                 {translated.contactUs}
               </Button>

@@ -31,7 +31,11 @@ const Delivery = ({ className, style }: DeliveryProps): JSX.Element => {
       className={cx(classes.root, className)}
       style={style}
     >
-      <SectionHead title={translated.deliver} subTitle={translated.subTitle} />
+      <SectionHead
+        title={translated.deliver}
+        subTitle={translated.subTitle}
+        id="deliver"
+      />
       <ContentContainer />
     </Box>
   );
