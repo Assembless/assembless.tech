@@ -15,12 +15,14 @@ import { preset } from '@/utils/translations';
 import theme from '@/theme';
 import AppBar from '@/components/AppBar';
 
-// Component scope imports.
 import HeroSegment from '../segments/Hero';
 import ContactSegment from '../segments/Contact';
 import ServicesSegment from '../segments/Services';
-import Delivery from '../segments/Delivery';
-import About from '../segments/About';
+import DeliverySegment from '../segments/Delivery';
+import AboutSegment from '../segments/About';
+import FooterSegment from '../segments/Footer';
+
+// Component scope imports.
 
 const Home: React.FC<PageProps> = () => (
   <>
@@ -45,9 +47,10 @@ const Home: React.FC<PageProps> = () => (
           <AppBar />
           <HeroSegment />
           <ServicesSegment />
-          <About />
-          <Delivery />
+          <AboutSegment />
+          <DeliverySegment />
           <ContactSegment />
+          <FooterSegment />
         </LitteraProvider>
       </ThemeProvider>
     </main>

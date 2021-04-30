@@ -8,7 +8,6 @@ const styles = (theme: Theme) =>
       display: `flex`,
       justifyContent: `center`,
       position: `relative`,
-      height: 37,
     },
 
     btn: {

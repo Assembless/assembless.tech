@@ -9,6 +9,7 @@ const styles = (theme: Theme) =>
       padding: `${theme.spacing(35)}px 0`,
       position: `relative`,
       marginTop: theme.spacing(25),
+      marginBottom: theme.spacing(25),
     },
 
     backgroundBox: {
