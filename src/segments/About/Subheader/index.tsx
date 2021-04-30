@@ -25,11 +25,7 @@ const Subheader = ({ className, style }: SubheaderProps): JSX.Element => {
 
   return (
     <Box className={cx(className)} style={style}>
-      <Typography
-        className={cx(classes.title, classes.grayText)}
-        variant="h3"
-        component="h3"
-      >
+      <Typography className={classes.title} variant="h3" component="h3">
         {translated.about_us}
       </Typography>
       <Typography className={classes.title_2} variant="h2" component="h2">

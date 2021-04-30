@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box } from '@material-ui/core';
+import { makeStyles, Box, IconButton } from '@material-ui/core';
 import cx from 'classnames';
 import { Facebook, GitHub, Twitter } from '@material-ui/icons';
 
@@ -23,12 +23,15 @@ const SocialMedia = ({ className, style }: SocialMediaProps): JSX.Element => {
 
   return (
     <Box className={cx(classes.mediaWrapper, className)} style={style}>
-      <GitHub className={classes.icon} style={{ fontSize: `3rem` }} />
-      <Facebook
-        className={classes.icon}
-        style={{ fontSize: `3rem`, borderRadius: `100px` }}
-      />
-      <Twitter className={classes.icon} style={{ fontSize: `3rem` }} />
+      <IconButton href="#services" size="small" color="primary">
+        <GitHub className={classes.icon} style={{ fontSize: `3rem` }} />
+      </IconButton>
+      <IconButton href="#services" size="small" color="primary">
+        <Facebook className={classes.icon} style={{ fontSize: `3rem` }} />
+      </IconButton>
+      <IconButton href="#services" size="small" color="primary">
+        <Twitter className={classes.icon} style={{ fontSize: `3rem` }} />
+      </IconButton>
     </Box>
   );
 };

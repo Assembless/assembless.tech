@@ -7,22 +7,29 @@ const styles = (theme: Theme) =>
       display: `flex`,
       justifyContent: `space-between`,
       alignItems: `center`,
-      margin: `50px 0`,
 
-      width: `203px`,
-      padding: `5px`,
-      backgroundColor: `#F4F4F4`,
-      borderRadius: `25px`,
+      width: 230,
+      height: 60,
 
-      [theme.breakpoints.down(`sm`)]: {
+      padding: 3.5,
+      marginTop: theme.spacing(12.5),
+
+      backgroundColor: theme.palette.background.patch.main,
+
+      borderRadius: `200px`,
+
+      /*     [theme.breakpoints.down(`sm`)]: {
         margin: `50px auto`,
-      },
+      }, */
     },
     icon: {
       backgroundColor: `#fff`,
+
       borderRadius: `50%`,
-      padding: `10px`,
+
+      padding: theme.spacing(2.25),
     },
+
     /** Mobile view */
     [theme.breakpoints.down(`sm`)]: {
       title: {

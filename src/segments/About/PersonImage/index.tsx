@@ -26,8 +26,10 @@ const PersonImage = ({ className, style }: PersonImageProps): JSX.Element => {
 
   return (
     <Box className={cx(classes.root, className)} style={style}>
-      {/* add to styles */}
-      <Box position="relative" style={{ height: `500px` }}>
+      <Box
+        position="relative"
+        style={{ height: `500px`, width: `500px`, marginBottom: 14 }}
+      >
         <StaticImage
           alt="Person"
           src="../../assets/mike.png"
@@ -54,10 +56,9 @@ const PersonImage = ({ className, style }: PersonImageProps): JSX.Element => {
           {translated.name}
         </Typography>
         <Typography
-          className={classes.nameParagraph}
+          className={classes.roleParagraph}
           variant="body2"
           component="p"
-          style={{ color: `rgba(0, 0, 0, 0.6)` }}
         >
           {translated.ceo}
         </Typography>

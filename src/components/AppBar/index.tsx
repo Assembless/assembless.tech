@@ -54,16 +54,29 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
               display="flex"
               alignItems="center"
               className={classes.menuBar}
+              role="menu"
             >
-              <Button href="#services" className={classes.menuItem}>
+              <Button
+                href="#services"
+                className={classes.menuItem}
+                role="menuitem"
+              >
                 {translated.services}
               </Button>
 
-              <Button href="#aboutUs" className={classes.menuItem}>
+              <Button
+                href="#aboutUs"
+                className={classes.menuItem}
+                role="menuitem"
+              >
                 {translated.aboutUs}
               </Button>
 
-              <Button href="#deliver" className={classes.menuItem}>
+              <Button
+                href="#deliver"
+                className={classes.menuItem}
+                role="menuitem"
+              >
                 {translated.deliver}
               </Button>
 
@@ -73,6 +86,7 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
                 color="primary"
                 variant="contained"
                 size="small"
+                role="menuitem"
               >
                 {translated.contactUs}
               </Button>

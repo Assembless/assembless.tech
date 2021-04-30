@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box } from '@material-ui/core';
+import { makeStyles, Box, Container } from '@material-ui/core';
 import cx from 'classnames';
 
 // Project scoped imports.
@@ -24,13 +24,17 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Box className={cx(classes.root, className)} style={style} id="aboutUs">
-      <Box className={classes.subheader}>
-        <Subheader />
-        <Media />
+    <Container id="aboutUs">
+      <Box className={cx(classes.root, className)} style={style}>
+        <Box className={classes.contentContainer}>
+          <Box className={classes.subheader}>
+            <Subheader />
+            <Media />
+          </Box>
+          <PersonImage />
+        </Box>
       </Box>
-      <PersonImage />
-    </Box>
+    </Container>
   );
 };
 
