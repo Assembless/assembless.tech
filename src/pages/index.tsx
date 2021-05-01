@@ -27,7 +27,7 @@ import FooterSegment from '../segments/Footer';
 // Component scope imports.
 
 const Home: React.FC<PageProps> = () => {
-  const isMobile = useMediaQuery(`(max-width: 600px)`);
+  const isMobile = useMediaQuery(`(max-width: 960px)`);
 
   return (
     <>

@@ -8,12 +8,15 @@ const styles = (theme: Theme) =>
       backgroundColor: theme.palette.background.default,
       boxShadow: `0 9px 38px rgba(0,0,0, 0.07)`,
 
-      padding: theme.spacing(15, 11.5),
+      padding: theme.spacing(13, 11),
+      margin: `0 ${theme.spacing(2.5)}px`,
+
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,
+
       borderRadius: theme.shape.borderRadius,
-      margin: `0 ${theme.spacing(2.5)}px`,
+
       transition: `all 0.25s ease`,
       transformStyle: `preserve-3d`,
 
@@ -38,19 +41,25 @@ const styles = (theme: Theme) =>
 
     title: {
       fontSize: `24px`,
-      marginBottom: theme.spacing(4.5),
-      whiteSpace: `pre-line`,
       textAlign: `center`,
+
+      marginBottom: theme.spacing(4.5),
+
+      whiteSpace: `pre-line`,
+
       pointerEvents: `none`,
     },
 
     subtitle: {
       fontSize: `17px`,
-      color: theme.palette.primary.main,
-      opacity: 0.65,
-      letterSpacing: `1px`,
       whiteSpace: `pre-line`,
+      letterSpacing: `1px`,
       textAlign: `center`,
+
+      color: theme.palette.primary.main,
+
+      opacity: 0.65,
+
       pointerEvents: `none`,
     },
   });

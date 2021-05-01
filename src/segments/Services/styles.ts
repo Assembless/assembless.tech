@@ -6,8 +6,15 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: theme.palette.background.patch.main,
+
       padding: `${theme.spacing(10)}px 0`,
+
       minHeight: `100vh`,
+
+      display: `flex`,
+      flexDirection: `column`,
+      alignItems: `center`,
+      justifyContent: `center`,
 
       [theme.breakpoints.down(`sm`)]: {
         position: `relative`,

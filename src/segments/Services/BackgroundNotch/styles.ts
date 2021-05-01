@@ -6,16 +6,25 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       width: `30%`,
-      height: `50px`,
+      height: 50,
+
       position: `absolute`,
-      display: `flex`,
       zIndex: -1,
+
+      display: `flex`,
+
+      [theme.breakpoints.down(`md`)]: {
+        height: 35,
+      },
     },
 
     innerBox: {
       position: `relative`,
+
       backgroundColor: theme.palette.background.patch.main,
+
       width: `100%`,
+
       borderRadius: `0 40px 0 0`,
     },
 
@@ -23,16 +32,24 @@ const styles = (theme: Theme) =>
       position: `absolute`,
       bottom: 0,
       right: 0,
+
       backgroundColor: theme.palette.background.patch.main,
-      width: `56px`,
-      height: `40px`,
+
+      width: 56,
+      height: 40,
+
       transform: `translate(97%,0)`,
       zIndex: -2,
+
+      [theme.breakpoints.down(`md`)]: {
+        transform: `translate(90%,0)`,
+      },
     },
 
     innerLayer: {
       width: `100%`,
       height: `100%`,
+
       backgroundColor: theme.palette.background.paper,
       borderRadius: `0 0 0 60%`,
     },

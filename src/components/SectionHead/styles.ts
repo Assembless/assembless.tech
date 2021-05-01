@@ -9,7 +9,11 @@ const styles = (theme: Theme) =>
       flexDirection: `column`,
       alignItems: `center`,
 
-      marginBottom: theme.spacing(25),
+      marginBottom: theme.spacing(20),
+
+      [theme.breakpoints.down(`md`)]: {
+        marginBottom: theme.spacing(12.5),
+      },
     },
 
     sectionTitle: {
