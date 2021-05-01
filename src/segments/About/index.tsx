@@ -28,13 +28,11 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      className="section"
+      className={cx(classes.root, className, `section`)}
+      style={style}
+      id="aboutUs"
     >
-      <Container
-        className={cx(classes.root, className)}
-        style={style}
-        id="aboutUs"
-      >
+      <Container>
         <Box className={classes.contentContainer}>
           <Box className={classes.subheader}>
             <Subheader />

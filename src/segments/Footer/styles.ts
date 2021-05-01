@@ -7,7 +7,10 @@ const styles = (theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
 
-      height: `100vh`,
+      [theme.breakpoints.down(`md`)]: {
+        minHeight: `100vh`,
+        paddingTop: theme.spacing(10),
+      },
     },
 
     linkBox: {
