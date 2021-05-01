@@ -18,7 +18,7 @@ const styles = (theme: Theme) =>
       padding: `${theme.spacing(2.5)}px ${theme.spacing(10)}px`,
 
       [theme.breakpoints.down(1062)]: {
-        marginTop: theme.spacing(7.5),
+        /*  marginTop: theme.spacing(7.5), */
       },
     },
   });

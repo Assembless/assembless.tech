@@ -7,6 +7,7 @@ module.exports = {
     `gatsby-transformer-sharp`, // Needed for dynamic images
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-top-layout',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
     {
       resolve: 'gatsby-plugin-material-ui',
       // If you want to use styled components you should change the injection order.
