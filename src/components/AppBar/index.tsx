@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { useLittera } from 'react-littera';
 import cx from 'classnames';
+import { navigate } from 'gatsby';
 
 // Project scoped imports.
 import Logotype from '@/components/Logotype';
@@ -27,9 +28,17 @@ const useStyles = makeStyles(styles);
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
+const AppBar = ({
+  className,
+  style,
+  scrollToSection,
+}: AppBarProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
+
+  const handleScrollTo = (index: number) => () => {
+    scrollToSection(index);
+  };
 
   return (
     <MaterialAppBar
@@ -57,7 +66,7 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
               role="menu"
             >
               <Button
-                href="#services"
+                onClick={handleScrollTo(2)}
                 className={classes.menuItem}
                 role="menuitem"
               >
@@ -65,7 +74,7 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
               </Button>
 
               <Button
-                href="#aboutUs"
+                onClick={handleScrollTo(3)}
                 className={classes.menuItem}
                 role="menuitem"
               >
@@ -73,7 +82,8 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
               </Button>
 
               <Button
-                href="#deliver"
+                //  WTF?! why the sections index is +2 than the previous one..? o.O
+                onClick={handleScrollTo(5)}
                 className={classes.menuItem}
                 role="menuitem"
               >
@@ -81,7 +91,8 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
               </Button>
 
               <Button
-                href="#contact"
+                //  WTF?! dah must be dah voodoo o.O
+                onClick={handleScrollTo(6)}
                 className={classes.contactUsButton}
                 color="primary"
                 variant="contained"
@@ -102,12 +113,18 @@ const AppBar = ({ className, style }: AppBarProps): JSX.Element => {
 type AppBarProps = {
   className?: string;
   style?: React.CSSProperties;
+  scrollToSection?: (index: number) => void;
 };
+
+const segmentsMap = [`hero`, `services`, `about`, `deliver`, `contact`];
 
 // Default props.
 AppBar.defaultProps = {
   className: ``,
   style: {},
+  scrollToSection: (num: number) => {
+    navigate(`#${segmentsMap[num - 1]}`);
+  },
 };
 
 // Time to export! 🚚
