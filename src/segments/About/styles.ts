@@ -3,7 +3,11 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const styles = (theme: Theme) =>
   createStyles({
-    root: {},
+    root: {
+      [theme.breakpoints.down(`md`)]: {
+        padding: theme.spacing(32.5, 0, 25, 0),
+      },
+    },
 
     contentContainer: {
       display: `flex`,
