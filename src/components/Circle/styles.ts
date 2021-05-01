@@ -7,7 +7,7 @@ const styles = (theme: Theme) =>
     root: {
       // Container styles...
       position: `absolute`,
-      backgroundColor: theme.palette.background.patch.dark,
+      backgroundColor: theme.palette.background.patch.main,
       zIndex: 0,
       borderRadius: `100%`,
     },

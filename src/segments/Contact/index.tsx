@@ -26,19 +26,27 @@ const Contact = ({ className, style }: ContactProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Container className={cx(classes.root, className)} style={style}>
-      <Box style={{ width: `100%`, position: `relative` }} id="contact">
-        <Box>
-          <Typography className={classes.label}>{translated.label}</Typography>
-          <Typography variant="h3" className={classes.title}>
-            {translated.title}
-          </Typography>
-        </Box>
+    <Box
+      component="section"
+      className={cx(classes.root, className)}
+      style={style}
+    >
+      <Container>
+        <Box style={{ width: `100%`, position: `relative` }} id="contact">
+          <Box>
+            <Typography className={classes.label}>
+              {translated.label}
+            </Typography>
+            <Typography variant="h3" className={classes.title}>
+              {translated.title}
+            </Typography>
+          </Box>
 
-        <ContactCard />
-        <ContactMap />
-      </Box>
-    </Container>
+          <ContactCard />
+          <ContactMap />
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

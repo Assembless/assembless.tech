@@ -24,8 +24,17 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Container id="aboutUs">
-      <Box className={cx(classes.root, className)} style={style}>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      className="section"
+    >
+      <Container
+        className={cx(classes.root, className)}
+        style={style}
+        id="aboutUs"
+      >
         <Box className={classes.contentContainer}>
           <Box className={classes.subheader}>
             <Subheader />
@@ -33,8 +42,8 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
           </Box>
           <PersonImage />
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 

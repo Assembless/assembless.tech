@@ -11,7 +11,7 @@ import HeroIllustration from './HeroIllustration';
 import HeroExploreButton from './HeroExploreButton';
 import styles from './styles';
 
-// Creates a hook for generating classnames.
+// Creates a hk for generating classnames.
 const useStyles = makeStyles(styles);
 
 /**

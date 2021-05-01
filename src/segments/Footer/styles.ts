@@ -7,8 +7,7 @@ const styles = (theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
 
-      paddingTop: theme.spacing(26),
-      marginTop: theme.spacing(22),
+      height: `100vh`,
     },
 
     linkBox: {

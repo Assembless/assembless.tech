@@ -6,10 +6,12 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: theme.palette.background.patch.main,
-      padding: `${theme.spacing(35)}px 0`,
-      position: `relative`,
-      marginTop: theme.spacing(25),
-      marginBottom: theme.spacing(25),
+      padding: `${theme.spacing(10)}px 0`,
+      minHeight: `100vh`,
+
+      [theme.breakpoints.down(`sm`)]: {
+        position: `relative`,
+      },
     },
 
     backgroundBox: {

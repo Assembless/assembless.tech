@@ -7,15 +7,13 @@ const styles = (theme: Theme) =>
     root: {
       position: `relative`,
 
-      minHeight: `100vh`,
+      height: `100vh`,
 
       backgroundColor: theme.palette.background.default,
 
       display: `flex`,
       alignItems: `center`,
       justifyContent: `center`,
-
-      paddingTop: `330px`,
     },
     title: {
       fontSize: 36,

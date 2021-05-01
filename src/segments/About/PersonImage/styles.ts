@@ -9,7 +9,7 @@ const styles = (theme: Theme) =>
       justifyContent: `flex-end`,
 
       [theme.breakpoints.down(`sm`)]: {
-        padding: `${theme.spacing(45)}px 0`,
+        display: `none`,
       },
     },
 
@@ -26,11 +26,6 @@ const styles = (theme: Theme) =>
       zIndex: 0,
       borderRadius: `100%`,
       overflow: `hidden`,
-
-      [theme.breakpoints.down(`sm`)]: {
-        width: 400,
-        height: 400,
-      },
     },
 
     imageMask: {

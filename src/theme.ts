@@ -32,7 +32,7 @@ const theme = createMuiTheme({
   spacing: 4,
 
   variables: {
-    appBarHeight: 112,
+    appBarHeight: 114,
   },
 
   overrides: {

@@ -5,7 +5,10 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: theme.palette.background.patch.main,
-      height: `424px`,
+      height: 334,
+      maxHeight: `100vh`,
+      width: `100%`,
+      alignItems: `flex-start`,
     },
 
     /** Mobile view */

@@ -34,6 +34,8 @@ const translations = {
   },
   content1: {
     en_US: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in ante libero. Mauris non lobortis purus. Nulla pulvinar tempor metus sed aliquet. 
+    Mauris gravida rhoncus enim, vitae mollis risus tincidunt eu. Donec tincidunt laoreet dui, aliquam finibus sem commodo at. Nulla pulvinar tempor metus sed aliquet. 
+    Mauris gravida rhoncus enim, vitae mollis risus tincidunt eu. Donec tincidunt laoreet dui, aliquam finibus sem commodo at. Nulla pulvinar tempor metus sed aliquet. 
     Mauris gravida rhoncus enim, vitae mollis risus tincidunt eu. Donec tincidunt laoreet dui, aliquam finibus sem commodo at.`,
     de_DE: `Beispiel`,
     pl_PL: `Przykład`,

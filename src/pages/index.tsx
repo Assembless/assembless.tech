@@ -8,6 +8,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { LitteraProvider } from 'react-littera';
 import { PageProps } from 'gatsby';
+import ReactFullpage from '@fullpage/react-fullpage';
 import Helmet from 'react-helmet';
 
 // Project scope imports.
@@ -15,6 +16,7 @@ import { preset } from '@/utils/translations';
 import theme from '@/theme';
 import AppBar from '@/components/AppBar';
 
+import { useMediaQuery } from '@material-ui/core';
 import HeroSegment from '../segments/Hero';
 import ContactSegment from '../segments/Contact';
 import ServicesSegment from '../segments/Services';
@@ -24,38 +26,87 @@ import FooterSegment from '../segments/Footer';
 
 // Component scope imports.
 
-const Home: React.FC<PageProps> = () => (
-  <>
-    <Helmet>
-      <script
-        title="Google Maps API Script"
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GMAPS_KEY}&callback=initMap&map_ids=b0895fcec40baecd`}
-        async
-        defer
-      />
-      <script
-        title="Calendly Widget Script"
-        type="text/javascript"
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async
-      />
-    </Helmet>
-    <main>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <LitteraProvider preset={preset} locales={[`en_US`, `pl_PL`, `de_DE`]}>
-          <AppBar />
-          <HeroSegment />
-          <ServicesSegment />
-          <AboutSegment />
-          <DeliverySegment />
-          <ContactSegment />
-          <FooterSegment />
-        </LitteraProvider>
-      </ThemeProvider>
-    </main>
-  </>
-);
+const Home: React.FC<PageProps> = () => {
+  const isMobile = useMediaQuery(`(max-width: 600px)`);
+
+  return (
+    <>
+      <Helmet>
+        <script
+          title="Google Maps API Script"
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GMAPS_KEY}&callback=initMap&map_ids=b0895fcec40baecd`}
+          async
+          defer
+        />
+        <script
+          title="Calendly Widget Script"
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        />
+      </Helmet>
+      <main>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <LitteraProvider
+            preset={preset}
+            locales={[`en_US`, `pl_PL`, `de_DE`]}
+          >
+            {isMobile === false ? (
+              <ReactFullpage
+                responsiveWidth={600}
+                scrollOverflow
+                scrollingSpeed={1000}
+                render={() => (
+                  <ReactFullpage.Wrapper>
+                    <div className="section">
+                      <AppBar />
+                      <HeroSegment />
+                    </div>
+                    <div
+                      className="section"
+                      style={{
+                        minHeight: `100vh`,
+                        position: `relative`,
+                        margin: `50px 0`,
+                      }}
+                    >
+                      <ServicesSegment />
+                    </div>
+                    <div className="section" style={{ minHeight: `100vh` }}>
+                      <AboutSegment />
+                    </div>
+                    <div className="section" style={{ minHeight: `100vh` }}>
+                      <DeliverySegment />
+                    </div>
+                    <div className="section" style={{ minHeight: `100vh` }}>
+                      <ContactSegment />
+                    </div>
+                    <div className="section" style={{ minHeight: `100vh` }}>
+                      <FooterSegment />
+                    </div>
+                  </ReactFullpage.Wrapper>
+                )}
+              />
+            ) : (
+              <>
+                <div>
+                  <AppBar />
+                  <HeroSegment />
+                </div>
+                <ServicesSegment />
+                <AboutSegment />
+                <DeliverySegment />
+                <ContactSegment />
+                <FooterSegment />
+              </>
+            )}
+          </LitteraProvider>
+        </ThemeProvider>
+      </main>
+    </>
+  );
+};
 
 export default Home;
 

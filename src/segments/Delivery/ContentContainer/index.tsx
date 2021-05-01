@@ -1,5 +1,5 @@
 // Deps scoped imports.
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles, Box, Container } from '@material-ui/core';
 import cx from 'classnames';
 
@@ -8,7 +8,6 @@ import cx from 'classnames';
 // Component scoped imports.
 import styles from './styles';
 import StepperContainer from './StepperContainer';
-import DeliverCard from './DeliverCard';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -23,20 +22,25 @@ const useStyles = makeStyles(styles);
 const ContentContainer = ({
   className,
   style,
+  activeStep,
+  setActiveStep,
 }: ContentContainerProps): JSX.Element => {
   const classes = useStyles();
 
-  const [activeStep, setActiveStep] = useState(0);
-
   return (
-    <Box className={cx(classes.root, className)} style={style}>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      className={cx(classes.root, className)}
+      style={style}
+    >
       <Container>
         <Box position="relative">
           <StepperContainer
             activeStep={activeStep}
             setActiveStep={setActiveStep}
           />
-          <DeliverCard activeStep={activeStep} />
         </Box>
       </Container>
     </Box>
@@ -47,6 +51,8 @@ const ContentContainer = ({
 type ContentContainerProps = {
   className?: string;
   style?: React.CSSProperties;
+  activeStep: number;
+  setActiveStep: (value: number) => void;
 };
 
 // Default props.

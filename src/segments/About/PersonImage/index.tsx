@@ -32,7 +32,7 @@ const PersonImage = ({ className, style }: PersonImageProps): JSX.Element => {
       >
         <StaticImage
           alt="Person"
-          src="../../assets/mike.png"
+          src="../../../assets/mike.png"
           height={250}
           width={200}
           className={cx(classes.imageMask, classes.image)}
@@ -40,7 +40,7 @@ const PersonImage = ({ className, style }: PersonImageProps): JSX.Element => {
         <Box className={cx(classes.imageContainer)}>
           <StaticImage
             alt="Person"
-            src="../../assets/mike.png"
+            src="../../../assets/mike.png"
             height={250}
             width={200}
             className={cx(classes.image)}
