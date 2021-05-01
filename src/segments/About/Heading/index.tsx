@@ -14,38 +14,28 @@ import translations from './trans';
 const useStyles = makeStyles(styles);
 
 /**
- * subheader component.
- * @description subheader
+ * Heading component.
+ * @description Component show the label and title on About us section. Also for some reason shows the content (paragraphs)...?
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const Subheader = ({ className, style }: SubheaderProps): JSX.Element => {
+const Heading = ({ className, style }: HeadingProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
 
   return (
     <Box className={cx(className)} style={style}>
-      <Typography className={classes.title} variant="h3" component="h3">
+      <Typography color="primary" className={classes.label} variant="h3">
         {translated.about_us}
       </Typography>
-      <Typography className={classes.title_2} variant="h2" component="h2">
-        {translated.title_1}
+      <Typography className={classes.title} variant="h2">
+        {translated.title}
       </Typography>
-      <Typography className={classes.title_2} variant="h2" component="h2">
-        {translated.title_2}
-      </Typography>
-      <Typography
-        className={cx(classes.text, classes.grayText)}
-        variant="body1"
-        component="p"
-      >
+
+      <Typography className={cx(classes.paragraph)} paragraph color="primary">
         {translated.paragraph}
       </Typography>
-      <Typography
-        className={cx(classes.text, classes.grayText)}
-        variant="body1"
-        component="p"
-      >
+      <Typography className={cx(classes.paragraph)} paragraph color="primary">
         {translated.paragraph2}
       </Typography>
     </Box>
@@ -53,16 +43,16 @@ const Subheader = ({ className, style }: SubheaderProps): JSX.Element => {
 };
 
 // Props the component accepts.
-type SubheaderProps = {
+type HeadingProps = {
   className?: string;
   style?: React.CSSProperties;
 };
 
 // Default props.
-Subheader.defaultProps = {
+Heading.defaultProps = {
   className: ``,
   style: {},
 };
 
 // Time to export! 🚚
-export default Subheader;
+export default Heading;

@@ -2,6 +2,7 @@
 import React from 'react';
 import { makeStyles, Box, Button } from '@material-ui/core';
 import { useLittera } from 'react-littera';
+import cx from 'classnames';
 
 // Project scoped imports.r
 import Circle from '@/components/Circle';
@@ -33,7 +34,7 @@ const HeroExploreButton = ({
       justifyContent="center"
       alignItems="center"
       width="227px"
-      className={className}
+      className={cx(classes.exploreButtonWrapper, className)}
       style={{ marginTop: 120, ...style }}
     >
       <Button

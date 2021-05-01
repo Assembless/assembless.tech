@@ -3,36 +3,37 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 
 const styles = (theme: Theme) =>
   createStyles({
-    title: {
+    label: {
       textAlign: `left`,
       fontSize: 27,
       letterSpacing: 1,
       fontWeight: 300,
 
-      /* minWidth: 240, */
-
       marginBottom: theme.spacing(5),
-
-      color: theme.palette.primary.main,
 
       opacity: 0.6,
     },
 
-    grayText: {
-      fontSize: 23,
-
-      color: theme.palette.primary.main,
-
-      opacity: 0.65,
-    },
-
-    title_2: {
+    title: {
       fontSize: 64,
       fontWeight: 400,
+      whiteSpace: `pre`,
+
+      [theme.breakpoints.down(`md`)]: {
+        fontSize: 60,
+      },
+      [theme.breakpoints.down(`sm`)]: {
+        fontSize: 58,
+      },
+      [theme.breakpoints.down(`xs`)]: {
+        fontSize: 52,
+      },
     },
 
-    text: {
-      marginTop: `50px`,
+    paragraph: {
+      marginTop: theme.spacing(4),
+
+      opacity: 0.65,
     },
   });
 

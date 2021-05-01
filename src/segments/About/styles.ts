@@ -6,6 +6,9 @@ const styles = (theme: Theme) =>
     root: {
       [theme.breakpoints.down(`md`)]: {
         padding: theme.spacing(32.5, 0, 25, 0),
+        display: `flex`,
+        alignItems: `center`,
+        justifyContent: `center`,
       },
     },
 

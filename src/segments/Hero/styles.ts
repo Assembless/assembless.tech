@@ -5,13 +5,18 @@ import { createStyles, Theme } from '@material-ui/core/styles';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      height: `100%`,
-      minHeight: `calc(100vh - ${theme.variables.appBarHeight}px)`,
       overflow: `hidden`,
       display: `flex`,
       alignItems: `center`,
       justifyContent: `center`,
-      // marginBottom: theme.spacing(25),
+
+      height: `calc(100vh - 56px - 44px)`,
+      [`${theme.breakpoints.up(`xs`)} and (orientation: landscape)`]: {
+        height: `calc(100vh - 48px - 44px)`,
+      },
+      [theme.breakpoints.up(`sm`)]: {
+        height: `calc(100vh - 64px - 44px)`,
+      },
     },
     container: {
       display: `grid`,
@@ -23,8 +28,12 @@ const styles = (theme: Theme) =>
     // HeroTitle
     titleWrapper: {
       width: 550,
-      [theme.breakpoints.down(`sm`)]: {
+      [theme.breakpoints.down(`xs`)]: {
         width: `100vw`,
+        display: `flex`,
+        flexDirection: `column`,
+        alignItems: `flex-start`,
+        justifyContent: `center`,
       },
     },
     title: {
@@ -34,6 +43,15 @@ const styles = (theme: Theme) =>
       textTransform: `uppercase`,
       whiteSpace: `pre-line`,
       display: `block`,
+      [theme.breakpoints.down(`md`)]: {
+        fontSize: 62,
+      },
+      [theme.breakpoints.down(`sm`)]: {
+        fontSize: 52,
+      },
+      [theme.breakpoints.down(`xs`)]: {
+        fontSize: 46,
+      },
     },
     slogan: {
       fontWeight: 600,
@@ -41,6 +59,12 @@ const styles = (theme: Theme) =>
       opacity: 0.65,
       letterSpacing: `0.3px`,
       marginTop: theme.spacing(3),
+      [theme.breakpoints.down(`md`)]: {
+        fontSize: 18,
+      },
+      [theme.breakpoints.down(`sm`)]: {
+        fontSize: 15,
+      },
     },
     // HeroExploreButton
     exploreButton: {
@@ -58,6 +82,12 @@ const styles = (theme: Theme) =>
       left: `50%`,
       transform: `translate(-50%, -50%)`,
     },
+    exploreButtonWrapper: {
+      [theme.breakpoints.down(`sm`)]: {
+        alignSelf: `center`,
+      },
+    },
+
     // HeroIllustration
     illustration: {
       position: `absolute`,
@@ -69,14 +99,14 @@ const styles = (theme: Theme) =>
       left: `50%`,
       transform: `translate(-50%, -50%)`,
       zIndex: 1,
-
-      [theme.breakpoints.down(`xs`)]: {
-        display: `none`,
-      },
     },
     illustrationRoot: {
       minWidth: 632,
       minHeight: 632,
+
+      [theme.breakpoints.down(`xs`)]: {
+        display: `none`,
+      },
     },
     illustrationCircle: {
       width: 507,
@@ -84,10 +114,6 @@ const styles = (theme: Theme) =>
       top: `50%`,
       left: `50%`,
       transform: `translate(-50%, -50%)`,
-
-      [theme.breakpoints.down(`xs`)]: {
-        display: `none`,
-      },
     },
   });
 

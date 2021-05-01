@@ -6,15 +6,10 @@ const translations = {
     de_DE: `beispiel`,
     pl_PL: `o nas`,
   },
-  title_1: {
-    en_US: `Get to know`,
-    de_DE: `Get to know`,
-    pl_PL: `Get to know`,
-  },
-  title_2: {
-    en_US: `us a bit better`,
-    de_DE: `us a bit better`,
-    pl_PL: `us a bit better`,
+  title: {
+    en_US: `Get to know us\na bit better`,
+    de_DE: `Get to know us\na bit better`,
+    pl_PL: `Get to know us\na bit better`,
   },
   paragraph: {
     en_US: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in ante libero. Mauris non lobortis purus. Nulla pulvinar tempor metus sed aliquet. 

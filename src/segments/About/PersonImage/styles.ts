@@ -53,16 +53,14 @@ const styles = (theme: Theme) =>
     },
 
     roleParagraph: {
-      fontSize: 20,
       letterSpacing: 1,
-
-      color: theme.palette.primary.main,
 
       opacity: 0.65,
     },
 
     imageTitleContainer: {
-      paddingLeft: 90,
+      textAlign: `left`,
+      paddingRight: theme.spacing(3),
     },
   });
 

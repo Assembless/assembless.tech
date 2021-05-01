@@ -54,11 +54,13 @@ const Home: React.FC<PageProps> = () => {
           >
             {isMobile === false ? (
               <ReactFullpage
-                scrollOverflow
                 scrollingSpeed={1000}
                 render={({ state, fullpageApi }) => (
                   <ReactFullpage.Wrapper>
-                    <div className="section">
+                    <div
+                      className="section"
+                      style={{ paddingBottom: isMobile ? `100px` : 0 }}
+                    >
                       <AppBar
                         scrollToSection={(index: number) =>
                           fullpageApi.moveTo(index, 0)

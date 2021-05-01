@@ -8,7 +8,7 @@ import cx from 'classnames';
 // Component scoped imports.
 import styles from './styles';
 import PersonImage from './PersonImage/index';
-import Subheader from './Subheader';
+import Heading from './Heading';
 import Media from './SocialMedia';
 
 // Creates a hook for generating classnames.
@@ -28,14 +28,14 @@ const About = ({ className, style }: AboutProps): JSX.Element => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      className={cx(classes.root, className, `section`)}
+      className={cx(classes.root, className)}
       style={style}
       id="aboutUs"
     >
       <Container>
         <Box className={classes.contentContainer}>
           <Box className={classes.subheader}>
-            <Subheader />
+            <Heading />
             <Media />
           </Box>
           <PersonImage />
