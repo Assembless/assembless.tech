@@ -10,6 +10,7 @@
 - 🖌 **Renovate** - Dependency update tool
 - 🚫 **lint-staged** - Run linters against staged git files
 - 🗂 **Root import** - Import folders and files using the `@` prefix.
+- 🌐 **react-littera** - Manage translations.
 
 ## 🚀 Getting started
 
