@@ -1,7 +1,7 @@
 // Deps scoped imports.
 import React from 'react';
 import { makeStyles, Box, Typography, Button } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { useLittera } from '@assembless/react-littera';
 import cx from 'classnames';
 
 // Project scoped imports.
@@ -38,7 +38,7 @@ const ProductsContainer = ({
       <Typography variant="h5" className={classes.title}>
         {translated.title}
       </Typography>
-      <Typography paragraph style={{ fontSize: 14 }}>
+      <Typography paragraph style={{ fontSize: 14, whiteSpace: `pre-wrap` }}>
         {translated.subtitle}
       </Typography>
       <Box display="flex" flexDirection="column">

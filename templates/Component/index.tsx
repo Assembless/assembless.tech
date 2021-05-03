@@ -1,7 +1,7 @@
 // Deps scoped imports.
 import React from 'react';
 import { makeStyles, Box, Typography } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { useLittera } from '@assembless/react-littera';
 import cx from 'classnames';
 
 // Project scoped imports.
@@ -19,7 +19,7 @@ const useStyles = makeStyles(styles);
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const {{$name}} = ({ className, style }: {{$name}}Props): JSX.Element => {
+const {{ $name }} = ({ className, style }: {{ $name }}Props): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
 
@@ -33,16 +33,16 @@ const {{$name}} = ({ className, style }: {{$name}}Props): JSX.Element => {
 };
 
 // Props the component accepts.
-type {{$name}}Props = {
+type { { $name } } Props = {
   className?: string;
   style?: React.CSSProperties;
 };
 
 // Default props.
-{{$name}}.defaultProps = {
+{ { $name } }.defaultProps = {
   className: ``,
   style: {},
 };
 
 // Time to export! 🚚
-export default {{$name}};
+export default {{ $name }};

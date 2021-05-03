@@ -1,7 +1,7 @@
 // Deps scoped imports.
 import React from 'react';
 import { makeStyles, Box, Button } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { useLittera } from '@assembless/react-littera';
 import cx from 'classnames';
 
 // Project scoped imports.

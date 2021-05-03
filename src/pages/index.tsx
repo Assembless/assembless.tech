@@ -6,7 +6,7 @@ import '@fontsource/lato/300.css';
 import '@fontsource/lato/700.css';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { LitteraProvider } from 'react-littera';
+import { LitteraProvider } from '@assembless/react-littera';
 import { PageProps } from 'gatsby';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Helmet from 'react-helmet';

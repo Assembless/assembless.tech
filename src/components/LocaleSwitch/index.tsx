@@ -1,7 +1,7 @@
 // Deps scoped imports.
 import React from 'react';
 import { MenuItem, TextField } from '@material-ui/core';
-import { useLittera, useLitteraMethods } from 'react-littera';
+import { useLittera, useLitteraMethods } from '@assembless/react-littera';
 
 // Project scoped imports.
 

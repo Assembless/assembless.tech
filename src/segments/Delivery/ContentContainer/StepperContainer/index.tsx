@@ -9,7 +9,7 @@ import {
   StepIconProps,
   StepConnector,
 } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { useLittera } from '@assembless/react-littera';
 import cx from 'classnames';
 
 // Project scoped imports.

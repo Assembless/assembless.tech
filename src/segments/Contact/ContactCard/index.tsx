@@ -1,7 +1,7 @@
 // Deps scoped imports.
 import React, { useState } from 'react';
 import { makeStyles, Box, Button, Dialog } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { useLittera } from '@assembless/react-littera';
 import cx from 'classnames';
 import MailIcon from '@material-ui/icons/Mail';
 import PhoneIcon from '@material-ui/icons/Phone';

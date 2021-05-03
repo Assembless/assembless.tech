@@ -8,7 +8,7 @@ import {
   Button,
   Container,
 } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { useLittera } from '@assembless/react-littera';
 import cx from 'classnames';
 import { navigate } from 'gatsby';
 

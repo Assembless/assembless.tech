@@ -1,7 +1,7 @@
 // Deps scoped imports.
 import React from 'react';
 import { makeStyles, Box, Typography } from '@material-ui/core';
-import { useLittera } from 'react-littera';
+import { useLittera } from '@assembless/react-littera';
 
 // Project scoped imports.
 import TypingCarousel from '@/components/TypingCarousel';
