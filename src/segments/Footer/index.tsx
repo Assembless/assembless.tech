@@ -1,6 +1,14 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box, Typography, Container } from '@material-ui/core';
+import {
+  makeStyles,
+  Box,
+  Typography,
+  Container,
+  IconButton,
+  Button,
+} from '@material-ui/core';
+import { Facebook, GitHub, Twitter } from '@material-ui/icons';
 import cx from 'classnames';
 
 // Project scoped imports.
@@ -9,10 +17,19 @@ import Logotype from '@/components/Logotype';
 // @ts-ignore
 import Logo from '@/assets/logo_square_transparent.svg';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import ReactLitteraLogo from '@/assets/hand_with_phone_illustration.png';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import GithubLogo from '@/assets/GitHub_Logo_White.png';
+
 // Component scoped imports.
 import LocaleSwitch from '@/components/LocaleSwitch';
-import FooterLinks from './FooterLinks';
 import styles from './styles';
+import FooterHead from './FooterHead';
+import FooterBody from './FooterBody';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -29,31 +46,20 @@ const Footer = ({ className, style }: FooterProps): JSX.Element => {
   return (
     <Box className={cx(classes.root, className)} style={style}>
       <Container>
-        <Box display="grid" className={classes.linkBox}>
-          <FooterLinks />
-
-          <Box display="flex" flexDirection="column" alignItems="flex-end">
-            <Box display="flex" flexDirection="column" alignItems="center">
-              <img
-                src={Logo}
-                alt="Assembless logo"
-                width={100}
-                height={100}
-                className={classes.logo}
-              />
-              <Logotype style={{ color: `#FFF` }} />
-            </Box>
+        <Box display="flex" flexDirection="column" height="100%">
+          <FooterHead />
+          <FooterBody />
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            className={classes.bottomBar}
+          >
+            <Typography style={{ fontSize: 14 }}>
+              Copyright © 2021, Assembless
+            </Typography>
+            <LocaleSwitch />
           </Box>
-        </Box>
-
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          className={classes.bottomBar}
-        >
-          <Typography>Copyright © 2021, Assembless</Typography>
-          <LocaleSwitch />
         </Box>
       </Container>
     </Box>
