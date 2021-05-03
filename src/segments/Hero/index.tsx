@@ -2,10 +2,12 @@
 import React from 'react';
 import { makeStyles, Box, Container } from '@material-ui/core';
 import cx from 'classnames';
+import { navigate } from 'gatsby';
 
 // Project scoped imports.
 
 // Component scoped imports.
+import { SEGMENTS_LIST } from '@/utils/segements';
 import HeroTitle from './HeroTitle';
 import HeroIllustration from './HeroIllustration';
 import HeroExploreButton from './HeroExploreButton';
@@ -20,7 +22,11 @@ const useStyles = makeStyles(styles);
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const Hero = ({ className, style }: HeroProps): JSX.Element => {
+const Hero = ({
+  className,
+  style,
+  scrollToSection,
+}: HeroProps): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -29,7 +35,7 @@ const Hero = ({ className, style }: HeroProps): JSX.Element => {
         <Box className={classes.titleWrapper}>
           <HeroTitle />
 
-          <HeroExploreButton />
+          <HeroExploreButton scrollToSection={scrollToSection} />
         </Box>
         <HeroIllustration />
       </Container>
@@ -41,12 +47,16 @@ const Hero = ({ className, style }: HeroProps): JSX.Element => {
 type HeroProps = {
   className?: string;
   style?: React.CSSProperties;
+  scrollToSection?: () => void;
 };
 
 // Default props.
 Hero.defaultProps = {
   className: ``,
   style: {},
+  scrollToSection: () => {
+    navigate(`#${SEGMENTS_LIST[1]}`);
+  },
 };
 
 // Time to export! 🚚

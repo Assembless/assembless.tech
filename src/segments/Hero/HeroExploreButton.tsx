@@ -23,6 +23,7 @@ const useStyles = makeStyles(styles);
 const HeroExploreButton = ({
   className,
   style,
+  scrollToSection,
 }: HeroExploreButtonProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
@@ -42,7 +43,7 @@ const HeroExploreButton = ({
         variant="outlined"
         className={classes.exploreButton}
         color="primary"
-        href="#services"
+        onClick={scrollToSection}
       >
         {translated.explore}
       </Button>
@@ -55,12 +56,14 @@ const HeroExploreButton = ({
 type HeroExploreButtonProps = {
   className?: string;
   style?: React.CSSProperties;
+  scrollToSection?: () => void;
 };
 
 // Default props.
 HeroExploreButton.defaultProps = {
   className: ``,
   style: {},
+  scrollToSection: () => undefined,
 };
 
 // Time to export! 🚚

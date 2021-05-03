@@ -55,7 +55,7 @@ const Home: React.FC<PageProps> = () => {
             {isMobile === false ? (
               <ReactFullpage
                 scrollingSpeed={1000}
-                render={({ state, fullpageApi }) => (
+                render={({ fullpageApi }) => (
                   <ReactFullpage.Wrapper>
                     <div
                       className="section"
@@ -66,7 +66,9 @@ const Home: React.FC<PageProps> = () => {
                           fullpageApi.moveTo(index, 0)
                         }
                       />
-                      <HeroSegment />
+                      <HeroSegment
+                        scrollToSection={() => fullpageApi.moveTo(1, 0)}
+                      />
                     </div>
                     <div
                       className="section"

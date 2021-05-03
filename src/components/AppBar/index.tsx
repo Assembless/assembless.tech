@@ -16,6 +16,7 @@ import { navigate } from 'gatsby';
 import Logotype from '@/components/Logotype';
 
 // Component scoped imports.
+import { SEGMENTS_LIST } from '@/utils/segements';
 import styles from './styles';
 import translations from './trans';
 
@@ -82,8 +83,7 @@ const AppBar = ({
               </Button>
 
               <Button
-                //  WTF?! why the sections index is +2 than the previous one..? o.O
-                onClick={handleScrollTo(5)}
+                onClick={handleScrollTo(4)}
                 className={classes.menuItem}
                 role="menuitem"
               >
@@ -91,8 +91,7 @@ const AppBar = ({
               </Button>
 
               <Button
-                //  WTF?! dah must be dah voodoo o.O
-                onClick={handleScrollTo(6)}
+                onClick={handleScrollTo(5)}
                 className={classes.contactUsButton}
                 color="primary"
                 variant="contained"
@@ -116,14 +115,12 @@ type AppBarProps = {
   scrollToSection?: (index: number) => void;
 };
 
-const segmentsMap = [`hero`, `services`, `about`, `deliver`, `contact`];
-
 // Default props.
 AppBar.defaultProps = {
   className: ``,
   style: {},
   scrollToSection: (num: number) => {
-    navigate(`#${segmentsMap[num - 1]}`);
+    navigate(`#${SEGMENTS_LIST[num - 1]}`);
   },
 };
 
