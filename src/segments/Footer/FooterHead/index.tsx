@@ -1,19 +1,10 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box, Typography, IconButton } from '@material-ui/core';
-import { useLittera } from 'react-littera';
-import { Facebook, GitHub, Twitter } from '@material-ui/icons';
+import { makeStyles, Box } from '@material-ui/core';
 import cx from 'classnames';
-
-// Project scoped imports.
-import Logotype from '@/components/Logotype';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import Logo from '@/assets/logo_square_transparent.svg';
 
 // Component scoped imports.
 import styles from './styles';
-import translations from './trans';
 import FooterHeadLeft from './FooterHeadLeft';
 import FooterHeadRight from './FooterHeadRight';
 
@@ -27,7 +18,6 @@ const useStyles = makeStyles(styles);
  * @author Assembless <support@assembless.tech>
  */
 const FooterHead = ({ className, style }: FooterHeadProps): JSX.Element => {
-  const translated = useLittera(translations);
   const classes = useStyles();
 
   return (

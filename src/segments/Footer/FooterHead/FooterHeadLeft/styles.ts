@@ -17,7 +17,7 @@ const styles = (theme: Theme) =>
       display: `flex`,
       justifyContent: `space-between`,
 
-      transition: `all 255ms ease 0.2s`,
+      transition: `all 255ms ease 0.1s`,
 
       [theme.breakpoints.down(758)]: {
         width: 110,

@@ -1,29 +1,8 @@
 // Deps scoped imports.
 import React from 'react';
-import {
-  makeStyles,
-  Box,
-  Typography,
-  Container,
-  IconButton,
-  Button,
-} from '@material-ui/core';
-import { Facebook, GitHub, Twitter } from '@material-ui/icons';
+import { makeStyles, Box, Typography, Container } from '@material-ui/core';
+
 import cx from 'classnames';
-
-// Project scoped imports.
-import Logotype from '@/components/Logotype';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import Logo from '@/assets/logo_square_transparent.svg';
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import ReactLitteraLogo from '@/assets/hand_with_phone_illustration.png';
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import GithubLogo from '@/assets/GitHub_Logo_White.png';
 
 // Component scoped imports.
 import LocaleSwitch from '@/components/LocaleSwitch';

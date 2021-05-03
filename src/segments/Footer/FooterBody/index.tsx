@@ -8,7 +8,6 @@ import cx from 'classnames';
 
 // Component scoped imports.
 import styles from './styles';
-import translations from './trans';
 import FooterLinks from './FooterLinks';
 import ProductsContainer from './ProductsContainer';
 
@@ -22,7 +21,6 @@ const useStyles = makeStyles(styles);
  * @author Assembless <support@assembless.tech>
  */
 const FooterBody = ({ className, style }: FooterBodyProps): JSX.Element => {
-  const translated = useLittera(translations);
   const classes = useStyles();
 
   return (

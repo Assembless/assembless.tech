@@ -29,16 +29,16 @@ const FooterHeadRight = ({
   return (
     <Box className={cx(classes.root, className)} style={style}>
       <Typography className={classes.contactDetailsTitle} variant="h4">
-        Questions about our work?
+        {translated.title}
       </Typography>
       <Typography className={classes.contactDetailsText} paragraph>
-        Call us Monday-Friday 9am - 8pm
+        {translated.line1}
       </Typography>
       <Typography className={classes.contactDetailsText} paragraph>
-        For Individual & Buisness queries, +48 666 666 666
+        {translated.line2}
       </Typography>
       <Typography className={classes.contactDetailsText} paragraph>
-        For Academy & Cooperation queries, +48 666 666 666
+        {translated.line3}
       </Typography>
     </Box>
   );

@@ -8,18 +8,28 @@ const styles = (theme: Theme) =>
     },
 
     title: {
-      fontSize: `14px`,
+      fontSize: 14,
       fontWeight: 600,
-      letterSpacing: `1px`,
-      marginBottom: `16px`,
+      letterSpacing: 1,
+      marginBottom: theme.spacing(4),
       textTransform: `uppercase`,
+    },
+
+    imgContainer: {
+      backgroundColor: `yellow`,
+      borderRadius: theme.shape.borderRadius,
+    },
+
+    productNameText: {
+      marginTop: theme.spacing(2.5),
+      fontSize: 14,
     },
 
     btn: {
       border: `1px solid #f4f4f4`,
-      borderRadius: `8px`,
-      padding: `0 20px`,
-      height: `40px`,
+      borderRadius: theme.shape.borderRadius,
+      padding: `0 ${theme.spacing(5)}`,
+      height: 40,
     },
   });
 

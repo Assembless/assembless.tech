@@ -36,15 +36,14 @@ const ProductsContainer = ({
   return (
     <Box className={cx(classes.root, className)} style={style}>
       <Typography variant="h5" className={classes.title}>
-        Try out our Products
+        {translated.title}
       </Typography>
       <Typography paragraph style={{ fontSize: 14 }}>
-        Take your react app on the next level
-        <br /> and use easy multilanguage translations
+        {translated.subtitle}
       </Typography>
       <Box display="flex" flexDirection="column">
         <Box display="flex" justifyContent="space-between">
-          <Box style={{ backgroundColor: `yellow`, borderRadius: `8px` }}>
+          <Box className={classes.imgContainer}>
             <img
               src={ReactLitteraLogo}
               alt="React-Literra logo"
@@ -65,7 +64,7 @@ const ProductsContainer = ({
             </Button>
           </Box>
         </Box>
-        <Typography style={{ marginTop: `10px`, fontSize: 14 }}>
+        <Typography className={classes.productNameText}>
           React-Littera
         </Typography>
       </Box>
