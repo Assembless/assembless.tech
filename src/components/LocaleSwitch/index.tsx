@@ -1,12 +1,21 @@
 // Deps scoped imports.
 import React from 'react';
-import { MenuItem, TextField } from '@material-ui/core';
+import { Box, MenuItem, TextField } from '@material-ui/core';
 import { useLittera, useLitteraMethods } from '@assembless/react-littera';
 
 // Project scoped imports.
+import PLFlag from '@/assets/flags/Flag_of_Poland.svg';
+import DEFlag from '@/assets/flags/Flag_of_Germany.svg';
+import ENFlag from '@/assets/flags/Flag_of_the_United_States.svg';
 
 // Component scoped imports.
 import translations from './trans';
+
+const LOCALE_FLAG_MAP = {
+  en_US: ENFlag,
+  pl_PL: PLFlag,
+  de_DE: DEFlag,
+};
 
 /**
  * LocaleSwitch component.
@@ -25,8 +34,8 @@ const LocaleSwitch = ({ className, style }: LocaleSwitchProps): JSX.Element => {
   return (
     <TextField
       className={className}
-      style={style}
-      variant="outlined"
+      style={{ ...style, width: 160 }}
+      variant="filled"
       label={translated.locale}
       value={locale}
       color="secondary"
@@ -34,7 +43,18 @@ const LocaleSwitch = ({ className, style }: LocaleSwitchProps): JSX.Element => {
       select
     >
       {locales.map((l) => (
-        <MenuItem value={l}>{translated[l]}</MenuItem>
+        <MenuItem key={l} value={l}>
+          <Box display="flex" justifyContent="flex-start" alignItems="center">
+            <img
+              height={12}
+              style={{ marginRight: 8 }}
+              alt="locale flag"
+              src={LOCALE_FLAG_MAP[l]}
+            />
+            {` `}
+            {translated[l]}
+          </Box>
+        </MenuItem>
       ))}
     </TextField>
   );

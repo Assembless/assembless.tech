@@ -97,6 +97,19 @@ const theme = createMuiTheme({
         fontWeight: `bold !important`,
       },
     },
+    MuiFilledInput: {
+      root: {
+        color: `#FFF`,
+        backgroundColor: `rgb(255 255 255 / 3%)`,
+
+        '&:hover': {
+          backgroundColor: `rgb(255 255 255 / 5%)`,
+        },
+      },
+      focused: {
+        backgroundColor: `rgb(255 255 255 / 4%)`,
+      },
+    },
     MuiOutlinedInput: {
       root: {
         color: `#FFF`,

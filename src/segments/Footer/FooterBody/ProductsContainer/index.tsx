@@ -2,6 +2,7 @@
 import React from 'react';
 import { makeStyles, Box, Typography, Button } from '@material-ui/core';
 import { useLittera } from '@assembless/react-littera';
+import { StaticImage } from 'gatsby-plugin-image';
 import cx from 'classnames';
 
 // Project scoped imports.
@@ -56,16 +57,30 @@ const ProductsContainer = ({
             flexDirection="column"
             justifyContent="space-between"
           >
-            <Button href="#services" className={classes.btn}>
-              <img src={GithubLogo} alt="Github logo" height={32} />
+            <Button
+              href="https://github.com/Assembless/react-littera"
+              className={classes.btn}
+            >
+              <StaticImage
+                src="../../../../assets/GitHub_Logo_White.png"
+                alt="Github logo"
+                height={28}
+              />
             </Button>
-            <Button href="#services" className={classes.btn}>
-              Npmjs
+            <Button
+              href="https://npmjs.com/package/@assembless/react-littera"
+              className={classes.btn}
+            >
+              <StaticImage
+                src="../../../../assets/800px-Npm-logo.svg.png"
+                alt="NPM logo"
+                height={28}
+              />
             </Button>
           </Box>
         </Box>
         <Typography className={classes.productNameText}>
-          React-Littera
+          react-littera
         </Typography>
       </Box>
     </Box>
