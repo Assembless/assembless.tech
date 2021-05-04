@@ -78,7 +78,9 @@ const Home: React.FC<PageProps> = () => {
                         margin: `50px 0`,
                       }}
                     >
-                      <ServicesSegment />
+                      <ServicesSegment
+                        scrollToSection={() => fullpageApi.moveTo(5, 0)}
+                      />
                     </div>
                     <div className="section" style={{ minHeight: `100vh` }}>
                       <AboutSegment />

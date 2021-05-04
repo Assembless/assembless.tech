@@ -2,9 +2,11 @@
 import React from 'react';
 import { makeStyles, Box, Container } from '@material-ui/core';
 import { useLittera } from '@assembless/react-littera';
+import { navigate } from 'gatsby';
 import cx from 'classnames';
 
 // Project scoped imports.
+import { SEGMENTS_LIST } from '@/utils/segements';
 
 // Component scoped imports.
 import SectionHead from '@/components/SectionHead';
@@ -23,7 +25,11 @@ const useStyles = makeStyles(styles);
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const Services = ({ className, style }: ServicesProps): JSX.Element => {
+const Services = ({
+  className,
+  style,
+  scrollToSection,
+}: ServicesProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
 
@@ -41,7 +47,7 @@ const Services = ({ className, style }: ServicesProps): JSX.Element => {
           id="services"
         />
         <CardsContainer />
-        <ButtonContainer />
+        <ButtonContainer scrollToSection={scrollToSection} />
       </Container>
       <BackgroundNotch className={classes.backgroundBox2} />
     </Box>
@@ -52,12 +58,16 @@ const Services = ({ className, style }: ServicesProps): JSX.Element => {
 type ServicesProps = {
   className?: string;
   style?: React.CSSProperties;
+  scrollToSection?: () => void;
 };
 
 // Default props.
 Services.defaultProps = {
   className: ``,
   style: {},
+  scrollToSection: () => {
+    navigate(`#${SEGMENTS_LIST[4]}`);
+  },
 };
 
 // Time to export! 🚚

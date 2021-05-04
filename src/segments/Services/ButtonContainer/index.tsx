@@ -22,6 +22,7 @@ const useStyles = makeStyles(styles);
 const ButtonContainer = ({
   className,
   style,
+  scrollToSection,
 }: ButtonContainerProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
@@ -33,7 +34,7 @@ const ButtonContainer = ({
         variant="outlined"
         color="primary"
         size="large"
-        href="#contact"
+        onClick={scrollToSection}
       >
         {translated.contact}
       </Button>
@@ -45,12 +46,14 @@ const ButtonContainer = ({
 type ButtonContainerProps = {
   className?: string;
   style?: React.CSSProperties;
+  scrollToSection?: () => void;
 };
 
 // Default props.
 ButtonContainer.defaultProps = {
   className: ``,
   style: {},
+  scrollToSection: () => undefined,
 };
 
 // Time to export! 🚚
