@@ -1,6 +1,6 @@
 import Project from "api/Project.model";
 
-export type TRole = "Chief Executive Officer" | "Chief Marketing Officer" | "Chief Technology Officer" | "Project Manager";
+export type TRole = "Chief Executive Officer" | "Chief Marketing Officer" | "Chief Technology Officer" | "Project Manager" | "Software Engineer" | "UX/UI Designer";
 
 export interface IMember {
     first_name: string;
