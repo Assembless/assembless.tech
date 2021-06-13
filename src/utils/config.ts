@@ -1,6 +1,6 @@
 const config = {
     hotjar: {
-        hjid: 2218981,
+        hjid: 2451699,
         hjsv: 6
     }
 };
