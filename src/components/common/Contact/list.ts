@@ -81,40 +81,25 @@ const contacts: TMemberContact[][] = [
             label: "github",
             name: "GitHub",
             value: "DRFR0ST"
-        },
-        {
-            label: "website",
-            name: "Website",
-            value: "https://mike-eling.dev/"
         }
     ],
     [
         {
             label: "email",
             name: "E-Mail",
-            value: "xomod99@gmail.com"
-        },
-        {
-            label: "twitter",
-            name: "Twitter",
-            value: "@damianblo"
-        },
-        {
-            label: "github",
-            name: "GitHub",
-            value: "xomod"
-        },
-        {
-            label: "telegram",
-            name: "Telegram",
-            value: "damblo"
+            value: "rafal.cichocki@assembless.tech"
         },
     ],
     [
         {
             label: "email",
             name: "E-Mail",
-            value: "marko@assembless.tech"
+            value: "karolina.falkowska@assembless.tech"
+        },
+        {
+            label: "website",
+            name: "Website",
+            value: "https://karutek.com/"
         }
     ],
     [
@@ -148,8 +133,8 @@ const contacts: TMemberContact[][] = [
 
 const list: MemberItem[] = [
     new MemberItem("Mike", "Eling", "Chief Executive Officer", contacts[0], undefined, undefined, "https://pbs.twimg.com/profile_images/1350106852814704641/w_BmuLjD_400x400.jpg"),
-    new MemberItem("Damian", "Błochowiak", "Chief Marketing Officer", contacts[1], undefined, undefined, "https://pbs.twimg.com/profile_images/1235677108208271360/TbZBzgcx_400x400.jpg"),
-    new MemberItem("Marko", "Eling", "Chief Technology Officer", contacts[2], undefined, undefined),
+    new MemberItem("Rafał", "Cichocki", "Software Engineer", contacts[1], undefined, undefined),
+    new MemberItem("Karolina", "Falkowska", "UX/UI Designer", contacts[2], undefined, undefined, "https://i.ibb.co/Nyxy5JX/106993419-4489704961099888-1937973486739651086-n.jpg"),
     new MemberItem("Przemysław", "Cieślik", "Project Manager", contacts[3], undefined, projects[0]),
 ]
 
