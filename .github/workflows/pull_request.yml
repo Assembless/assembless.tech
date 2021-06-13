@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
         with:
           secret: ${{ secrets.ACCESS_TOKEN }}
-          url: ${{ steps.preview_step.outputs.preview_url }}
+          url: https://${{ steps.preview_step.outputs.preview_url }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
         uses: actions/upload-artifact@master

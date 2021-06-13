@@ -1,8 +1,7 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Container } from "@material-ui/core";
+import { Box, makeStyles } from "@material-ui/core";
 import { useLittera } from "react-littera";
-import cx from "classnames";
 
 // Project scoped imports.
 import Header from 'components/common/Header'
@@ -24,12 +23,12 @@ const Home = (props: HomeProps) => {
     const translated = useLittera(translations);
     const classes = useStyles();
 
-    return <Container className={cx(classes.root, props.className)} style={props.style}>
-        <Header />
-        <About />
-        <Projects />
-        <Contact />
-    </Container>
+    return <>
+            <Header />
+            <About />
+            <Projects />
+            <Contact />
+    </>
 }
 
 // Creates a hook for generating classnames.

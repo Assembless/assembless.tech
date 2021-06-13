@@ -1,6 +1,6 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Box, Typography } from "@material-ui/core";
+import { makeStyles, Box, Typography, Container } from "@material-ui/core";
 import { useLittera } from "react-littera";
 import cx from "classnames";
 
@@ -20,18 +20,20 @@ const About = (props: AboutProps) => {
     const translated = useLittera(translations);
     const classes = useStyles();
 
-    return <Box display="flex" justifyContent="space-between" alignItems="center" flexWrap="wrap" className={cx(classes.root, props.className)} style={props.style}>
-        <Box className={classes.side}>
-            <Typography className={classes.title} variant="h3" gutterBottom>{translated.title}</Typography>
-            <Typography className={classes.description}>{translated.description}</Typography>
-        </Box>
+    return <Container>
+        <Box display="flex" justifyContent="space-between" alignItems="center" flexWrap="wrap" className={cx(classes.root, props.className)} style={props.style}>
+            <Box className={classes.side}>
+                <Typography className={classes.title} variant="h3" gutterBottom>{translated.title}</Typography>
+                <Typography className={classes.description}>{translated.description}</Typography>
+            </Box>
 
-        <Box className={classes.side} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
-            <h1 className={classes.brandName} style={{ opacity: 1 }}>Assembless</h1>
-            <h1 className={classes.brandName} style={{ opacity: 0.55 }}>/əˈsɛmblɛs/</h1>
+            <Box className={classes.side} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
+                <h1 className={classes.brandName} style={{ opacity: 1 }}>Assembless</h1>
+                <h1 className={classes.brandName} style={{ opacity: 0.55 }}>/əˈsɛmblɛs/</h1>
+            </Box>
         </Box>
+    </Container>
 
-    </Box>
 }
 
 // Creates a hook for generating classnames.

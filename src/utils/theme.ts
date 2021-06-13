@@ -8,6 +8,10 @@ export const LIGHT_THEME = createMuiTheme({
             main: "#FFF",
             contrastText: "#000"
         },
+        secondary: {
+            main: "rgb(33, 150, 243)",
+            contrastText: "#FFF"
+        },
         background: {
             default: "#000",
             paper: "#212121"
@@ -35,12 +39,14 @@ export const LIGHT_THEME = createMuiTheme({
             },
         },
         MuiOutlinedInput: {
+            root: {
+                "&$focused": {
+                    borderColor: "#FFF"
+                }
+            },
             notchedOutline: {
                 borderColor: "#a8a8a8",
             },
-            focused: {
-                borderColo: "#FFF"
-            }
         },
     },
 });

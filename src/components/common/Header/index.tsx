@@ -1,8 +1,9 @@
 // Deps scoped imports.
 import React from "react";
-import { makeStyles, Box, Typography, Button, Hidden, useMediaQuery } from "@material-ui/core";
+import { makeStyles, Box, Typography, Button, Hidden, Container } from "@material-ui/core";
 import { useLittera } from "react-littera";
 import cx from "classnames";
+import { Canvas } from 'react-three-fiber'
 
 // Project scoped imports.
 
@@ -10,56 +11,75 @@ import cx from "classnames";
 import styles from "./styles";
 import translations from "./trans";
 
+const EarthComp = React.lazy(() => import("./Earth"));
+
 /**
  * Header component.
- * @version 1.0.0
- * @author Mike Eling <mike.eling97@gmail.com>
+ * @description This is the first thing that you see.
+ * @version 2.0.0
+ * @author Assembless <support@assembless.tech>
  */
-const Header = (props: HeaderProps) => {
-    const reduceData = useMediaQuery("(prefers-reduced-data: reduce)");
+const Header = (props: ComponentProps) => {
     const translated = useLittera(translations);
     const classes = useStyles();
-    
-    return <Box display="flex" justifyContent="space-between" alignItems="flex-start" className={cx(classes.root, props.className)} style={props.style}>
-        <Box display="flex" justifyContent="flex-start" alignItems="center" className={cx(classes.side)}>
-            <Box>
+
+    return <Container>
+        <Box className={cx(classes.root, props.className)} style={props.style} display="flex" justifyContent="space-between" alignItems="center">
+            <Box className={classes.side}>
                 <Typography component="h1" variant="h2" className={classes.title}>{translated.title}</Typography>
                 <Typography component="h2" variant="h5" className={classes.slogan}>{translated.slogan}</Typography>
+                <Typography component="h2" variant="h5" className={classes.subSlogan}>{translated.subSlogan}</Typography>
                 <br />
                 <br />
                 <br />
-                <Button href="https://github.com/Assembless" variant="contained" size="large">{translated.findSpace}</Button>
+                <Button href="https://github.com/Assembless" variant="contained" color="secondary" size="large" classes={{ root: classes.featuredButton }}>{translated.findSpace}</Button>
             </Box>
-        </Box>
 
-        { /* What a hell I've created..? */}
-        <Hidden smDown>
-            <Box display="flex" justifyContent="flex-end" alignItems="center" className={cx(classes.side)} overflow="hidden" >
-                <div>
-                    <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.galaxy}>
+            <Hidden smDown>
+                <Box style={{ position: "relative", width: "100%", overflow: "hidden" }}>
+                    <Box width="1000px" height="1000px" display="flex" alignItems="center" justifyContent="center" className={classes.galaxy}>
                     </Box>
-                    <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.galaxyFade}>
+                    <Box width="1000px" height="1000px" display="flex" alignItems="center" justifyContent="center" className={classes.galaxyFade}>
                     </Box>
-                    <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.orbit}>
+                    <Box display="flex" justifyContent="flex-end" alignItems="center" className={cx(classes.side)} style={{ height: "100vh", margin: "0 auto" }} >
+                        <div>
+                            <Box width="550px" height="550px" display="flex" alignItems="center" justifyContent="center" className={classes.orbit}>
+                            </Box>
+                            <Box width="500px" height="500px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.atmosphere, classes.atmosphereAnimation01)}>
+                            </Box>
+                            <Box width="500px" height="500px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.atmosphere, classes.atmosphereAnimation02)}>
+                            </Box>
+                            <Box width="400px" height="400px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.planet, classes.earthContainer)}>
+                                <Canvas style={{ width: "400px", height: "400px", borderRadius: "400px" }}>
+                                    <React.Suspense fallback={
+                                        <mesh scale={[1, 1, 1]}>
+                                            <sphereGeometry args={[3, 52, 52]} />
+                                            <meshStandardMaterial color={"#eee"} />
+                                        </mesh>}>
+
+                                        <EarthComp />
+                                    </React.Suspense>
+                                </Canvas>
+                            </Box>
+                        </div>
                     </Box>
-                    <Box width="500px" height="500px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.atmosphere, classes.atmosphereAnimation01)}>
-                    </Box>
-                    <Box width="500px" height="500px" display="flex" alignItems="center" justifyContent="center" className={cx(classes.atmosphere, classes.atmosphereAnimation02)}>
-                    </Box>
-                    <Box width="400px" height="400px" display="flex" alignItems="center" justifyContent="center" className={classes.planet}>
-                        <img src="https://media4.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif?cid=ecf05e476yvh801dnv123fvcatmqyc9iqp9mee4zcv5pwfsr&rid=giphy.gif" style={{ width: "400px", height: "400px" }} />
-                    </Box>
-                </div>
-            </Box> 
-        </Hidden>
-    </Box>
+                </Box>
+            </Hidden>
+
+            {/* <Box className={classes.earthContainer}>
+                <Canvas style={{ width: "353px", height: "353px", borderRadius: "353px" }}>
+                    <Earth />
+                </Canvas>
+            </Box> */}
+        </Box>
+    </Container>
 }
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
 
 // Props the component accepts.
-type HeaderProps = {
+type ComponentProps = {
     className?: string;
     style?: React.CSSProperties
 }
