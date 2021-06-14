@@ -134,7 +134,7 @@ const contacts: TMemberContact[][] = [
 const list: MemberItem[] = [
     new MemberItem("Mike", "Eling", "Chief Executive Officer", contacts[0], undefined, undefined, "https://pbs.twimg.com/profile_images/1350106852814704641/w_BmuLjD_400x400.jpg"),
     new MemberItem("Rafał", "Cichocki", "Software Engineer", contacts[1], undefined, undefined),
-    new MemberItem("Karolina", "Falkowska", "UX/UI Designer", contacts[2], undefined, undefined, "https://i.ibb.co/Nyxy5JX/106993419-4489704961099888-1937973486739651086-n.jpg"),
+    new MemberItem("Karolina", "Falkowska", "UX/UI Designer", contacts[2], undefined, undefined, "https://pbs.twimg.com/profile_images/1375522101810098182/Ehv8nsne_400x400.jpg"),
     new MemberItem("Przemysław", "Cieślik", "Software Engineer", contacts[3], undefined, undefined),
 ]
 
