@@ -9,6 +9,8 @@ const styles = (theme: Theme) =>
       maxHeight: `100vh`,
       width: `100%`,
       alignItems: `flex-start`,
+      maxWidth: `100vw`,
+      overflow: `hidden`,
     },
 
     /** Mobile view */

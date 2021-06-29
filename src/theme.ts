@@ -140,11 +140,6 @@ const theme = createMuiTheme({
         },
       },
     },
-    MuiInputLabel: {
-      root: {
-        color: `#FFF`,
-      },
-    },
     MuiSelect: {
       icon: {
         color: `#FFF`,

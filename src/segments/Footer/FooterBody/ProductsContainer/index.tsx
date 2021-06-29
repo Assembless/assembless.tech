@@ -10,10 +10,6 @@ import cx from 'classnames';
 // @ts-ignore
 import ReactLitteraLogo from '@/assets/hand_with_phone_illustration.png';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import GithubLogo from '@/assets/GitHub_Logo_White.png';
-
 // Component scoped imports.
 import styles from './styles';
 import translations from './trans';
@@ -74,7 +70,7 @@ const ProductsContainer = ({
               <StaticImage
                 src="../../../../assets/800px-Npm-logo.svg.png"
                 alt="NPM logo"
-                height={28}
+                height={20}
               />
             </Button>
           </Box>

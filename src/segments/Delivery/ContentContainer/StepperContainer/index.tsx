@@ -1,5 +1,5 @@
 // Deps scoped imports.
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   makeStyles,
   Box,
@@ -92,8 +92,44 @@ const StepperContainer = ({
   const translated = useLittera(translations);
   const classes = useStyles();
 
-  const handleStep = (index: number) => () => {
+  const stepperHTMLEl = useRef(
+    (null as undefined) as React.MutableRefObject<HTMLDivElement | null>,
+  );
+
+  const handleStep = (index: number) => {
     setActiveStep(index);
+
+    if (activeStep < index && activeStep !== 0)
+      // eslint-disable-next-line prettier/prettier
+      stepperHTMLEl.current.style.transform = `translate(-${index * 20
+        }%, 0)`;
+    // eslint-disable-next-line no-useless-return
+    else if (activeStep === index) return;
+    else {
+      // eslint-disable-next-line prettier/prettier
+      stepperHTMLEl.current.style.transform = `translate(-${(index) * 20}%, 0)`;
+    }
+  };
+
+  const handleSwipeEnd = (clientStartX: number, clientNextX: number) => {
+    if (clientNextX > clientStartX && activeStep > 0)
+      handleStep(activeStep - 1);
+    if (clientNextX < clientStartX) handleStep(activeStep + 1);
+  };
+
+  const handleSwipe = (e: any) => {
+    const clientStartX: number = e.targetTouches[0].clientX;
+
+    /* stepperHTMLEl.current.addEventListener(`touchend`, (evt) =>
+      handleSwipe2(evt.changedTouches[0].clientX, clientStartX),
+    ); */
+
+    stepperHTMLEl.current.addEventListener(`touchend`, (evt) => {
+      const clientNextX: number = evt.changedTouches[0].clientX;
+      handleSwipeEnd(clientStartX, clientNextX);
+    });
+
+    return () => stepperHTMLEl.current.removeEventListener();
   };
 
   const deliverySteps = [
@@ -107,6 +143,7 @@ const StepperContainer = ({
   return (
     <Box className={cx(classes.root, className)} style={style}>
       <Stepper
+        ref={stepperHTMLEl}
         alternativeLabel
         nonLinear
         activeStep={activeStep}
@@ -120,9 +157,10 @@ const StepperContainer = ({
             }}
           />
         }
+        onTouchStart={handleSwipe}
       >
         {deliverySteps.map((step, index, steps) => (
-          <Step onClick={handleStep(index)} key={step.title}>
+          <Step onClick={() => handleStep(index)} key={step.title}>
             <StepLabel
               classes={{
                 alternativeLabel: classes.alternativeLabel,

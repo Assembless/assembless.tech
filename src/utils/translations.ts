@@ -22,6 +22,12 @@ export const preset = {
     de_DE: `Kontakt`,
     pl_PL: `Skontaktuj się`,
   },
+
+  carrers: {
+    en_US: `Careers`,
+    de_DE: `Kontakt`,
+    pl_PL: `Kariera`,
+  },
 };
 
 export type TTransPreset = typeof preset;

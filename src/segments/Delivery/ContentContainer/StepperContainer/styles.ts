@@ -8,6 +8,8 @@ const styles = (theme: Theme) =>
     stepper: {
       backgroundColor: theme.palette.background.patch.main,
       paddingTop: theme.spacing(17),
+      transition: `all 1s ease`,
+      minWidth: 4000,
     },
 
     alternativeLabel: {
@@ -27,8 +29,8 @@ const styles = (theme: Theme) =>
     },
 
     iconContainer: {
-      width: `23px`,
-      height: `23px`,
+      width: 23,
+      height: 23,
 
       display: `flex`,
       alignItems: `center`,
@@ -42,8 +44,8 @@ const styles = (theme: Theme) =>
     active: {
       '&::after': {
         content: `""`,
-        width: `3px`,
-        height: `37px`,
+        width: 3,
+        height: 37,
 
         position: `absolute`,
         bottom: 0,
@@ -51,24 +53,24 @@ const styles = (theme: Theme) =>
         transform: `translate(50%,120%)`,
 
         backgroundColor: theme.palette.background.patch.dark,
-        borderRadius: `200px`,
+        borderRadius: 200,
       },
     },
 
     connectorLine: {
       backgroundColor: theme.palette.background.patch.dark,
-      height: `3px`,
+      height: 3,
       border: `none`,
-      borderRadius: `200px`,
+      borderRadius: 200,
     },
 
     productIcon: {
-      fontSize: `99px`,
+      fontSize: 99,
     },
 
     /** Mobile view */
     [theme.breakpoints.down(`sm`)]: {
-      title: {},
+      stepper: {},
     },
   });
 

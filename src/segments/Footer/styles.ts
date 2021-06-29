@@ -14,6 +14,10 @@ const styles = (theme: Theme) =>
     bottomBar: {
       padding: theme.spacing(4, 0),
     },
+
+    label: {
+      color: `red`,
+    },
   });
 
 export default styles;
