@@ -33,13 +33,13 @@ const {{ $name }} = ({ className, style }: {{ $name }}Props): JSX.Element => {
 };
 
 // Props the component accepts.
-type { { $name } } Props = {
+type {{ $name }} Props = {
   className?: string;
   style?: React.CSSProperties;
 };
 
 // Default props.
-{ { $name } }.defaultProps = {
+{{ $name }}.defaultProps = {
   className: ``,
   style: {},
 };

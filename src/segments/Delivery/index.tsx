@@ -1,58 +1,136 @@
 // Deps scoped imports.
-import React, { useState } from 'react';
-import { makeStyles, Box, Container } from '@material-ui/core';
+import React, { useState, useRef } from 'react';
+import {
+  makeStyles,
+  Box,
+  Container,
+  Stepper,
+  Step,
+  StepButton,
+  useTheme,
+  useMediaQuery,
+} from '@material-ui/core';
 import { useLittera } from '@assembless/react-littera';
 import cx from 'classnames';
+import { navigate } from 'gatsby';
 
 // Project scoped imports.
+import SectionHead from '@/components/SectionHead';
+import { SEGMENTS_LIST } from '@/utils/segements';
 
 // Component scoped imports.
-import SectionHead from '@/components/SectionHead';
+import { DELIVERY_STEPS } from './constants';
 import styles from './styles';
 import translations from './trans';
-import ContentContainer from './ContentContainer';
-import DeliverCard from './ContentContainer/DeliverCard';
+
+import { DesktopDeliveryCard } from './DesktopDeliveryCard';
+import { MobileDeliveryCard } from './MobileDeliveryCard';
 
 // Creates a hook for generating classnames.
-const useStyles = makeStyles(styles);
+export const useStyles = makeStyles(styles);
 
 /**
  * Delivery component.
- * @description This is the delivery section.
+ * @description Section component representing Delivery section.
  * @version 1.0.0
  * @author Assembless <support@assembless.tech>
  */
-const Delivery = ({ className, style }: DeliveryProps): JSX.Element => {
+const Delivery = ({
+  className,
+  style,
+  scrollToSection,
+}: DeliveryProps): JSX.Element => {
   const translated = useLittera(translations);
   const classes = useStyles();
 
+  // Theme is used to get the breakpoints which then are used for the media query to tell if the user views on mobile.
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down(`sm`));
+
   const [activeStep, setActiveStep] = useState(0);
+  // This tells if the card is in or out, for the animation.
+  const [isCardIn, setIsCardIn] = useState(true);
+  // Wait for a few seconds before the card comes out again.
+  const timeoutRef = useRef((null as unknown) as NodeJS.Timeout);
+
+  const handleStep = (index: number) => () => {
+    // Clear timeout to have no leaks.
+    clearTimeout(timeoutRef.current);
+
+    setIsCardIn(false);
+
+    const tmFn = () => {
+      setActiveStep(index);
+      setIsCardIn(true);
+    };
+
+    timeoutRef.current = setTimeout(tmFn, 355);
+  };
+
+  const handleNext = () =>
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const handlePrev = () =>
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+
+  // The currently enabled step.
+  const selectedStep = DELIVERY_STEPS[activeStep] ?? null;
+  const stepperOrientation = isMobile ? `vertical` : `horizontal`;
 
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      width="100%"
       component="section"
       className={cx(classes.root, className)}
       style={style}
     >
-      <Box style={{ width: `100%`, marginBottom: -192 }}>
+      <Container>
         <SectionHead
           title={translated.deliver}
           subTitle={translated.subTitle}
           id="deliver"
         />
-        <ContentContainer
-          activeStep={activeStep}
-          setActiveStep={setActiveStep}
-        />
-        <Container style={{ position: `relative`, top: -192 }}>
-          <DeliverCard activeStep={activeStep} />
+      </Container>
+
+      <Box className={classes.stepperWrapper}>
+        <Container style={{ marginTop: isMobile ? 0 : `-36px` }}>
+          <Stepper
+            style={{ backgroundColor: `transparent` }}
+            activeStep={activeStep}
+            nonLinear
+            alternativeLabel={!isMobile}
+            orientation={stepperOrientation}
+          >
+            {DELIVERY_STEPS.map((step, index) => (
+              <Step key={step.title} completed={index < activeStep}>
+                <StepButton onClick={handleStep(index)}>
+                  {step.title}
+                </StepButton>
+
+                {/* View for mobile! */}
+                <MobileDeliveryCard
+                  activeStep={activeStep}
+                  selectedStep={selectedStep}
+                  onNext={
+                    activeStep >= DELIVERY_STEPS.length
+                      ? scrollToSection
+                      : handleNext
+                  }
+                  onPrev={handlePrev}
+                  isMaxIndex={activeStep >= DELIVERY_STEPS.length}
+                />
+              </Step>
+            ))}
+          </Stepper>
         </Container>
       </Box>
+
+      {/* View for desktop! */}
+      <DesktopDeliveryCard
+        selectedStep={selectedStep}
+        activeStep={activeStep}
+        onNext={handleStep(activeStep < 4 ? activeStep + 1 : 0)}
+        isCardIn={isCardIn}
+        scrollToSection={scrollToSection}
+      />
     </Box>
   );
 };
@@ -61,12 +139,16 @@ const Delivery = ({ className, style }: DeliveryProps): JSX.Element => {
 type DeliveryProps = {
   className?: string;
   style?: React.CSSProperties;
+  scrollToSection?: () => void;
 };
 
 // Default props.
 Delivery.defaultProps = {
   className: ``,
   style: {},
+  scrollToSection: () => {
+    navigate(`#${SEGMENTS_LIST[4]}`);
+  },
 };
 
 // Time to export! 🚚

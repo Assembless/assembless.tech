@@ -17,12 +17,13 @@ import theme from '@/theme';
 import AppBar from '@/components/AppBar';
 
 import { useMediaQuery } from '@material-ui/core';
-import HeroSegment from '../segments/Hero';
-import ContactSegment from '../segments/Contact';
-import ServicesSegment from '../segments/Services';
-import DeliverySegment from '../segments/Delivery';
-import AboutSegment from '../segments/About';
-import FooterSegment from '../segments/Footer';
+
+import HeroSegment from '@/segments/Hero';
+import ContactSegment from '@/segments/Contact';
+import ServicesSegment from '@/segments/Services';
+import DeliverySegment from '@/segments/Delivery';
+import AboutSegment from '@/segments/About';
+import FooterSegment from '@/segments/Footer';
 
 // Component scope imports.
 
@@ -67,7 +68,7 @@ const Home: React.FC<PageProps> = () => {
                         }
                       />
                       <HeroSegment
-                        scrollToSection={() => fullpageApi.moveTo(1, 0)}
+                        scrollToSection={() => fullpageApi.moveTo(2, 0)}
                       />
                     </div>
                     <div
@@ -86,7 +87,9 @@ const Home: React.FC<PageProps> = () => {
                       <AboutSegment />
                     </div>
                     <div className="section" style={{ minHeight: `100vh` }}>
-                      <DeliverySegment />
+                      <DeliverySegment
+                        scrollToSection={() => fullpageApi.moveTo(5, 0)}
+                      />
                     </div>
                     <div className="section" style={{ minHeight: `100vh` }}>
                       <ContactSegment />

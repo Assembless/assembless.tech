@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "start": "gatsby develop",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H bastion.local -p 8000",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
