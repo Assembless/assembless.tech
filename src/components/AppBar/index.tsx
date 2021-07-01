@@ -17,6 +17,7 @@ import Logotype from '@/components/Logotype';
 
 // Component scoped imports.
 import { SEGMENTS_LIST } from '@/utils/segements';
+import CareersDialog from '@/segments/CareersDialog';
 import styles from './styles';
 import translations from './trans';
 
@@ -89,6 +90,8 @@ const AppBar = ({
               >
                 {translated.deliver}
               </Button>
+
+              <CareersDialog />
 
               <Button
                 onClick={handleScrollTo(5)}
