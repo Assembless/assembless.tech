@@ -20,7 +20,7 @@ jobs:
       - name: E2E Test ✅
         run: |
           yarn test:e2e:ci
-      - name: Deploy 🚀
+      - name: Deploy 🚀 # The project will be deployed to Surge here!
         uses: afc163/surge-preview@v1
         id: preview_step
         with:
