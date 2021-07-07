@@ -47,7 +47,7 @@ const FooterHeadLeft = ({
           color="primary"
           aria-label="GitHub"
         >
-          <GitHub className={classes.icon} style={{ fontSize: `3rem` }} />
+          <GitHub className={classes.icon} style={{ fontSize: `1rem` }} />
         </IconButton>
         <IconButton
           href="https://facebook.com/Assembless"
@@ -55,7 +55,7 @@ const FooterHeadLeft = ({
           color="primary"
           aria-label="Facebook"
         >
-          <Facebook className={classes.icon} style={{ fontSize: `3rem` }} />
+          <Facebook className={classes.icon} style={{ fontSize: `1rem` }} />
         </IconButton>
         <IconButton
           href="https://twitter.com/Assembless"
@@ -63,7 +63,7 @@ const FooterHeadLeft = ({
           color="primary"
           aria-label="Twitter"
         >
-          <Twitter className={classes.icon} style={{ fontSize: `3rem` }} />
+          <Twitter className={classes.icon} style={{ fontSize: `1rem` }} />
         </IconButton>
       </Box>
     </Box>
