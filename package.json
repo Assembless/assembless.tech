@@ -23,7 +23,7 @@
     "test:e2e:ci": "start-server-and-test \"yarn develop\" http://localhost:8000 \"yarn cy:run\""
   },
   "dependencies": {
-    "@assembless/react-littera": "^2.2.1",
+    "@assembless/react-littera": "^2.3.0-beta.0",
     "@fontsource/lato": "^4.2.2",
     "@fontsource/roboto-mono": "^4.2.2",
     "@fullpage/react-fullpage": "^0.1.19",
