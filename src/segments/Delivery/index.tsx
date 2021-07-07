@@ -1,5 +1,5 @@
 // Deps scoped imports.
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import {
   makeStyles,
   Box,
@@ -10,7 +10,7 @@ import {
   useTheme,
   useMediaQuery,
 } from '@material-ui/core';
-import { useLittera } from '@assembless/react-littera';
+import { useLittera, useLitteraMethods } from '@assembless/react-littera';
 import cx from 'classnames';
 import { navigate } from 'gatsby';
 
@@ -19,9 +19,10 @@ import SectionHead from '@/components/SectionHead';
 import { SEGMENTS_LIST } from '@/utils/segements';
 
 // Component scoped imports.
-import { DELIVERY_STEPS } from './constants';
+import { DELIVERY_STEPS_KEYS } from './constants';
+import { TDeliveryStep } from './types';
 import styles from './styles';
-import translations from './trans';
+import translations, { deliveryTranslations } from './trans';
 
 import { DesktopDeliveryCard } from './DesktopDeliveryCard';
 import { MobileDeliveryCard } from './MobileDeliveryCard';
@@ -41,7 +42,21 @@ const Delivery = ({
   scrollToSection,
 }: DeliveryProps): JSX.Element => {
   const translated = useLittera(translations);
+  const { locale } = useLitteraMethods();
+  const deliveryTranslated = useLittera(deliveryTranslations);
   const classes = useStyles();
+
+  const steps = useMemo<TDeliveryStep[]>(
+    () =>
+      DELIVERY_STEPS_KEYS.map((key: string) =>
+        deliveryTranslated[key].map((trans: string[]) => ({
+          title: trans[0],
+          subheader: trans[1],
+          content: trans[2],
+        })),
+      ),
+    [locale],
+  );
 
   // Theme is used to get the breakpoints which then are used for the media query to tell if the user views on mobile.
   const theme = useTheme();
@@ -73,7 +88,7 @@ const Delivery = ({
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
   // The currently enabled step.
-  const selectedStep = DELIVERY_STEPS[activeStep] ?? null;
+  const selectedStep = steps[activeStep] ?? null;
   const stepperOrientation = isMobile ? `vertical` : `horizontal`;
 
   return (
@@ -99,7 +114,7 @@ const Delivery = ({
             alternativeLabel={!isMobile}
             orientation={stepperOrientation}
           >
-            {DELIVERY_STEPS.map((step, index) => (
+            {steps.map((step, index) => (
               <Step key={step.title} completed={index < activeStep}>
                 <StepButton onClick={handleStep(index)}>
                   {step.title}
@@ -110,12 +125,12 @@ const Delivery = ({
                   activeStep={activeStep}
                   selectedStep={selectedStep}
                   onNext={
-                    activeStep >= DELIVERY_STEPS.length
+                    activeStep >= DELIVERY_STEPS_KEYS.length
                       ? scrollToSection
                       : handleNext
                   }
                   onPrev={handlePrev}
-                  isMaxIndex={activeStep >= DELIVERY_STEPS.length}
+                  isMaxIndex={activeStep >= DELIVERY_STEPS_KEYS.length}
                 />
               </Step>
             ))}
