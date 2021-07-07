@@ -50,16 +50,14 @@ const Delivery = ({
     const stps = [] as TDeliveryStep[];
 
     DELIVERY_STEPS_KEYS.forEach((key: string) => {
-      deliveryTranslated[key].map((trans: string[]) => {
-        stps.push({
-          title: trans[0],
-          subheader: trans[1],
-          content: trans[2],
-        });
+      stps.push({
+        title: deliveryTranslated[key][0],
+        subheader: deliveryTranslated[key][1],
+        content: deliveryTranslated[key][2],
       });
     });
 
-    return stps;
+    return [...stps];
   }, [locale]);
 
   // Theme is used to get the breakpoints which then are used for the media query to tell if the user views on mobile.

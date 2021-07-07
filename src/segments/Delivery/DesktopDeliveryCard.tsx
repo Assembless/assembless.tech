@@ -70,7 +70,7 @@ export const DesktopDeliveryCard = ({
               title={selectedStep.title}
               subheader={selectedStep.subheader}
               action={
-                <IconButton onClick={onNext}>
+                <IconButton onClick={onNext} aria-label="Next card">
                   {activeStep < 4 ? <ArrowForward /> : <Replay />}
                 </IconButton>
               }

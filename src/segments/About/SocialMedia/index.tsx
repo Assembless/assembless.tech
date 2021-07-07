@@ -23,13 +23,28 @@ const SocialMedia = ({ className, style }: SocialMediaProps): JSX.Element => {
 
   return (
     <Box className={cx(classes.mediaWrapper, className)} style={style}>
-      <IconButton href="#services" size="small" color="primary">
+      <IconButton
+        href="https://github.com/Assembless"
+        size="small"
+        color="primary"
+        aria-label="GitHub"
+      >
         <GitHub className={classes.icon} style={{ fontSize: `3rem` }} />
       </IconButton>
-      <IconButton href="#services" size="small" color="primary">
+      <IconButton
+        href="https://facebook.com/Assembless"
+        size="small"
+        color="primary"
+        aria-label="Facebook"
+      >
         <Facebook className={classes.icon} style={{ fontSize: `3rem` }} />
       </IconButton>
-      <IconButton href="#services" size="small" color="primary">
+      <IconButton
+        href="https://twitter.com/Assembless"
+        size="small"
+        color="primary"
+        aria-label="Twitter"
+      >
         <Twitter className={classes.icon} style={{ fontSize: `3rem` }} />
       </IconButton>
     </Box>

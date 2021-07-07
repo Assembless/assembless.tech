@@ -28,7 +28,11 @@ const FooterHeadRight = ({
 
   return (
     <Box className={cx(classes.root, className)} style={style}>
-      <Typography className={classes.contactDetailsTitle} variant="h4">
+      <Typography
+        className={classes.contactDetailsTitle}
+        variant="h4"
+        component="p"
+      >
         {translated.title}
       </Typography>
       <Typography className={classes.contactDetailsText} paragraph>
