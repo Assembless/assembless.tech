@@ -46,17 +46,21 @@ const Delivery = ({
   const deliveryTranslated = useLittera(deliveryTranslations);
   const classes = useStyles();
 
-  const steps = useMemo<TDeliveryStep[]>(
-    () =>
-      DELIVERY_STEPS_KEYS.map((key: string) =>
-        deliveryTranslated[key].map((trans: string[]) => ({
+  const steps = useMemo<TDeliveryStep[]>(() => {
+    const stps = [] as TDeliveryStep[];
+
+    DELIVERY_STEPS_KEYS.forEach((key: string) => {
+      deliveryTranslated[key].map((trans: string[]) => {
+        stps.push({
           title: trans[0],
           subheader: trans[1],
           content: trans[2],
-        })),
-      ),
-    [locale],
-  );
+        });
+      });
+    });
+
+    return stps;
+  }, [locale]);
 
   // Theme is used to get the breakpoints which then are used for the media query to tell if the user views on mobile.
   const theme = useTheme();

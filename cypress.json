@@ -5,5 +5,10 @@
     "viewportHeight": 768,
     "screenshotsFolder": "cypress/screenshots",
     "videosFolder": "cypress/videos",
-    "defaultCommandTimeout": 120000
+    "defaultCommandTimeout": 120000,
+    "execTimeout": 180000,
+    "taskTimeout": 180000,
+    "pageLoadTime": 180000,
+    "requestTimeout": 20000,
+    "responseTimeout": 150000
 }
