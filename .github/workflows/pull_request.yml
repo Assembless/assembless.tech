@@ -30,7 +30,7 @@ jobs:
           teardown: 'true'
           failOnError: true
       - name: Get the preview_url
-        run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
+        run: echo "Preview url => ${{ steps.preview_step.outputs.preview_url }}"
       - name: Generate Lighthouse Report
         uses: justinribeiro/lighthouse-action@master
         continue-on-error: true
