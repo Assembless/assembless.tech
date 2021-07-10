@@ -7,6 +7,7 @@ import {
   Stepper,
   Step,
   StepButton,
+  StepContent,
   useTheme,
   useMediaQuery,
 } from '@material-ui/core';
@@ -123,17 +124,19 @@ const Delivery = ({
                 </StepButton>
 
                 {/* View for mobile! */}
-                <MobileDeliveryCard
-                  activeStep={activeStep}
-                  selectedStep={selectedStep}
-                  onNext={
-                    activeStep >= DELIVERY_STEPS_KEYS.length
-                      ? scrollToSection
-                      : handleNext
-                  }
-                  onPrev={handlePrev}
-                  isMaxIndex={activeStep >= DELIVERY_STEPS_KEYS.length}
-                />
+                <StepContent>
+                  <MobileDeliveryCard
+                    activeStep={activeStep}
+                    selectedStep={selectedStep}
+                    onNext={
+                      activeStep >= DELIVERY_STEPS_KEYS.length - 1
+                        ? scrollToSection
+                        : handleNext
+                    }
+                    onPrev={handlePrev}
+                    isMaxIndex={activeStep >= DELIVERY_STEPS_KEYS.length - 1}
+                  />
+                </StepContent>
               </Step>
             ))}
           </Stepper>

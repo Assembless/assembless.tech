@@ -43,30 +43,23 @@ export const MobileDeliveryCard = ({
   if (!isMobile) return null;
 
   return (
-    <StepContent>
-      <Box>
-        <CardHeader
-          title={selectedStep.title}
-          subheader={selectedStep.subheader}
-        />
-        <CardContent>
-          <Typography paragraph>{selectedStep.content}</Typography>
-        </CardContent>
-        <CardActions>
-          <Button disabled={activeStep === 0} onClick={onPrev}>
-            {translated.back}
-          </Button>
+    <Box>
+      <CardHeader
+        title={selectedStep.title}
+        subheader={selectedStep.subheader}
+      />
+      <CardContent>
+        <Typography paragraph>{selectedStep.content}</Typography>
+      </CardContent>
+      <CardActions>
+        <Button disabled={activeStep === 0} onClick={onPrev}>
+          {translated.back}
+        </Button>
 
-          <Button
-            disabled={isMaxIndex}
-            variant="contained"
-            color="primary"
-            onClick={onNext}
-          >
-            {isMaxIndex ? translated.bigButton : translated.next}
-          </Button>
-        </CardActions>
-      </Box>
-    </StepContent>
+        <Button variant="contained" color="primary" onClick={onNext}>
+          {isMaxIndex ? translated.bigButton : translated.next}
+        </Button>
+      </CardActions>
+    </Box>
   );
 };
