@@ -60,7 +60,7 @@ export const DesktopDeliveryCard = ({
       <Grow in={isCardIn && !!selectedStep} mountOnEnter>
         <Container
           style={{
-            marginTop: `-110px`,
+            marginTop: `-140px`,
             position: `relative`,
             minHeight: cardElementRef.current?.clientHeight ?? `200px`,
           }}

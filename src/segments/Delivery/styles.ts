@@ -25,10 +25,14 @@ const styles = (theme: Theme) =>
       left: `50%`,
       transform: `translateX(-50%)`,
       top: `0`,
+      backgroundColor: theme.palette.background.default,
+      boxShadow: `0 9px 38px rgba(0,0,0, 0.07)`,
+      padding: theme.spacing(13, 11),
+      borderRadius: theme.shape.borderRadius,
     },
     stepperWrapper: {
       width: `100%`,
-      paddingBottom: `128px`,
+      paddingBottom: `148px`,
       backgroundColor: theme.palette.background.patch.main,
 
       [theme.breakpoints.down(`sm`)]: {

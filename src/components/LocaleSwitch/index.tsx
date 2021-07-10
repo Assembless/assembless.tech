@@ -40,6 +40,7 @@ const LocaleSwitch = ({ className, style }: LocaleSwitchProps): JSX.Element => {
       value={locale}
       color="secondary"
       onChange={handleChange}
+      InputLabelProps={{ style: { color: `#FFF` } }}
       select
     >
       {locales.map((l) => (
