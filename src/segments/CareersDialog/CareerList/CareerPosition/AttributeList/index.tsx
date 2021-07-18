@@ -1,17 +1,12 @@
 // Deps scoped imports.
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
-import { useLittera } from '@assembless/react-littera';
-import cx from 'classnames';
+import { Box, Typography } from '@material-ui/core';
 
 // Project scoped imports.
 
 // Component scoped imports.
-import styles from './styles';
-import translations from './trans';
 
 // Creates a hook for generating classnames.
-const useStyles = makeStyles(styles);
 
 /**
  * AttributeList component.

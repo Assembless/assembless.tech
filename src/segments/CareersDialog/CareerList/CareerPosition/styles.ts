@@ -66,6 +66,7 @@ const styles = (theme: Theme) =>
       fontSize: 20,
       whiteSpace: `pre-line`,
 
+      marginTop: 40,
       marginBottom: 86,
     },
 

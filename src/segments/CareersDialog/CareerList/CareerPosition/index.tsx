@@ -1,5 +1,5 @@
 // Deps scoped imports.
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {
   makeStyles,
   Box,
@@ -12,18 +12,18 @@ import {
   StepLabel,
   Step,
   TextField,
+  Container,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import cx from 'classnames';
-import { useLittera } from '@assembless/react-littera';
 
 // Project scoped imports.
 
 // Component scoped imports.
 import AttributeList from './AttributeList/index';
 import styles from './styles';
-import translations from './trans';
+import { useDynamicInputs } from './useDynamicInputs';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -40,7 +40,8 @@ const CareerPosition = ({
   position,
 }: CareerPositionProps): JSX.Element => {
   const classes = useStyles();
-  const translated = useLittera(translations);
+
+  const { comps } = useDynamicInputs();
 
   const steps = [
     `Select campaign settings`,
@@ -48,10 +49,10 @@ const CareerPosition = ({
     `Create an ad`,
   ];
 
-  const subscribe = useRef();
-
   const [open, setOpen] = useState(false);
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(-1);
+
+  /*  const [cv, setCv] = useState(); */
 
   const handleOpen = () => {
     setOpen(true);
@@ -59,7 +60,7 @@ const CareerPosition = ({
 
   const handleClose = () => {
     setOpen(false);
-    setActiveStep(0);
+    setActiveStep(-1);
   };
 
   const handleNext = () => {
@@ -67,8 +68,11 @@ const CareerPosition = ({
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     if (activeStep === steps.length - 1) {
       handleClose();
-      setActiveStep(0);
     }
+  };
+
+  const handleAttachCV = () => {
+    /*  setCv(e.target.files[0]); */
   };
 
   return (
@@ -96,22 +100,20 @@ const CareerPosition = ({
         scroll="body"
         classes={{ paperWidthLg: classes.dialog }}
       >
-        <Box>
+        <Box display="flex" flexDirection="column">
           <Box className={classes.dialogHead}>
             <h3 className={classes.dialogTitle}>{position.name}</h3>
             <IconButton style={{ marginTop: 36 }} onClick={handleClose}>
               <CloseIcon />
             </IconButton>
           </Box>
-          <Box style={{ padding: `20px 60px 38px 60px` }}>
-            <Stepper activeStep={activeStep} alternativeLabel>
-              {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-            {activeStep === 0 && (
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            style={{ padding: `20px 60px 38px 60px` }}
+          >
+            {activeStep === -1 && (
               <Box className={classes.dialogContent}>
                 <Typography className={classes.dialogDescription}>
                   {position.description}
@@ -122,71 +124,108 @@ const CareerPosition = ({
                 <AttributeList attribute={position.ourOffer} />
               </Box>
             )}
+            {activeStep >= 0 && (
+              <Stepper
+                activeStep={activeStep}
+                alternativeLabel
+                style={{ marginTop: 30 }}
+              >
+                {steps.map((label) => (
+                  <Step key={label}>
+                    <StepLabel>{label}</StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+            )}
+            {activeStep === 0 && (
+              <Box
+                marginTop="50px"
+                marginBottom="50px"
+                display="flex"
+                justifyContent="center"
+              >
+                <Container maxWidth="sm">
+                  <form
+                    style={{
+                      display: `flex`,
+                      flexDirection: `column`,
+                      marginBottom: `20px`,
+                    }}
+                  >
+                    <Box display="flex" flexDirection="column">
+                      <Box display="flex" justifyContent="space-between">
+                        <TextField
+                          required
+                          name="first_name"
+                          autoComplete="off"
+                          style={{
+                            marginBottom: `20px`,
+                            borderRadius: `4px`,
+                            marginRight: `20px`,
+                            width: `45%`,
+                          }}
+                          label="First Name"
+                        />
+                        <TextField
+                          required
+                          name="last_name"
+                          autoComplete="off"
+                          style={{
+                            marginBottom: `20px`,
+                            borderRadius: `4px`,
+                            width: `45%`,
+                          }}
+                          label="Last Name"
+                        />
+                      </Box>
+                      <TextField
+                        required
+                        name="email"
+                        type="email"
+                        style={{
+                          marginBottom: `20px`,
+                          borderRadius: `4px`,
+                        }}
+                        label="Email"
+                      />
+                      <TextField
+                        required
+                        name="phone_number"
+                        style={{
+                          marginBottom: `20px`,
+                          borderRadius: `4px`,
+                        }}
+                        label="Phone number"
+                      />
+                    </Box>
 
-            {activeStep === 1 && (
-              <Box>
-                <form style={{ display: `flex`, flexDirection: `column` }}>
-                  <TextField
-                    required
-                    name="first_name"
-                    autoComplete="off"
-                    style={{
-                      marginBottom: `10px`,
-                      borderRadius: `4px`,
-                    }}
-                    label={translated.title}
-                  />
-                  <TextField
-                    inputRef={subscribe}
-                    name="last_name"
-                    autoComplete="off"
-                    style={{
-                      marginBottom: `10px`,
-                      borderRadius: `4px`,
-                    }}
-                    label={translated.title}
-                  />
-                  <TextField
-                    inputRef={subscribe}
-                    required
-                    name="email"
-                    type="email"
-                    autoComplete="off"
-                    style={{
-                      marginBottom: `10px`,
-                      borderRadius: `4px`,
-                    }}
-                    label={translated.title}
-                  />
-                  <TextField
-                    inputRef={subscribe}
-                    required
-                    name="experience"
-                    type="number"
-                    autoComplete="off"
-                    style={{
-                      marginBottom: `10px`,
-                      borderRadius: `4px`,
-                    }}
-                    label={translated.title}
-                  />
-                  <TextField
-                    inputRef={subscribe}
-                    required
-                    name="time_available"
-                    type="string"
-                    autoComplete="off"
-                    style={{
-                      marginBottom: `10px`,
-                      borderRadius: `4px`,
-                    }}
-                    label={translated.title}
-                  />
-                </form>
+                    <TextField
+                      required
+                      name="message"
+                      autoComplete="off"
+                      multiline
+                      rows={6}
+                      style={{
+                        marginBottom: `10px`,
+                        borderRadius: `4px`,
+                      }}
+                      label="Message"
+                    />
+                  </form>
+                </Container>
               </Box>
             )}
 
-            {activeStep === 2 && <Box>complete</Box>}
+            {activeStep === 1 && (
+              <Box display="flex" flexDirection="column">
+                {comps}
+                <input
+                  type="file"
+                  onClick={handleAttachCV}
+                  style={{ width: `fit-content` }}
+                />
+              </Box>
+            )}
             <Box className={classes.btn}>
               <Button
                 color="primary"

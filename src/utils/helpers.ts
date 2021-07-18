@@ -1,3 +1,5 @@
+import { useReducer } from 'react';
+
 /**
  * Waits N amount of milliseconds.
  * @param timeout Milliseconds
@@ -8,3 +10,12 @@ export function wait(timeout: number) {
     setTimeout(resolve, timeout);
   });
 }
+
+// export const useSignal = () => useReducer((state) => state + 1, 0)[0];
+
+// const [, f] = useReducer((c) => c + 1, 0);
+export const useSignal = () => {
+  const [, f] = useReducer((c) => c + 1, 0);
+
+  return f;
+};
