@@ -8,6 +8,8 @@ type THookApi = {
   onValueChange: (value: string, index: number) => void;
 };
 
+const MAX_NUMBER_OF_INPUTS = 10;
+
 const mapToComp = (onChange: (v: string, i: number) => void) => (
   value: string,
   index: number,
@@ -22,8 +24,6 @@ const mapToComp = (onChange: (v: string, i: number) => void) => (
     onChange={(e) => onChange(e.target.value, index)}
   />
 );
-
-const MAX_NUMBER_OF_INPUTS = 10;
 
 export const useDynamicInputs = () => {
   const signal = useSignal();

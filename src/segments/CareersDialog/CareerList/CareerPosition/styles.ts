@@ -60,16 +60,6 @@ const styles = (theme: Theme) =>
       fontWeight: 600,
     },
 
-    dialogContent: {},
-
-    dialogDescription: {
-      fontSize: 20,
-      whiteSpace: `pre-line`,
-
-      marginTop: 40,
-      marginBottom: 86,
-    },
-
     btn: {
       display: `flex`,
       justifyContent: `flex-end`,

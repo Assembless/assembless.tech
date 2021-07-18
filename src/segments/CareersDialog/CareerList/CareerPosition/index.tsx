@@ -11,8 +11,6 @@ import {
   Stepper,
   StepLabel,
   Step,
-  TextField,
-  Container,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
@@ -21,9 +19,11 @@ import cx from 'classnames';
 // Project scoped imports.
 
 // Component scoped imports.
-import AttributeList from './AttributeList/index';
+
 import styles from './styles';
-import { useDynamicInputs } from './useDynamicInputs';
+import DialogFirstView from './DialogFirstView';
+import StepOne from './StepOne';
+import StepTwo from './StepTwo';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -41,8 +41,6 @@ const CareerPosition = ({
 }: CareerPositionProps): JSX.Element => {
   const classes = useStyles();
 
-  const { comps } = useDynamicInputs();
-
   const steps = [
     `Select campaign settings`,
     `Create an ad group`,
@@ -51,8 +49,6 @@ const CareerPosition = ({
 
   const [open, setOpen] = useState(false);
   const [activeStep, setActiveStep] = useState(-1);
-
-  /*  const [cv, setCv] = useState(); */
 
   const handleOpen = () => {
     setOpen(true);
@@ -69,10 +65,6 @@ const CareerPosition = ({
     if (activeStep === steps.length - 1) {
       handleClose();
     }
-  };
-
-  const handleAttachCV = () => {
-    /*  setCv(e.target.files[0]); */
   };
 
   return (
@@ -113,17 +105,7 @@ const CareerPosition = ({
             justifyContent="center"
             style={{ padding: `20px 60px 38px 60px` }}
           >
-            {activeStep === -1 && (
-              <Box className={classes.dialogContent}>
-                <Typography className={classes.dialogDescription}>
-                  {position.description}
-                </Typography>
-
-                <AttributeList attribute={position.requirements} />
-                <AttributeList attribute={position.responsibilities} />
-                <AttributeList attribute={position.ourOffer} />
-              </Box>
-            )}
+            {activeStep === -1 && <DialogFirstView position={position} />}
             {activeStep >= 0 && (
               <Stepper
                 activeStep={activeStep}
@@ -137,95 +119,9 @@ const CareerPosition = ({
                 ))}
               </Stepper>
             )}
-            {activeStep === 0 && (
-              <Box
-                marginTop="50px"
-                marginBottom="50px"
-                display="flex"
-                justifyContent="center"
-              >
-                <Container maxWidth="sm">
-                  <form
-                    style={{
-                      display: `flex`,
-                      flexDirection: `column`,
-                      marginBottom: `20px`,
-                    }}
-                  >
-                    <Box display="flex" flexDirection="column">
-                      <Box display="flex" justifyContent="space-between">
-                        <TextField
-                          required
-                          name="first_name"
-                          autoComplete="off"
-                          style={{
-                            marginBottom: `20px`,
-                            borderRadius: `4px`,
-                            marginRight: `20px`,
-                            width: `45%`,
-                          }}
-                          label="First Name"
-                        />
-                        <TextField
-                          required
-                          name="last_name"
-                          autoComplete="off"
-                          style={{
-                            marginBottom: `20px`,
-                            borderRadius: `4px`,
-                            width: `45%`,
-                          }}
-                          label="Last Name"
-                        />
-                      </Box>
-                      <TextField
-                        required
-                        name="email"
-                        type="email"
-                        style={{
-                          marginBottom: `20px`,
-                          borderRadius: `4px`,
-                        }}
-                        label="Email"
-                      />
-                      <TextField
-                        required
-                        name="phone_number"
-                        style={{
-                          marginBottom: `20px`,
-                          borderRadius: `4px`,
-                        }}
-                        label="Phone number"
-                      />
-                    </Box>
+            {activeStep === 0 && <StepOne />}
+            {activeStep === 1 && <StepTwo />}
 
-                    <TextField
-                      required
-                      name="message"
-                      autoComplete="off"
-                      multiline
-                      rows={6}
-                      style={{
-                        marginBottom: `10px`,
-                        borderRadius: `4px`,
-                      }}
-                      label="Message"
-                    />
-                  </form>
-                </Container>
-              </Box>
-            )}
-
-            {activeStep === 1 && (
-              <Box display="flex" flexDirection="column">
-                {comps}
-                <input
-                  type="file"
-                  onClick={handleAttachCV}
-                  style={{ width: `fit-content` }}
-                />
-              </Box>
-            )}
             <Box className={classes.btn}>
               <Button
                 color="primary"
@@ -262,7 +158,7 @@ type TPositionDetails = {
   list: string[];
 };
 
-interface IPosition {
+export interface IPosition {
   name: string;
   type: string;
   description: string;
