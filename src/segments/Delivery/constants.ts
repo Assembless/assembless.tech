@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { TDeliveryStep } from './types';
 
 /** TODO: Translations! */
@@ -54,4 +55,12 @@ export const DELIVERY_STEPS: TDeliveryStep[] = [
                           Mauris non gravida diam, at posuere velit. Suspendisse
                           porttitor sit amet ex eget commodo.`,
   },
+=======
+export const DELIVERY_STEPS_KEYS = [
+  `brainstorming`,
+  `prototyping`,
+  `development`,
+  `testing`,
+  `deployment`,
+>>>>>>> eb9b6404e6edca2d49e49723ff394e296183b5c8
 ];

@@ -30,13 +30,7 @@ const HeroTitle = ({ className, style }: HeroTitleProps): JSX.Element => {
         {` `}
         <TypingCarousel
           style={{ fontWeight: 800 }}
-          values={[
-            translated.typing1,
-            translated.typing2,
-            translated.typing3,
-            translated.typing4,
-            translated.typing5,
-          ]}
+          values={translated.typings}
         />
       </Typography>
       <Typography className={classes.slogan}>{translated.slogan}</Typography>

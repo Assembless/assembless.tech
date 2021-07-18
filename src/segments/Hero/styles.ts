@@ -27,13 +27,14 @@ const styles = (theme: Theme) =>
     },
     // HeroTitle
     titleWrapper: {
-      width: 550,
+      width: `600px`,
       [theme.breakpoints.down(`xs`)]: {
         width: `100vw`,
         display: `flex`,
         flexDirection: `column`,
         alignItems: `flex-start`,
         justifyContent: `center`,
+        margin: `0 1rem`,
       },
     },
     title: {

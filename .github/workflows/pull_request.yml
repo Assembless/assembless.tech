@@ -1,5 +1,5 @@
 name: 📦 Pull Request
-on: [pull_request]
+on: pull_request
 jobs:
   pullrequest:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
       - name: E2E Test ✅
         run: |
           yarn test:e2e:ci
-      - name: Deploy 🚀
+      - name: Deploy 🚀 # The project will be deployed to Surge here!
         uses: afc163/surge-preview@v1
         id: preview_step
         with:
@@ -30,7 +30,7 @@ jobs:
           teardown: 'true'
           failOnError: true
       - name: Get the preview_url
-        run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
+        run: echo "Preview url => ${{ steps.preview_step.outputs.preview_url }}"
       - name: Generate Lighthouse Report
         uses: justinribeiro/lighthouse-action@master
         continue-on-error: true

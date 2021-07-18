@@ -41,14 +41,29 @@ const FooterHeadLeft = ({
         <Logotype style={{ color: `#FFF`, fontSize: `17px` }} />
       </Box>
       <Box className={classes.iconsContainer}>
-        <IconButton href="#services" size="small" color="primary">
-          <GitHub className={classes.icon} />
+        <IconButton
+          href="https://github.com/Assembless"
+          size="small"
+          color="primary"
+          aria-label="GitHub"
+        >
+          <GitHub className={classes.icon} style={{ fontSize: `1rem` }} />
         </IconButton>
-        <IconButton href="#services" size="small" color="primary">
-          <Facebook className={classes.icon} />
+        <IconButton
+          href="https://facebook.com/Assembless"
+          size="small"
+          color="primary"
+          aria-label="Facebook"
+        >
+          <Facebook className={classes.icon} style={{ fontSize: `1rem` }} />
         </IconButton>
-        <IconButton href="#services" size="small" color="primary">
-          <Twitter className={classes.icon} />
+        <IconButton
+          href="https://twitter.com/Assembless"
+          size="small"
+          color="primary"
+          aria-label="Twitter"
+        >
+          <Twitter className={classes.icon} style={{ fontSize: `1rem` }} />
         </IconButton>
       </Box>
     </Box>

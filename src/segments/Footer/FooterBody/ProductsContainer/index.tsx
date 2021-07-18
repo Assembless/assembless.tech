@@ -32,7 +32,7 @@ const ProductsContainer = ({
 
   return (
     <Box className={cx(classes.root, className)} style={style}>
-      <Typography variant="h5" className={classes.title}>
+      <Typography variant="h5" className={classes.title} component="p">
         {translated.title}
       </Typography>
       <Typography paragraph style={{ fontSize: 14, whiteSpace: `pre-wrap` }}>
@@ -43,7 +43,7 @@ const ProductsContainer = ({
           <Box className={classes.imgContainer}>
             <img
               src={ReactLitteraLogo}
-              alt="React-Literra logo"
+              alt="React-Littera logo"
               width={85}
               height={85}
             />
@@ -56,6 +56,7 @@ const ProductsContainer = ({
             <Button
               href="https://github.com/Assembless/react-littera"
               className={classes.btn}
+              aria-label="React Littera Package"
             >
               <StaticImage
                 src="../../../../assets/GitHub_Logo_White.png"
@@ -66,6 +67,7 @@ const ProductsContainer = ({
             <Button
               href="https://npmjs.com/package/@assembless/react-littera"
               className={classes.btn}
+              aria-label="React Littera Package"
             >
               <StaticImage
                 src="../../../../assets/800px-Npm-logo.svg.png"

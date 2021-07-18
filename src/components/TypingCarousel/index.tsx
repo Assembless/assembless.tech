@@ -7,6 +7,7 @@ import cx from 'classnames';
 
 // Component scoped imports.
 import styles from './styles';
+import { BlankCharacterSpan } from './BlankCharacterSpan';
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
@@ -64,10 +65,14 @@ const TypingCarousel = ({
   return (
     <span
       data-test-id="typingcarousel"
-      className={cx(classes.root, { [classes.caret]: !hideCaret }, className)}
+      className={cx(classes.root, className)}
       style={style}
     >
-      {value}
+      <span>
+        <BlankCharacterSpan />
+        {value}
+      </span>
+      {!hideCaret && <span className={classes.caret}>|</span>}
     </span>
   );
 };

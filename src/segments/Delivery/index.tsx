@@ -1,5 +1,5 @@
 // Deps scoped imports.
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import {
   makeStyles,
   Box,
@@ -7,10 +7,11 @@ import {
   Stepper,
   Step,
   StepButton,
+  StepContent,
   useTheme,
   useMediaQuery,
 } from '@material-ui/core';
-import { useLittera } from '@assembless/react-littera';
+import { useLittera, useLitteraMethods } from '@assembless/react-littera';
 import cx from 'classnames';
 import { navigate } from 'gatsby';
 
@@ -19,9 +20,10 @@ import SectionHead from '@/components/SectionHead';
 import { SEGMENTS_LIST } from '@/utils/segements';
 
 // Component scoped imports.
-import { DELIVERY_STEPS } from './constants';
+import { DELIVERY_STEPS_KEYS } from './constants';
+import { TDeliveryStep } from './types';
 import styles from './styles';
-import translations from './trans';
+import translations, { deliveryTranslations } from './trans';
 
 import { DesktopDeliveryCard } from './DesktopDeliveryCard';
 import { MobileDeliveryCard } from './MobileDeliveryCard';
@@ -41,7 +43,23 @@ const Delivery = ({
   scrollToSection,
 }: DeliveryProps): JSX.Element => {
   const translated = useLittera(translations);
+  const { locale } = useLitteraMethods();
+  const deliveryTranslated = useLittera(deliveryTranslations);
   const classes = useStyles();
+
+  const steps = useMemo<TDeliveryStep[]>(() => {
+    const stps = [] as TDeliveryStep[];
+
+    DELIVERY_STEPS_KEYS.forEach((key: string) => {
+      stps.push({
+        title: deliveryTranslated[key][0],
+        subheader: deliveryTranslated[key][1],
+        content: deliveryTranslated[key][2],
+      });
+    });
+
+    return [...stps];
+  }, [locale]);
 
   // Theme is used to get the breakpoints which then are used for the media query to tell if the user views on mobile.
   const theme = useTheme();
@@ -73,7 +91,7 @@ const Delivery = ({
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
   // The currently enabled step.
-  const selectedStep = DELIVERY_STEPS[activeStep] ?? null;
+  const selectedStep = steps[activeStep] ?? null;
   const stepperOrientation = isMobile ? `vertical` : `horizontal`;
 
   return (
@@ -99,24 +117,26 @@ const Delivery = ({
             alternativeLabel={!isMobile}
             orientation={stepperOrientation}
           >
-            {DELIVERY_STEPS.map((step, index) => (
+            {steps.map((step, index) => (
               <Step key={step.title} completed={index < activeStep}>
                 <StepButton onClick={handleStep(index)}>
                   {step.title}
                 </StepButton>
 
                 {/* View for mobile! */}
-                <MobileDeliveryCard
-                  activeStep={activeStep}
-                  selectedStep={selectedStep}
-                  onNext={
-                    activeStep >= DELIVERY_STEPS.length
-                      ? scrollToSection
-                      : handleNext
-                  }
-                  onPrev={handlePrev}
-                  isMaxIndex={activeStep >= DELIVERY_STEPS.length}
-                />
+                <StepContent>
+                  <MobileDeliveryCard
+                    activeStep={activeStep}
+                    selectedStep={selectedStep}
+                    onNext={
+                      activeStep >= DELIVERY_STEPS_KEYS.length - 1
+                        ? scrollToSection
+                        : handleNext
+                    }
+                    onPrev={handlePrev}
+                    isMaxIndex={activeStep >= DELIVERY_STEPS_KEYS.length - 1}
+                  />
+                </StepContent>
               </Step>
             ))}
           </Stepper>

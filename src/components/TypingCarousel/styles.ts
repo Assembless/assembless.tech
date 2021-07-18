@@ -6,10 +6,22 @@ const styles = (theme: Theme) =>
   createStyles({
     root: {
       userSelect: `none`,
+      whiteSpace: `nowrap`,
+
+      display: `inline-flex`,
+      alignItems: `center`,
     },
     caret: {
-      borderRight: `0.04em solid ${theme.palette.primary.main}`,
-      paddingRight: theme.spacing(1) / 2,
+      marginTop: `-7.5px`,
+      lineHeight: `0px`,
+      fontSize: `52px`,
+      fontWeight: 400,
+      paddingLeft: `5px`,
+      opacity: 1,
+      animation: `$blinkAnimation 1s infinite`,
+    },
+    '@keyframes blinkAnimation': {
+      '50%': { opacity: 0 },
     },
   });
 
