@@ -1,12 +1,12 @@
 // Deps scoped imports.
-import React from "react";
-import { makeStyles, Typography } from "@material-ui/core";
-import { useLittera } from "react-littera";
-import cx from "classnames";
+import React from 'react';
+import { makeStyles, Typography } from '@material-ui/core';
+import { useLittera } from 'react-littera';
+import cx from 'classnames';
 
 // Project scoped imports.
-import styles from "./styles";
-import translations from "./trans";
+import styles from './styles';
+import translations from './trans';
 
 /**
  * WrongPage component
@@ -15,22 +15,24 @@ import translations from "./trans";
  * @author Mike Eling <mike.eling97@gmail.com>
  */
 const WrongPage = (props: ComponentProps) => {
-    const translated = useLittera(translations);
-    const classes = useStyles();
+  const translated = useLittera(translations);
+  const classes = useStyles();
 
-    return <div className={cx(classes.root, props.className)} style={props.style}>
-        <Typography className={classes.h4}>{translated.title}</Typography>
+  return (
+    <div className={cx(classes.root, props.className)} style={props.style}>
+      <Typography className={classes.h4}>{translated.title}</Typography>
     </div>
-}
+  );
+};
 
 // Creates a hook for generating classnames.
 const useStyles = makeStyles(styles);
 
 // Props the component accepts.
 type ComponentProps = {
-    className?: string;
-    style?: React.CSSProperties
-}
+  className?: string;
+  style?: React.CSSProperties;
+};
 
 // Time to export! 🚚
 export default WrongPage;

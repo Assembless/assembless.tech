@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from 'components/App';
 import { hotjar } from 'react-hotjar';
-import config from "utils/config";
-import reportWebVitals from './reportWebVitals';
+import config from 'utils/config';
+import reportWebVitals from 'reportWebVitals';
 
 hotjar.initialize(config.hotjar.hjid, config.hotjar.hjsv);
 
@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById(`root`),
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,19 +1,18 @@
-import { createStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, Theme } from '@material-ui/core/styles';
 // Here we define styles for the component.
 
-export default ((theme: Theme) => createStyles({
+export default (theme: Theme) =>
+  createStyles({
     root: {
-        // Container styles...
+      // Container styles...
     },
     title: {
-        // Head text styles...
-        fontFamily: "'PT Mono', monospace"
+      // Head text styles...
+      fontFamily: `'PT Mono', monospace`,
     },
     container: {
-
-        [theme.breakpoints.down("sm")]: {
-            alignItems: "center",
-
-        }
-    }
-}));
+      [theme.breakpoints.down(`sm`)]: {
+        alignItems: `center`,
+      },
+    },
+  });

@@ -1,54 +1,54 @@
 // Default theme can be found here: https://material-ui.com/customization/default-theme/
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme } from '@material-ui/core';
 
 export const LIGHT_THEME = createMuiTheme({
-    palette: {
-        type: "light",
-        primary: {
-            main: "#FFF",
-            contrastText: "#000"
-        },
-        secondary: {
-            main: "rgb(33, 150, 243)",
-            contrastText: "#FFF"
-        },
-        background: {
-            default: "#000",
-            paper: "#212121"
-        },
-        text: {
-            primary: "#FFF",
-            disabled: "#21212"
-        }
+  palette: {
+    type: `light`,
+    primary: {
+      main: `#FFF`,
+      contrastText: `#000`,
     },
-    overrides: {
-        MuiCssBaseline: {
-            '@global': {
-                html: {
-                    WebkitFontSmoothing: 'auto',
-                    backgroundColor: "#000"
-                },
-            },
-        },
-        MuiInputLabel: {
-            root: {
-                color: "#a8a8a8",
-                "&$focused": {
-                    color: "#FFF",
-                }
-            },
-        },
-        MuiOutlinedInput: {
-            root: {
-                "&$focused": {
-                    borderColor: "#FFF"
-                }
-            },
-            notchedOutline: {
-                borderColor: "#a8a8a8",
-            },
-        },
+    secondary: {
+      main: `rgb(33, 150, 243)`,
+      contrastText: `#FFF`,
     },
+    background: {
+      default: `#000`,
+      paper: `#212121`,
+    },
+    text: {
+      primary: `#FFF`,
+      disabled: `#21212`,
+    },
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          WebkitFontSmoothing: `auto`,
+          backgroundColor: `#000`,
+        },
+      },
+    },
+    MuiInputLabel: {
+      root: {
+        color: `#a8a8a8`,
+        '&$focused': {
+          color: `#FFF`,
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        '&$focused': {
+          borderColor: `#FFF`,
+        },
+      },
+      notchedOutline: {
+        borderColor: `#a8a8a8`,
+      },
+    },
+  },
 });
 
 export const DARK_THEME = LIGHT_THEME;

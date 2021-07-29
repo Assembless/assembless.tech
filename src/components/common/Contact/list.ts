@@ -1,152 +1,209 @@
-import Project from "api/Project.model";
-import projects from "../Projects/list";
-import { IMember, TMemberContact, TRole, TMemberContactLabel } from "./types";
+/* eslint-disable camelcase */
+import Project from 'api/Project.model';
+import { IMember, TMemberContact, TRole, TMemberContactLabel } from './types';
 
 export class MemberItem {
-    // @ts-ignore
-    details: IMember = {};
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  details: IMember = {};
 
-    constructor(first_name: string, last_name: string, role: TRole, contact: TMemberContact[], nickname?: string, project?: Project, photo_url?: string) {
-        this.details.first_name = first_name;
-        this.details.last_name = last_name;
-        this.details.role = role;
-        this.details.nickname = nickname;
-        this.details.photo_url = photo_url;
-        this.details.project = project;
-        this.details.contact = contact;
-    }
+  constructor(
+    first_name: string,
+    last_name: string,
+    role: TRole,
+    contact: TMemberContact[],
+    nickname?: string,
+    project?: Project,
+    photo_url?: string,
+  ) {
+    this.details.first_name = first_name;
+    this.details.last_name = last_name;
+    this.details.role = role;
+    this.details.nickname = nickname;
+    this.details.photo_url = photo_url;
+    this.details.project = project;
+    this.details.contact = contact;
+  }
 
-    get name() {
-        const nickName = this.details.nickname ? ` ${this.details.nickname} ` : " "
+  get name() {
+    const nickName = this.details.nickname ? ` ${this.details.nickname} ` : ` `;
 
-        return `${this.details.first_name}${nickName}${this.details.last_name}`;
-    }
+    return `${this.details.first_name}${nickName}${this.details.last_name}`;
+  }
 
-    get contact() {
-        return this.details.contact.map(ct => ({ ...ct, value: makeLink(ct.label, ct.value) }))
-    }
+  get contact() {
+    return this.details.contact.map((ct: any) => ({
+      ...ct,
+      value: makeLink(ct.label, ct.value),
+    }));
+  }
 
-    get initials() {
-        return `${this.details.first_name[0]}${this.details.last_name[0]}`
-    }
+  get initials() {
+    return `${this.details.first_name[0]}${this.details.last_name[0]}`;
+  }
 
-    getContact(label: TMemberContactLabel): TMemberContact | null {
-        return this.contact.find(ct => ct.label === label) ?? null;
-    }
+  getContact(label: TMemberContactLabel): TMemberContact | null {
+    return this.contact.find((ct: any) => ct.label === label) ?? null;
+  }
 }
 
 const makeLink = (label: TMemberContactLabel, value: string) => {
-    switch (label) {
-        case "email":
-            return `mailto://${value}`
+  switch (label) {
+    case `email`:
+      return `mailto://${value}`;
 
-        case "phone":
-            return `tel://${value}`
+    case `phone`:
+      return `tel://${value}`;
 
-        case "twitter":
-            return `https://twitter.com/${value}`;
+    case `twitter`:
+      return `https://twitter.com/${value}`;
 
-        case "github":
-            return `https://github.com/${value}`
+    case `github`:
+      return `https://github.com/${value}`;
 
-        case "linkedin":
-            return `https://www.linkedin.com/in/${value}/`
+    case `linkedin`:
+      return `https://www.linkedin.com/in/${value}/`;
 
-        case "telegram":
-            return `https://t.me/${value}`
+    case `telegram`:
+      return `https://t.me/${value}`;
 
-        default:
-            return value;
-    }
-}
+    default:
+      return value;
+  }
+};
 
 const contacts: TMemberContact[][] = [
-    [
-        {
-            label: "email",
-            name: "E-Mail",
-            value: "mike@assembless.tech"
-        },
-        {
-            label: "phone",
-            name: "Phone",
-            value: "+48 450 010 420"
-        },
-        {
-            label: "twitter",
-            name: "Twitter",
-            value: "@DRFR0ST"
-        },
-        {
-            label: "github",
-            name: "GitHub",
-            value: "DRFR0ST"
-        }
-    ],
-    [
-        {
-            label: "email",
-            name: "E-Mail",
-            value: "rafal.cichocki@assembless.tech"
-        },
-    ],
-    [
-        {
-            label: "email",
-            name: "E-Mail",
-            value: "karolina.falkowska@assembless.tech"
-        },
-        {
-            label: "website",
-            name: "Website",
-            value: "https://karutek.com/"
-        }
-    ],
-    [
-        {
-            label: "email",
-            name: "E-Mail",
-            value: "przemyslawcieslik@smartoakprojects.com"
-        },
-        {
-            label: "phone",
-            name: "Phone",
-            value: "+44 7526151139"
-        },
-        {
-            label: "github",
-            name: "GitHub",
-            value: "cieslikprzemyslaw"
-        },
-        {
-            label: "facebook",
-            name: "Facebook",
-            value: "https://www.facebook.com/profile.php?id=100000375258188"
-        },
-        {
-            label: "linkedin",
-            name: "LinkedIn",
-            value: "przemyslaw-cieslik-b90457169"
-        },
-    ]
+  [
+    {
+      label: `email`,
+      name: `E-Mail`,
+      value: `mike.eling@assembless.tech`,
+    },
+    {
+      label: `phone`,
+      name: `Phone`,
+      value: `+48 450 010 420`,
+    },
+    {
+      label: `twitter`,
+      name: `Twitter`,
+      value: `@DRFR0ST`,
+    },
+    {
+      label: `github`,
+      name: `GitHub`,
+      value: `DRFR0ST`,
+    },
+  ],
+  [
+    {
+      label: `email`,
+      name: `E-Mail`,
+      value: `rafal.cichocki@assembless.tech`,
+    },
+  ],
+  [
+    {
+      label: `email`,
+      name: `E-Mail`,
+      value: `karolina.falkowska@assembless.tech`,
+    },
+    {
+      label: `website`,
+      name: `Website`,
+      value: `https://karutek.com/`,
+    },
+  ],
+  [
+    {
+      label: `email`,
+      name: `E-Mail`,
+      value: `przemyslaw.cieslik@assembless.tech`,
+    },
+    {
+      label: `phone`,
+      name: `Phone`,
+      value: `+44 7526151139`,
+    },
+    {
+      label: `github`,
+      name: `GitHub`,
+      value: `cieslikprzemyslaw`,
+    },
+    {
+      label: `facebook`,
+      name: `Facebook`,
+      value: `https://www.facebook.com/profile.php?id=100000375258188`,
+    },
+    {
+      label: `linkedin`,
+      name: `LinkedIn`,
+      value: `przemyslaw-cieslik-b90457169`,
+    },
+  ],
+  [
+    {
+      label: `email`,
+      name: `E-Mail`,
+      value: `sergiusz.krysiak@assembless.tech`,
+    },
+  ],
 ];
 
 const list: MemberItem[] = [
-    new MemberItem("Mike", "Eling", "Chief Executive Officer", contacts[0], undefined, undefined, "https://pbs.twimg.com/profile_images/1350106852814704641/w_BmuLjD_400x400.jpg"),
-    new MemberItem("Rafał", "Cichocki", "Software Engineer", contacts[1], undefined, undefined),
-    new MemberItem("Karolina", "Falkowska", "UX/UI Designer", contacts[2], undefined, undefined, "https://pbs.twimg.com/profile_images/1375522101810098182/Ehv8nsne_400x400.jpg"),
-    new MemberItem("Przemysław", "Cieślik", "Software Engineer", contacts[3], undefined, undefined),
-]
+  new MemberItem(
+    `Mike`,
+    `Eling`,
+    `Chief Executive Officer`,
+    contacts[0],
+    undefined,
+    undefined,
+    `https://pbs.twimg.com/profile_images/1350106852814704641/w_BmuLjD_400x400.jpg`,
+  ),
+  new MemberItem(
+    `Rafał`,
+    `Cichocki`,
+    `Software Engineer`,
+    contacts[1],
+    undefined,
+    undefined,
+  ),
+  new MemberItem(
+    `Karolina`,
+    `Falkowska`,
+    `UX/UI Designer`,
+    contacts[2],
+    undefined,
+    undefined,
+    `https://pbs.twimg.com/profile_images/1375522101810098182/Ehv8nsne_400x400.jpg`,
+  ),
+  new MemberItem(
+    `Przemysław`,
+    `Cieślik`,
+    `Software Engineer`,
+    contacts[3],
+    undefined,
+    undefined,
+  ),
+  new MemberItem(
+    `Sergiusz`,
+    `Krysiak`,
+    `Marketing Representative`,
+    contacts[4],
+    undefined,
+    undefined,
+  ),
+];
 
 export const iconsMap: { [key: string]: string } = {
-    email: "fas fa-envelope",
-    phone: "fas fa-phone",
-    github: "fab fa-github",
-    twitter: "fab fa-twitter",
-    linkedin: "fab fa-linkedin",
-    facebook: "fab fa-facebook",
-    telegram: "fab fa-telegram",
-    website: "fas fa-globe",
-}
+  email: `fas fa-envelope`,
+  phone: `fas fa-phone`,
+  github: `fab fa-github`,
+  twitter: `fab fa-twitter`,
+  linkedin: `fab fa-linkedin`,
+  facebook: `fab fa-facebook`,
+  telegram: `fab fa-telegram`,
+  website: `fas fa-globe`,
+};
 
 export default list;

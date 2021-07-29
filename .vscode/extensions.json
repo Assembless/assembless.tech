@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "teamchilla.blueprint",
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint"
+    ]
+}
